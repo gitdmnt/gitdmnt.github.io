@@ -3,42 +3,88 @@
 ---
 
 <header>
-    <h2><a href="/">や‐さがされ</a></h2>
-    <ul>
-        <li>
-            <a href="/about">げんかん</a>
-        </li>
-        <li>
-            <a href="/blog">やねうら</a>
-        </li>
-        <li>
-            <a href="/illust">そうこ</a>
-        </li>
-        <li>
-            <a href="/gacha">れいぞうこ</a>
-        </li>
-    </ul>
+    <div class="container">
+        <ul class="page-link">
+            <li class="page-link">
+                <a href="/about">げんかん</a>
+            </li>
+            <li class="page-link">
+                <a href="/blog">やねうら</a>
+            </li>
+            <li class="page-link">
+                <a href="/illust">そうこ</a>
+            </li>
+            <li class="page-link">
+                <a href="/gacha">れいぞうこ</a>
+            </li>
+        </ul>
+        <div class="title"><a href="/">や‐さがされ</a></div>
+        <hr />
+    </div>
 </header>
 
 <style>
+    .container::before {
+        content: "";
+        display: inline-block;
+        height: 122pt;
+        width: 10pt;
+        background: #1d1d1d;
+        margin-block-end: -126pt;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin-block-end: 3rem;
+        margin-inline: auto;
+        font-family: "Kosugi";
+        line-height: 0;
+    }
+    div.page-link {
+    }
+    ul.page-link {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+    }
+    li.page-link::before {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 100pt;
+        background: #d4d4d4;
+        margin-block-end: 12pt;
+    }
+    li.page-link {
+        white-space: nowrap;
+        margin-inline: 18pt;
+        margin-block-start: 8pt;
+        margin-block-end: 20pt;
+        font-size: 8pt;
+    }
+    .title {
+        display: block;
+        white-space: nowrap;
+        margin-block-start: 40pt;
+        margin-block-end: 20pt;
+        margin-inline: 16pt;
+        font-size: 40pt;
+    }
     header {
         display: flex;
         justify-content: space-between;
     }
     a {
-        color: #3b3b3b;
+        color: #1d1d1d;
         text-decoration: none;
     }
-    ul {
-        list-style: none;
-        display: flex;
-    }
-    li {
-        white-space: nowrap;
-        margin-inline-end: auto;
-        padding: 0.5rem;
-    }
-    h2 {
-        white-space: nowrap;
+    hr {
+        margin-block-start: 20pt;
+        width: 100%;
+        border: none;
+        border-top: 4px double #d4d4d4;
+        text-align: center;
     }
 </style>
