@@ -24,6 +24,11 @@
 </header>
 
 <style>
+    header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
     .container::before {
         content: "";
         display: inline-block;
@@ -39,27 +44,30 @@
         margin-inline: auto;
         font-family: "Kosugi";
         line-height: 0;
-    }
-    div.page-link {
+        width: 80%;
     }
     ul.page-link {
         list-style: none;
         display: flex;
+        flex-wrap: nowrap;
+        flex-shrink: 1;
         justify-content: space-between;
         margin: 0;
+        margin-inline-start: 18pt;
         padding: 0;
     }
     li.page-link::before {
         content: "";
         display: block;
+        flex-shrink: 1;
         height: 1px;
-        width: 100pt;
+        width: 50pt;
         background: #d4d4d4;
         margin-block-end: 12pt;
     }
     li.page-link {
         white-space: nowrap;
-        margin-inline: 18pt;
+        margin-inline: 0pt;
         margin-block-start: 8pt;
         margin-block-end: 20pt;
         font-size: 8pt;
