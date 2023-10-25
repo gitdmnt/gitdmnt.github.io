@@ -1,0 +1,169 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="家の床">
+    <main>
+        <div class="container">
+            <div class="madori">
+                <h2 class="genkan">や‐さがされ</h2>
+                <ul class="rouka">
+                    <li class="heya">
+                        <a href="/about">げたばこ</a>
+                    </li>
+                    <li class="heya">
+                        <a href="/blog">やねうら</a>
+                    </li>
+                    <li class="heya">
+                        <a href="/illust">そうこ</a>
+                    </li>
+                    <li class="heya">
+                        <a href="/gacha">れいぞうこ</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="ie">
+                <div class="hyosatsu">
+                    <div class="shitsuryo">住んで<br />います</div>
+                    <h2 class="keiso">宇田</h2>
+                </div>
+                <div class="yubin-uke">
+                    <h2 class="bira">動かしています</h2>
+                    <ul class="bira">
+                        <li class="bira">文字</li>
+                        <li class="bira">ピクセル</li>
+                        <li class="bira">バイナリ・ディジット</li>
+                    </ul>
+                    <h2 class="bira">動かされています</h2>
+                    <ul class="bira">
+                        <li class="bira">意味</li>
+                        <li class="bira">実存</li>
+                        <li class="bira">愛</li>
+                        <li class="bira">恐怖</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>
+<style>
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-content: space-between;
+        flex-wrap: wrap;
+        writing-mode: horizontal-tb;
+        font-family: "Kosugi";
+    }
+    .madori {
+        display: flex;
+        flex-shrink: 0;
+        justify-content: left;
+        margin: 0;
+        color: #1d1d1d;
+    }
+    .genkan {
+        writing-mode: vertical-lr;
+        flex-shrink: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        font-size: 100pt;
+        white-space: nowrap;
+        box-sizing: border-box;
+        line-height: 1;
+    }
+    .genkan::after {
+        content: "";
+        background: #1d1d1d;
+        display: block;
+        height: 100%;
+        width: 16pt;
+        margin-block-start: 0;
+        margin-block-end: 0.2rem;
+        flex-shrink: 0;
+    }
+    .rouka {
+        flex-shrink: 0;
+        font-size: xx-large;
+        list-style: none;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    .heya {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+    .ie {
+        color: #1d1d1d;
+        margin-block-start: 2rem;
+        margin-inline: 0;
+        display: flex;
+        justify-content: right;
+        flex-direction: row-reverse;
+        align-items: flex-end;
+    }
+    .hyosatsu {
+        display: flex;
+        text-align: right;
+        flex-direction: column;
+        align-items: flex-end;
+        margin: 0;
+        font-family: "Kosugi";
+        color: #1d1d1d;
+        line-height: 1;
+    }
+    .shitsuryo {
+        font-size: 32pt;
+        margin: 0;
+        padding: 0;
+    }
+    .shitsuryo::after {
+        content: "";
+        display: block;
+        height: 5pt;
+        width: 95pt;
+        margin-inline-start: 10pt;
+        margin-block: 2pt;
+        background: #1d1d1d;
+    }
+    .keiso {
+        writing-mode: vertical-lr;
+        font-size: 100pt;
+        margin: 0;
+        padding: 0;
+    }
+    .yubin-uke {
+        text-align: right;
+        margin-block-end: 7pt;
+    }
+    .hyosatsu::after {
+        content: "";
+        display: block;
+        height: 270pt;
+        width: 10pt;
+        margin-block-start: -272pt;
+        margin-inline-end: 100pt;
+        margin-inline-start: 5pt;
+        background: #1d1d1d;
+    }
+    .bira {
+        margin: 0;
+        padding: 0;
+        font-size: 15pt;
+        white-space: nowrap;
+        line-height: 1.2;
+    }
+    h2.bira {
+        line-height: 1.6;
+    }
+
+    ul.bira {
+        list-style: none;
+    }
+    a {
+        color: #1d1d1d;
+        text-decoration: none;
+    }
+</style>
