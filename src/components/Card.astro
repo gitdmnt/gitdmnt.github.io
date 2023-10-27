@@ -19,3 +19,35 @@ const { href, title, body } = Astro.props;
     </p>
   </a>
 </li>
+
+<style>
+  li {
+    margin: 1rem;
+    padding: 0rem;
+    min-width: 15rem;
+    max-width: 49rem;
+    border-block-start: 0.2rem solid #1d1d1d;
+    border-inline-start: 1rem solid #1d1d1d;
+    box-sizing: border-box;
+  }
+  a {
+    padding: 1rem;
+    padding-inline-end: 0rem;
+    color: #1d1d1d;
+    text-decoration: none;
+    display: grid;
+    grid-template-rows: 2fr 3fr;
+  }
+  h2 {
+    grid-row: 1/2;
+    margin-block: 0.5rem;
+    padding-block: 0.5rem;
+    border-block-end: 0.1rem solid #1d1d1d;
+
+    border-inline-end: 0.4rem solid #1d1d1d;
+  }
+  p {
+    margin: 0;
+    grid-row: 2/3;
+  }
+</style>

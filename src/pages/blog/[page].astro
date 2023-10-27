@@ -8,7 +8,7 @@ export async function getStaticPaths({ paginate }) {
             Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date),
     );
 
-    return paginate(posts, { pageSize: 2 });
+    return paginate(posts, { pageSize: 10 });
 }
 const { page } = Astro.props;
 ---
@@ -31,11 +31,9 @@ const { page } = Astro.props;
                 () => {
                     if (page.url.prev != null) {
                         return (
-                            <li class="page prev">
-                                <a href={page.url.prev}>
-                                    {page.currentPage - 1}
-                                </a>
-                            </li>
+                            <a class="page prev" href={page.url.prev}>
+                                <li>{page.currentPage - 1}</li>
+                            </a>
                         );
                     } else {
                         return;
@@ -47,11 +45,9 @@ const { page } = Astro.props;
                 () => {
                     if (page.url.next != null) {
                         return (
-                            <li class="page next">
-                                <a href={page.url.next}>
-                                    {page.currentPage + 1}
-                                </a>
-                            </li>
+                            <a class="page next" href={page.url.next}>
+                                <li>{page.currentPage + 1}</li>
+                            </a>
                         );
                     } else {
                         return;
@@ -69,16 +65,40 @@ const { page } = Astro.props;
     }
     .article-list {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: flex-start;
+        flex-wrap: wrap;
     }
     .page-list {
-        margin: auto;
-        display: flex;
+        margin-inline: auto;
+        margin-block: 2rem;
+        display: grid;
         justify-content: center;
-        flex-wrap: nowrap;
+        grid-template-rows: 2.5rem;
+        grid-template-columns: 2rem 2rem 2rem;
     }
     .page {
-        margin-inline: 1rem;
+        box-sizing: border-box;
+        padding: 0.5rem;
+        border: 1px solid #1d1d1d;
+        color: #1d1d1d;
+    }
+    .prev {
+        grid-column: 1/2;
+        text-align: center;
+    }
+    .pres {
+        grid-column: 2/3;
+        background: #1d1d1d;
+        text-align: center;
+        color: #fffefd;
+    }
+    .next {
+        grid-column: 3/4;
+        text-align: center;
+    }
+    a {
+        color: #1d1d1d;
+        text-decoration: none;
     }
 </style>
