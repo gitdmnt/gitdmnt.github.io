@@ -1,0 +1,21 @@
+---
+import Header from "../components/Header.astro";
+import Top from "./Top.astro";
+interface Props {
+    title: string;
+}
+const { title } = Astro.props;
+---
+
+<Top title={title}>
+    <Header />
+    <div class="main">
+        <slot />
+    </div>
+</Top>
+<style>
+    .main {
+        margin: auto;
+        width: 80%;
+    }
+</style>

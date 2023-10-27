@@ -1,6 +1,6 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import Layout from "../layouts/Top.astro";
+import Card2 from "../components/Card2.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -34,30 +34,30 @@ import Card from "../components/Card.astro";
 			</defs>
 		</svg>
 		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<Card href="index2" title="unko" body="wahhahha" />
+		<Card2 href="index2" title="unko" body="wahhahha" />
 		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your
-			project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro"
-			message above.
+			To get started, open the directory <code>src/pages</code> in your project.<br
+			/>
+			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message
+			above.
 		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
+		<ul role="list" class="link-Card2-grid">
+			<Card2
 				href="https://docs.astro.build/"
 				title="Documentation"
 				body="Learn how Astro works and explore the official API docs."
 			/>
-			<Card
+			<Card2
 				href="https://astro.build/integrations/"
 				title="Integrations"
 				body="Supercharge your project with new frameworks and libraries."
 			/>
-			<Card
+			<Card2
 				href="https://astro.build/themes/"
 				title="Themes"
 				body="Explore a galaxy of community-built starter themes."
 			/>
-			<Card
+			<Card2
 				href="https://astro.build/chat/"
 				title="Community"
 				body="Come say hi to our amazing Discord community. ❤️"
@@ -120,7 +120,7 @@ import Card from "../components/Card.astro";
 	.instructions strong {
 		color: rgb(var(--accent-light));
 	}
-	.link-card-grid {
+	.link-Card2-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 2rem;
