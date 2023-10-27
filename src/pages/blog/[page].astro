@@ -31,7 +31,7 @@ const { page } = Astro.props;
                 () => {
                     if (page.url.prev != null) {
                         return (
-                            <li class="prev">
+                            <li class="page prev">
                                 <a href={page.url.prev}>
                                     {page.currentPage - 1}
                                 </a>
@@ -42,12 +42,12 @@ const { page } = Astro.props;
                     }
                 }
             }
-            <li class="pres">{page.currentPage}</li>
+            <li class="page pres">{page.currentPage}</li>
             {
                 () => {
                     if (page.url.next != null) {
                         return (
-                            <li class="next">
+                            <li class="page next">
                                 <a href={page.url.next}>
                                     {page.currentPage + 1}
                                 </a>
@@ -64,10 +64,21 @@ const { page } = Astro.props;
 <style>
     ul {
         list-style: none;
+        margin: auto;
+        padding: 0;
     }
     .article-list {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+    }
+    .page-list {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+    .page {
+        margin-inline: 1rem;
     }
 </style>
