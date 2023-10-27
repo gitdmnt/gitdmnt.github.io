@@ -1,14 +1,10 @@
 ---
+import Common from "./Common.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<html>
-  <head>
-    <title>{frontmatter.title}</title>
-  </head>
-  <body>
-    <h1>{frontmatter.title} by {frontmatter.author}</h1>
-    <slot />
-    <p>Written on: {frontmatter.date}</p>
-  </body>
-</html>
+<Common title={frontmatter.title}>
+  <h1>{frontmatter.title}</h1>
+  <slot />
+  <p>{frontmatter.date}, 書いた人: {frontmatter.author}</p>
+</Common>
