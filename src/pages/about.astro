@@ -1,8 +1,13 @@
 ---
-import Layout from "../layouts/Top.astro";
-import LayoutWithHeader from "../layouts/Common.astro";
+import Common from "../layouts/Common.astro";
+import { Content as Profile } from "./md/profile.md";
 ---
 
-<LayoutWithHeader title="姿見">
-    <main>おれ</main>
-</LayoutWithHeader>
+<Common title="姿見">
+    <main>
+        <div class="intro">著者近影(気が向いたら撮るぜ！)</div>
+        <div class="profile">
+            <Profile />
+        </div>
+    </main>
+</Common>

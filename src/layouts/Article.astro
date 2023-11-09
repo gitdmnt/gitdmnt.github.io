@@ -1,10 +1,13 @@
 ---
 import Common from "./Common.astro";
+import Md from "./Md.astro";
 const { frontmatter } = Astro.props;
 ---
 
 <Common title={frontmatter.title}>
   <h1>{frontmatter.title}</h1>
-  <slot />
+  <Md>
+    <slot />
+  </Md>
   <p>{frontmatter.date}, 書いた人: {frontmatter.author}</p>
 </Common>
