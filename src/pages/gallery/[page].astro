@@ -1,0 +1,30 @@
+---
+import Common from "../../layouts/Common.astro";
+
+export async function getStaticPaths({ paginate }) {
+    const posts = await Astro.glob("/src/assets/illusts/*.png");
+    return paginate(posts, { pageSize: 20 });
+}
+const { page } = Astro.props;
+---
+
+<Common title="倉庫">
+    <main>
+        <div class="container">
+            {
+                page.data.map((p) => (
+                    <img class="illust" src={p.default.src} alt="" />
+                ))
+            }
+        </div>
+    </main>
+</Common>
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .illust {
+        width: 100px;
+    }
+</style>
