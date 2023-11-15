@@ -3,7 +3,7 @@ import Common from "../../layouts/Common.astro";
 import Card from "../../components/Card.astro";
 
 export async function getStaticPaths({ paginate }) {
-    const posts = (await Astro.glob("../../pages/blog/article/*.md")).sort(
+    const posts = (await Astro.glob("../../../public/docs/article/*.md")).sort(
         (a, b) =>
             Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date),
     );
