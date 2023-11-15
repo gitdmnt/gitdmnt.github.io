@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Article.astro
+layout: /src/layouts/Article.astro
 title: "記事3"
 author: "uda"
 date: "2023-01-01"

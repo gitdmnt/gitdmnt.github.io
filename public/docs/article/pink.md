@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Article.astro
+layout: /src/layouts/Article.astro
 title: "記事5 なんだけど、長いタイトルにするとどうなる？"
 author: "宇田です"
 date: "2025-01-01"
