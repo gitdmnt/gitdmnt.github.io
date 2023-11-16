@@ -13,7 +13,9 @@ const { page } = Astro.props;
         <div class="container">
             {
                 page.data.map((p) => (
-                    <img class="illust" src={p.default.src} alt="" />
+                    <a href={p.default.src}>
+                        <img class="illust" src={p.default.src} alt="" />
+                    </a>
                 ))
             }
         </div>
