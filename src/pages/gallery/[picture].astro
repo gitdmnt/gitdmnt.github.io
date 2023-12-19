@@ -62,6 +62,18 @@ const img: ImageMetadata = (
       }
     </ul>
     <p class="description">{caption.frontmatter.description}</p>
+    {
+      () => {
+        if (caption.frontmatter.link) {
+          return (
+            <p class="link">
+              初出:
+              <a href={caption.frontmatter.link}>{caption.frontmatter.link}</a>
+            </p>
+          );
+        }
+      }
+    }
   </div>
 </Common>
 <style>
@@ -99,5 +111,8 @@ const img: ImageMetadata = (
     font-size: 10pt;
   }
   .description {
+  }
+  .link {
+    font-size: 10pt;
   }
 </style>
