@@ -3,7 +3,7 @@ import type { AstroInstance } from "astro";
 import Common from "../../layouts/Common.astro";
 
 export async function getStaticPaths() {
-  const posts: AstroInstance[] = await Astro.glob("/src/content/article/*.md");
+  const posts: AstroInstance[] = await Astro.glob("../../content/article/*.md");
   interface Obj {
     params: {
       article: string;
@@ -20,9 +20,9 @@ export async function getStaticPaths() {
   return articles;
 }
 const { article } = Astro.params;
-const md = await Astro.glob("/src/content/article/*.md");
-
-const content = await import("/src/content/article/" + article + ".md");
+const content = (await Astro.glob("/src/content/article/*.md")).filter(
+  (p) => p.file.split("/").pop().split(".")[0] === article,
+)[0];
 ---
 
 {(<content.Content />)}
