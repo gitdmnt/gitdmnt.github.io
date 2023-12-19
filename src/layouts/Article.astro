@@ -9,5 +9,12 @@ const { frontmatter } = Astro.props;
   <Md>
     <slot />
   </Md>
-  <p>{frontmatter.date}, 書いた人: {frontmatter.author}</p>
+  <p class="credit">{frontmatter.date}, 書いた人: {frontmatter.author}</p>
 </Common>
+
+<style>
+  .credit {
+    color: rgb(189, 189, 189);
+    font-size: 10pt;
+  }
+</style>

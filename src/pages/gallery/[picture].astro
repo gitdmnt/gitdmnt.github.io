@@ -39,9 +39,9 @@ const caption = md.filter((p) => pick_name(p.file) === picture)[0];
 
 <Common title={picture}>
   <img src={"/src/content/illust/" + picture + ".png"} />
-  {(<caption.default />)}
+  {(<caption.Content />)}
 </Common>
-<style>
+<style is:global>
   img {
     width: 80%;
   }

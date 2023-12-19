@@ -37,4 +37,4 @@ const md = await Astro.glob("/src/content/article/*.md");
 const content = md.filter((p) => pick_name(p.file) === article)[0];
 ---
 
-{(<content.default />)}
+{(<content.Content />)}
