@@ -2,20 +2,8 @@
 import type { AstroInstance } from "astro";
 import Common from "../../layouts/Common.astro";
 
-function pick_name(src: string): string {
-  const dir = src.split("/");
-  const name = dir[dir.length - 1].split(".")[0];
-  return name;
-}
-
 export async function getStaticPaths() {
   const posts: AstroInstance[] = await Astro.glob("/src/content/illust/*.md");
-  // ここ最悪
-  function pick_name(src: string): string {
-    const dir = src.split("/");
-    const name = dir[dir.length - 1].split(".")[0];
-    return name;
-  }
   interface Obj {
     params: {
       picture: string;
@@ -24,7 +12,7 @@ export async function getStaticPaths() {
   const pictures: Obj[] = posts.map((p) => {
     return {
       params: {
-        picture: pick_name(p.file),
+        picture: p.file.split("/").pop().split(".")[0],
       },
     };
   });
@@ -34,7 +22,9 @@ export async function getStaticPaths() {
 const { picture } = Astro.params;
 const md = await Astro.glob("/src/content/illust/*.md");
 
-const caption = md.filter((p) => pick_name(p.file) === picture)[0];
+const caption = md.filter(
+  (p) => p.file.split("/").pop().split(".")[0] === picture,
+)[0];
 ---
 
 <Common title={picture}>
@@ -59,7 +49,7 @@ const caption = md.filter((p) => pick_name(p.file) === picture)[0];
     <ul class="tags">
       {
         caption.frontmatter.tags.map((tag) => {
-          return <li class="tag">{tag}</li>;
+          return <li class="tag">{"#" + tag}</li>;
         })
       }
     </ul>
@@ -99,5 +89,7 @@ const caption = md.filter((p) => pick_name(p.file) === picture)[0];
     padding: 0.2rem;
     color: #444444;
     font-size: 10pt;
+  }
+  .description {
   }
 </style>
