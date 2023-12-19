@@ -38,11 +38,66 @@ const caption = md.filter((p) => pick_name(p.file) === picture)[0];
 ---
 
 <Common title={picture}>
-  <img src={"/src/content/illust/" + picture + ".png"} />
+  <div class="picture_frame">
+    <img
+      class="picture"
+      alt={caption.frontmatter.title + ", " + caption.frontmatter.description}
+      src={"/src/content/illust/" + picture + ".png"}
+    />
+  </div>
   {(<caption.Content />)}
+  <div class="caption">
+    <h1 class="title">{caption.frontmatter.title}</h1>
+    <p class="date">
+      {
+        () => {
+          const d: Date = new Date(caption.frontmatter.date);
+          return d.toLocaleDateString();
+        }
+      }
+    </p>
+    <ul class="tags">
+      {
+        caption.frontmatter.tags.map((tag) => {
+          return <li class="tag">{tag}</li>;
+        })
+      }
+    </ul>
+    <p class="description">{caption.frontmatter.description}</p>
+  </div>
 </Common>
-<style is:global>
+<style>
+  .picture_frame {
+    margin: auto;
+  }
   img {
     width: 80%;
+    margin-inline: auto;
+    margin-block: 20px;
+    display: block;
+  }
+  .caption {
+    margin: auto;
+  }
+  .title {
+    text-align: center;
+    margin-block: 1.5rem;
+  }
+  .date {
+    text-align: right;
+    color: #cccccc;
+    font-size: 8pt;
+    margin: 0;
+  }
+  .tags {
+    list-style: none;
+    padding: 0;
+    margin-block: 0;
+  }
+  .tag {
+    display: inline;
+    padding: 0.2rem;
+    color: #444444;
+    font-size: 10pt;
   }
 </style>
