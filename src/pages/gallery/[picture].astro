@@ -10,6 +10,12 @@ function pick_name(src: string): string {
 
 export async function getStaticPaths() {
   const posts: AstroInstance[] = await Astro.glob("/src/content/illust/*.md");
+  // ここ最悪
+  function pick_name(src: string): string {
+    const dir = src.split("/");
+    const name = dir[dir.length - 1].split(".")[0];
+    return name;
+  }
   interface Obj {
     params: {
       picture: string;

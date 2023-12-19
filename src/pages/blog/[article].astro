@@ -1,0 +1,40 @@
+---
+import type { AstroInstance } from "astro";
+import Common from "../../layouts/Common.astro";
+
+function pick_name(src: string): string {
+  const dir = src.split("/");
+  const name = dir[dir.length - 1].split(".")[0];
+  return name;
+}
+
+export async function getStaticPaths() {
+  const posts: AstroInstance[] = await Astro.glob("/src/content/article/*.md");
+  interface Obj {
+    params: {
+      article: string;
+    };
+  }
+  // ここ最悪
+  function pick_name(src: string): string {
+    const dir = src.split("/");
+    const name = dir[dir.length - 1].split(".")[0];
+    return name;
+  }
+  const articles: Obj[] = posts.map((p) => {
+    return {
+      params: {
+        article: pick_name(p.file),
+      },
+    };
+  });
+
+  return articles;
+}
+const { article } = Astro.params;
+const md = await Astro.glob("/src/content/article/*.md");
+
+const content = md.filter((p) => pick_name(p.file) === article)[0];
+---
+
+{(<content.default />)}

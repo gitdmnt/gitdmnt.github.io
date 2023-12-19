@@ -3,7 +3,7 @@ import Common from "../../layouts/Common.astro";
 import Card from "../../components/Card.astro";
 
 export async function getStaticPaths({ paginate }) {
-    const posts = (await Astro.glob("/src/pages/docs/article/*.md")).sort(
+    const posts = (await Astro.glob("/src/content/article/*.md")).sort(
         (a, b) =>
             Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date),
     );
@@ -20,7 +20,7 @@ const { page } = Astro.props;
                 page.data.map((p) => (
                     <Card
                         title={p.frontmatter.title}
-                        href={p.url}
+                        href={"/blog/" + p.file.split("/").pop().split(".")[0]}
                         body={p.frontmatter.description}
                     />
                 ))
