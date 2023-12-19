@@ -1,5 +1,6 @@
 ---
 import type { AstroInstance } from "astro";
+import { Image } from "astro:assets";
 import Common from "../../layouts/Common.astro";
 
 export async function getStaticPaths() {
@@ -23,9 +24,16 @@ const { picture } = Astro.params;
 const caption = (await Astro.glob("/src/content/illust/*.md")).filter(
   (p) => p.file.split("/").pop().split(".")[0] === picture,
 )[0];
-const img = (await Astro.glob("/src/content/illust/*.png")).filter(
-  (p) => p.default.src.split("/").pop().split(".")[0] === picture,
-)[0];
+interface ImageMetadata {
+  src: string;
+  width: number;
+  height: number;
+  format: string;
+}
+const img: ImageMetadata = (
+  await Astro.glob("/src/content/illust/*.png")
+).filter((p) => p.default.src.split("/").pop().split(".")[0] === picture)[0]
+  .default;
 ---
 
 <Common title={picture}>
@@ -33,7 +41,7 @@ const img = (await Astro.glob("/src/content/illust/*.png")).filter(
     <img
       class="picture"
       alt={caption.frontmatter.title + ", " + caption.frontmatter.description}
-      src={img.default.src}
+      src={img.src}
     />
   </div>
   {(<caption.Content />)}
