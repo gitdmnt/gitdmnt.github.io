@@ -2,15 +2,22 @@
 import Common from "../../layouts/Common.astro";
 
 export async function getStaticPaths({ paginate }) {
-    const posts = (await Astro.glob("/src/content/illust/*.md")).sort(
-        (a, b) =>
-            Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date),
-    );
+    const cap = await Astro.glob("/src/content/illust/*.md");
+    const img = await Astro.glob("/src/content/illust/*.png");
+    const posts = cap
+        .map((p) => {
+            const i = cap.indexOf(p);
+            return [cap[i], img[i]];
+        })
+        .sort(
+            (a, b) =>
+                Date.parse(b[0].frontmatter.date) -
+                Date.parse(a[0].frontmatter.date),
+        );
 
     return paginate(posts, { pageSize: 20 });
 }
 const { page } = Astro.props;
-const img = await Astro.glob("/src/content/illust/*.png");
 ---
 
 <Common title="倉庫">
@@ -18,22 +25,10 @@ const img = await Astro.glob("/src/content/illust/*.png");
         <div class="container">
             {
                 page.data.map((p) => {
-                    const name = p.file.split("/").pop().split(".")[0];
+                    const name = p[0].file.split("/").pop().split(".")[0];
                     return (
                         <a href={"/gallery/" + name}>
-                            <img
-                                class="illust"
-                                src={
-                                    img.filter(
-                                        (p) =>
-                                            p.default.src
-                                                .split("/")
-                                                .pop()
-                                                .split(".")[0] === name,
-                                    )[0].default.src
-                                }
-                                alt=""
-                            />
+                            <img class="illust" src={p[1].default.src} alt="" />
                         </a>
                     );
                 })
