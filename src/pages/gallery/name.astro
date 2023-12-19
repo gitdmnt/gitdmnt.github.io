@@ -1,6 +1,0 @@
----
-export async function getStaticPaths({ paginate }) {
-  const posts = await Astro.glob("/src/assets/illusts/*.png");
-  return paginate(posts, { pageSize: 20 });
-}
----

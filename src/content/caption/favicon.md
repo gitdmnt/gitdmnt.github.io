@@ -1,7 +1,6 @@
 ---
-layout: /src/layouts/Article.astro
+layout: /src/layouts/Gallery.astro
 title: "favicon"
-author: "宇田"
 date: "2023-11-16"
 description: ""
 ---

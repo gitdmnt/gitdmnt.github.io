@@ -1,0 +1,45 @@
+---
+import type { AstroInstance } from "astro";
+import Common from "../../layouts/Common.astro";
+
+export async function getStaticPaths() {
+  const posts: AstroInstance[] = await Astro.glob("/src/content/caption/*.md");
+  const pick_name = (src: string) => {
+    const dir = src.split("/");
+    const name = dir[dir.length - 1].split(".")[0];
+    return name;
+  };
+  interface Obj {
+    params: {
+      picture: string;
+    };
+  }
+  const pictures: Obj[] = posts.map((p) => {
+    return {
+      params: {
+        picture: pick_name(p.file),
+      },
+    };
+  });
+
+  return pictures;
+}
+const { picture } = Astro.params;
+const md = await Astro.glob("/src/content/caption/*.md");
+const pick_name = (src: string) => {
+  const dir = src.split("/");
+  const name = dir[dir.length - 1].split(".")[0];
+  return name;
+};
+const caption = md.filter((p) => pick_name(p.file) === picture)[0];
+---
+
+<Common title={picture}>
+  <img src={"/src/assets/illusts/" + picture + ".png"} />
+  {(<caption.default />)}
+</Common>
+<style>
+  img {
+    width: 80%;
+  }
+</style>

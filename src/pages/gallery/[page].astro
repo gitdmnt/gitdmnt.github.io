@@ -21,7 +21,7 @@ const pick_name = (src: string) => {
                 page.data.map((p) => {
                     const name = pick_name(p.default.src);
                     return (
-                        <a href={"/src/pages/docs/caption/" + name + ".md"}>
+                        <a href={"/gallery/" + name}>
                             <img
                                 class="illust"
                                 src={"/src/assets/illusts/" + name + ".png"}

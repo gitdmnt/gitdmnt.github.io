@@ -1,0 +1,9 @@
+---
+import Md from "./Md.astro";
+const { frontmatter } = Astro.props;
+---
+
+<h1>{frontmatter.title}</h1>
+<Md>
+  <slot />
+</Md>
