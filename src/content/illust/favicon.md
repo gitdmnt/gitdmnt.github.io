@@ -1,8 +1,8 @@
 ---
-layout: /src/layouts/Gallery.astro
-title: "favicon"
-date: "2023-11-16"
-description: ""
+title: favicon
+date: 2023-11-16
+tags:
+  - "#宇田ちゃん"
+description: このサイトのファビコン。はじめてのドット絵！
+series:
 ---
-
-## テスト
