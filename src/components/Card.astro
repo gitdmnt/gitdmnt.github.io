@@ -14,7 +14,7 @@ const { href, title, body } = Astro.props;
       {title}
       <span>&rarr;</span>
     </h2>
-    <p>
+    <p class="description">
       {body}
     </p>
   </a>
@@ -46,8 +46,8 @@ const { href, title, body } = Astro.props;
 
     border-inline-end: 0.4rem solid #1d1d1d;
   }
-  p {
-    margin: 0;
+  .description {
+    margin-block: 0;
     grid-row: 2/3;
   }
 </style>
