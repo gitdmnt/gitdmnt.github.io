@@ -1,18 +1,34 @@
 ---
 interface Props {
+	url: string;
+	type: string;
 	title: string;
+	description: string;
+	site_name: string;
+	image: string;
 }
+const url = "";
+const type = "";
 const { title } = Astro.props;
+const description = "";
+const site_name = "家";
+const image = "";
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="宇田の家" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
+		<meta property="og:url" content={url} />
+		<meta property="og:type" content={type} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:site_name" content={site_name} />
+		<meta property="og:image" content={image} />
 		<title>{title + " - 家"}</title>
 	</head>
 	<body>
