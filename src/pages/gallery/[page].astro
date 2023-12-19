@@ -2,16 +2,14 @@
 import Common from "../../layouts/Common.astro";
 
 export async function getStaticPaths({ paginate }) {
-    const posts = await Astro.glob("/src/content/illust/*.png");
+    const posts = (await Astro.glob("/src/content/illust/*.md")).sort(
+        (a, b) =>
+            Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date),
+    );
+
     return paginate(posts, { pageSize: 20 });
 }
 const { page } = Astro.props;
-
-const pick_name = (src: string) => {
-    const dir = src.split("/");
-    const name = dir[dir.length - 1].split(".")[0];
-    return name;
-};
 ---
 
 <Common title="倉庫">
@@ -19,7 +17,7 @@ const pick_name = (src: string) => {
         <div class="container">
             {
                 page.data.map((p) => {
-                    const name = pick_name(p.default.src);
+                    const name = p.file.split("/").pop().split(".")[0];
                     return (
                         <a href={"/gallery/" + name}>
                             <img

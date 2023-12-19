@@ -25,10 +25,12 @@
 <style>
     header {
         width: 100%;
+        margin-block-end: 4rem;
     }
     .container {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         margin: auto;
         font-family: "Kosugi";
         border-bottom: 2px solid #1d1d1d;
@@ -68,24 +70,6 @@
         padding-inline-end: 1.5rem;
         margin: 0;
         font-size: 10pt;
-    }
-    @media (max-width: 500px) {
-        ul.page-link {
-            margin-inline: 0.2rem;
-        }
-        li.page-link {
-            font-size: 8pt;
-            padding-inline-start: 0.1rem;
-            padding-inline-end: 0.4rem;
-        }
-    }
-    @media (max-width: 360px) {
-        .title {
-            font-size: 12pt;
-        }
-        li.page-link {
-            font-size: 6pt;
-        }
     }
 
     a {
