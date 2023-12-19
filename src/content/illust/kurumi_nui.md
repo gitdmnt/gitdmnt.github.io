@@ -4,6 +4,7 @@ date: 2023-12-18
 tags:
   - マイメロディ
   - クルミ・ヌイ
-description: 描いたことのないキャラクターを描くやつで描いた。 https://twitter.com/neru__O_o_/status/1736754829605916692?s=20
+description: 描いたことのないキャラクターを描くやつで描いた。
 series: 描いたことないキャラクターを描く
+link: https://twitter.com/41_36_22/status/1736770876904018284
 ---

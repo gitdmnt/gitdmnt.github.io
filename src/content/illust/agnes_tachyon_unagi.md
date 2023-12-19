@@ -5,5 +5,6 @@ tags:
   - "#ウマ娘"
   - "#アグネスタキオン"
 description: 今日も元気に
-series:
+series: 
+link: https://twitter.com/41_36_22/status/1736752744999120926
 ---
