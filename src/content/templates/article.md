@@ -1,9 +1,7 @@
 ---
 layout: /src/layouts/Article.astro
-title:
-  "{ title }": 
+title: 
 author: 宇田
-date:
-  "{ date:YYYY-MM-DD }": 
+date: 
 description: ""
 ---

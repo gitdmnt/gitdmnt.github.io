@@ -1,0 +1,9 @@
+---
+const { path } = Astro.props;
+---
+
+<div>
+  <video controls style="width:100%">
+    <source src={path} type="video/mp4" />
+  </video>
+</div>
