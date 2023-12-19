@@ -10,6 +10,7 @@ export async function getStaticPaths({ paginate }) {
     return paginate(posts, { pageSize: 20 });
 }
 const { page } = Astro.props;
+const img = await Astro.glob("/src/content/illust/*.png");
 ---
 
 <Common title="倉庫">
@@ -22,7 +23,15 @@ const { page } = Astro.props;
                         <a href={"/gallery/" + name}>
                             <img
                                 class="illust"
-                                src={"/src/content/illust/" + name + ".png"}
+                                src={
+                                    img.filter(
+                                        (p) =>
+                                            p.default.src
+                                                .split("/")
+                                                .pop()
+                                                .split(".")[0] === name,
+                                    )[0].default.src
+                                }
                                 alt=""
                             />
                         </a>

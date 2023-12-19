@@ -30,7 +30,7 @@ interface ImageMetadata {
   format: string;
 }
 const img: ImageMetadata = (
-  await Astro.glob("../../content/illust/*.png")
+  await Astro.glob("/src/content/illust/*.png")
 ).filter((p) => p.default.src.split("/").pop().split(".")[0] === picture)[0]
   .default;
 ---
