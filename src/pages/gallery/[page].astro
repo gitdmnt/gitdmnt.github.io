@@ -6,17 +6,30 @@ export async function getStaticPaths({ paginate }) {
     return paginate(posts, { pageSize: 20 });
 }
 const { page } = Astro.props;
+
+const pick_name = (src: string) => {
+    const dir = src.split("/");
+    const name = dir[dir.length - 1].split(".")[0];
+    return name;
+};
 ---
 
 <Common title="倉庫">
     <main>
         <div class="container">
             {
-                page.data.map((p) => (
-                    <a href={p.default.src}>
-                        <img class="illust" src={p.default.src} alt="" />
-                    </a>
-                ))
+                page.data.map((p) => {
+                    const name = pick_name(p.default.src);
+                    return (
+                        <a href={"/src/pages/docs/caption/" + name + ".md"}>
+                            <img
+                                class="illust"
+                                src={"/src/assets/illusts/" + name + ".png"}
+                                alt=""
+                            />
+                        </a>
+                    );
+                })
             }
         </div>
     </main>
@@ -27,6 +40,6 @@ const { page } = Astro.props;
         grid-template-columns: 1fr 1fr 1fr;
     }
     .illust {
-        width: 100px;
+        width: 80%;
     }
 </style>
