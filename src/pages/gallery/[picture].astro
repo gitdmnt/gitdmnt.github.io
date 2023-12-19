@@ -20,11 +20,8 @@ export async function getStaticPaths() {
   return pictures;
 }
 const { picture } = Astro.params;
-const md = await Astro.glob("/src/content/illust/*.md");
-
-const caption = md.filter(
-  (p) => p.file.split("/").pop().split(".")[0] === picture,
-)[0];
+const caption = await import("/src/content/illust/" + picture + ".md");
+const img = await import("/src/content/illust/" + picture + ".png");
 ---
 
 <Common title={picture}>
@@ -32,7 +29,7 @@ const caption = md.filter(
     <img
       class="picture"
       alt={caption.frontmatter.title + ", " + caption.frontmatter.description}
-      src={"/src/content/illust/" + picture + ".png"}
+      src={img.default.src}
     />
   </div>
   {(<caption.Content />)}
