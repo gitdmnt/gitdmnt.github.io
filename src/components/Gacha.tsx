@@ -31,9 +31,9 @@ const button = {
 const Gacha: React.FC<prop> = ({ gachaItemLists }) => {
   const [result, setResult] = useState(["勢いよく", "このガチャを引くべき", "今", "ここ", "キミは", "世界の"]);
   const roll = () => {
-    const result = [];
+    const result: string[] = [];
     gachaItemLists.forEach(e => {
-      const number = Math.floor(Math.random() * e.length);
+      const number: number = Math.floor(Math.random() * e.length);
       result.push(e[number]);
     })
     setResult(result);
