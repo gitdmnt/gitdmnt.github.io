@@ -29,7 +29,7 @@ const site_name = "家";
 			property="og:image"
 			content={(() => {
 				if (image === "") {
-					return "/favicon.png";
+					return "https://" + Astro.url.host + favicon.default.src;
 				} else {
 					return image;
 				}
