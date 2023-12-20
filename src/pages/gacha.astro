@@ -1,5 +1,6 @@
 ---
 import Common from "../layouts/Common.astro";
+import GachaComponent from "../components/Gacha";
 ---
 
 <Common
@@ -9,5 +10,7 @@ import Common from "../layouts/Common.astro";
     description="からっぽ"
     image=""
 >
-    <main>からっぽ</main>
+    <main>
+        <GachaComponent client:load />
+    </main>
 </Common>
