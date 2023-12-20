@@ -1,23 +1,44 @@
 ---
-
+import * as twitter_icon from "/public/twitter.png";
+import * as github_icon from "/public/github-mark.svg";
 ---
 
 <footer>
     <div class="container">
+        <div class="button-box" id="l">
+            <a href="https://twitter.com/41_36_22"
+                ><img
+                    class="button"
+                    src={twitter_icon.default.src}
+                    alt="uda on twitter"
+                /></a
+            >
+            <a href="https://github.com/gitdmnt"
+                ><img
+                    class="button"
+                    src={github_icon.default.src}
+                    alt="uda on github nya"
+                /></a
+            >
+        </div>
         <div class="sign">2023 うだ✌️</div>
+        <div class="button-box" id="r"></div>
     </div>
 </footer>
 <style>
     .container {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
         margin-inline: auto;
         margin-block: 3rem;
         border: none;
         border-top: 1px solid #d4d4d4;
-        justify-content: center;
+        justify-content: space-between;
         min-width: 320px;
         width: 50%;
     }
     .sign {
+        grid-column: 2/2;
         margin-inline: auto;
         margin-block: 2rem;
         color: #dbd4d4;
@@ -27,5 +48,21 @@
             "Helvetica Neue",
             Helvetica,
             "Noto Sans" sans-serif;
+    }
+    .button-box {
+        width: 100px;
+        margin-block: 2rem;
+        padding-inline: 0.5rem;
+        display: flex;
+    }
+    .button {
+        margin-inline: 10px;
+        width: 30px;
+    }
+    .button-box#l {
+        justify-content: start;
+    }
+    .button-box#r {
+        justify-content: end;
     }
 </style>
