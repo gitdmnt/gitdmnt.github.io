@@ -20,7 +20,13 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 ---
 
-<Common title="倉庫">
+<Common
+    url={Astro.url.href}
+    type="blog"
+    title="倉庫"
+    description="絵が並んでいる。"
+    image=""
+>
     <main>
         <div class="container">
             {
@@ -43,5 +49,14 @@ const { page } = Astro.props;
     }
     .illust {
         width: 80%;
+    }
+    @media (max-width: 600px) {
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .illust {
+            width: 100%;
+        }
     }
 </style>

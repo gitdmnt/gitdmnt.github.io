@@ -1,18 +1,15 @@
 ---
+import * as favicon from "/src/content/illust/favicon.png";
+
 interface Props {
 	url: string;
 	type: string;
 	title: string;
 	description: string;
-	site_name: string;
 	image: string;
 }
-const url = "";
-const type = "";
-const { title } = Astro.props;
-const description = "";
+const { url, type, title, description, image } = Astro.props;
 const site_name = "家";
-const image = "";
 ---
 
 <!doctype html>
@@ -28,7 +25,16 @@ const image = "";
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:site_name" content={site_name} />
-		<meta property="og:image" content={image} />
+		<meta
+			property="og:image"
+			content={(() => {
+				if (image === "") {
+					return favicon.default.src;
+				} else {
+					return image;
+				}
+			})()}
+		/>
 		<title>{title + " - 家"}</title>
 	</head>
 	<body>

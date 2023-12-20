@@ -1,8 +1,14 @@
 ---
-import Layout from "../layouts/Top.astro";
+import Top from "../layouts/Top.astro";
 ---
 
-<Layout title="床">
+<Top
+    url={Astro.url.href}
+    type="website"
+    title="床"
+    description="宇田の家の床"
+    image=""
+>
     <main>
         <div class="container">
             <div class="madori">
@@ -45,7 +51,7 @@ import Layout from "../layouts/Top.astro";
             </div>
         </div>
     </main>
-</Layout>
+</Top>
 <style>
     .container {
         display: grid;

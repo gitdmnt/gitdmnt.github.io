@@ -4,7 +4,13 @@ import Md from "./Md.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<Common title={frontmatter.title}>
+<Common
+  url={Astro.url.href}
+  type="article"
+  title={frontmatter.title}
+  description={frontmatter.description}
+  image=""
+>
   <h1>{frontmatter.title}</h1>
   <Md>
     <slot />

@@ -35,7 +35,13 @@ const img: ImageMetadata = (
   .default;
 ---
 
-<Common title={picture}>
+<Common
+  url={Astro.url.href}
+  type="article"
+  title={caption.frontmatter.title}
+  description={caption.frontmatter.description}
+  image={img.src}
+>
   <div class="picture_frame">
     <img
       class="picture"

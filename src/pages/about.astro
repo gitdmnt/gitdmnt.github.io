@@ -1,9 +1,16 @@
 ---
 import Common from "../layouts/Common.astro";
 import { Content as Profile } from "/src/content/profile.md";
+import * as ProfilePic from "/src/content/illust/icon.png";
 ---
 
-<Common title="姿見">
+<Common
+    url={Astro.url.href}
+    type="profile"
+    title="姿見"
+    description="誰！？"
+    image={ProfilePic.default.src}
+>
     <main>
         <div class="intro">著者近影(気が向いたら撮るぜ！)</div>
         <div class="profile">

@@ -13,7 +13,13 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 ---
 
-<Common title="屋根裏">
+<Common
+    url={Astro.url.href}
+    type="blog"
+    title="屋根裏"
+    description="紙が散らばっている"
+    image=""
+>
     <main>
         <ul class="article-list">
             {

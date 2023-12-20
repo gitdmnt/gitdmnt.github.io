@@ -2,13 +2,25 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Top from "./Top.astro";
+
+const { url, type, title, description, image } = Astro.props;
+
 interface Props {
+    url: string;
+    type: string;
     title: string;
+    description: string;
+    image: string;
 }
-const { title } = Astro.props;
 ---
 
-<Top title={title}>
+<Top
+    url={url}
+    type={type}
+    title={title}
+    description={description}
+    image={image}
+>
     <Header />
     <div class="main">
         <slot />
