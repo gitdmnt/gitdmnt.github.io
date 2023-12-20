@@ -40,7 +40,7 @@ const img: ImageMetadata = (
   type="article"
   title={caption.frontmatter.title}
   description={caption.frontmatter.description}
-  image={Astro.url.host + "/" + img.src}
+  image={"https://" + Astro.url.host + img.src}
 >
   <div class="picture_frame">
     <img
