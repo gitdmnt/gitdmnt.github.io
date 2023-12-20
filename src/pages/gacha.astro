@@ -1,6 +1,10 @@
 ---
 import Common from "../layouts/Common.astro";
 import GachaComponent from "../components/Gacha";
+const md = await Astro.glob("/src/content/resources/5w1h/*.md");
+const gachaItemLists = md
+    .sort()
+    .map((p) => p.rawContent().split("\n").filter(Boolean));
 ---
 
 <Common
@@ -11,6 +15,6 @@ import GachaComponent from "../components/Gacha";
     image=""
 >
     <main>
-        <GachaComponent client:load />
+        <GachaComponent gachaItemLists={gachaItemLists} client:load />
     </main>
 </Common>

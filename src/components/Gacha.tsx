@@ -1,25 +1,28 @@
 import React from "react";
 import { useState } from "react";
 
-interface prop {
-  WordList: string;
+type prop = {
+  gachaItemLists: string[][];
 }
 
-const Gacha: React.FC = () => {
-  const wordList = "aaa, a b".split(",");
-  const max = wordList.length;
-  const [result, setResult] = useState("");
+const Gacha: React.FC<prop> = ({ gachaItemLists }) => {
+  const [result, setResult] = useState(["勢いよく", "このガチャを引くべきだ", "今", "ここ", "キミは", "世界の"]);
   const roll = () => {
-    const number = Math.floor(Math.random() * max);
-    setResult(wordList[number]);
+    const result = [];
+    gachaItemLists.forEach(e => {
+      const number = Math.floor(Math.random() * e.length);
+      result.push(e[number]);
+    })
+    setResult(result);
 
   };
+  const sentence = result[4] + result[5] + "ため、" + result[2] + result[3] + "で、" + result[0] + result[1] + "。";
   return (
     <div className="gacha">
       <ul className="result">
-        <li>{result}</li>
+        <li>{sentence}</li>
       </ul>
-      <button className="button" onClick={() => console.log("a")}>引く</button>
+      <button className="button" onClick={() => roll()}>引く</button>
     </div >
   );
 }
