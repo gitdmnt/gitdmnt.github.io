@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import Top from "../../../layouts/Top.astro";
 
 export async function getStaticPaths() {
     const posts = await Astro.glob("/src/content/illust/*.png");
@@ -24,7 +25,15 @@ const img = (await Astro.glob("/src/content/illust/*.png")).filter(
 )[0].default;
 ---
 
-<Image class="pic" src={img} alt="" format="png" />
+<Top
+    title={picture}
+    url={Astro.url.href}
+    type="article"
+    description=""
+    image={"https://" + Astro.url.host + img.src}
+>
+    <Image class="pic" src={img} alt="" format="png" />
+</Top>
 <style>
     .pic {
         width: 100%;

@@ -10,6 +10,15 @@ interface Props {
 }
 const { url, type, title, description, image } = Astro.props;
 const site_name = "家";
+let img = "";
+let card = "";
+if (image === "") {
+	img = "https://" + Astro.url.host + favicon.default.src;
+	card = "summary";
+} else {
+	img = image;
+	card = "summary_large_image";
+}
 ---
 
 <!doctype html>
@@ -25,18 +34,10 @@ const site_name = "家";
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:site_name" content={site_name} />
-		<meta
-			property="og:image"
-			content={(() => {
-				if (image === "") {
-					return "https://" + Astro.url.host + favicon.default.src;
-				} else {
-					return image;
-				}
-			})()}
-		/>
-		<meta name="twitter:card" content="summary_large_image" />
+		<meta property="og:image" content={img} />
+		<meta name="twitter:card" content={card} />
 		<meta name="twitter:creator" content="@41_36_22" />
+		<meta name="twitter:image" content={img} />
 
 		<title>{title + " - 家"}</title>
 	</head>
