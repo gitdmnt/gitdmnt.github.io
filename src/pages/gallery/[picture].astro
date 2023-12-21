@@ -1,6 +1,7 @@
 ---
 import type { AstroInstance } from "astro";
 import Common from "../../layouts/Common.astro";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
   const posts: AstroInstance[] = await Astro.glob("/src/content/illust/*.md");
@@ -23,16 +24,9 @@ const { picture } = Astro.params;
 const caption = (await Astro.glob("/src/content/illust/*.md")).filter(
   (p) => p.file.split("/").pop().split(".")[0] === picture,
 )[0];
-interface ImageMetadata {
-  src: string;
-  width: number;
-  height: number;
-  format: string;
-}
-const img: ImageMetadata = (
-  await Astro.glob("/src/content/illust/*.png")
-).filter((p) => p.default.src.split("/").pop().split(".")[0] === picture)[0]
-  .default;
+const img = (await Astro.glob("/src/content/illust/*.png")).filter(
+  (p) => p.default.src.split("/").pop().split(".")[0] === picture,
+)[0].default;
 ---
 
 <Common
@@ -43,11 +37,14 @@ const img: ImageMetadata = (
   image={"https://" + Astro.url.host + img.src}
 >
   <div class="picture_frame">
-    <img
-      class="picture"
-      alt={caption.frontmatter.title + ", " + caption.frontmatter.description}
-      src={img.src}
-    />
+    <a href={Astro.url + "/native"}>
+      <Image
+        class="picture"
+        alt={caption.frontmatter.title + ", " + caption.frontmatter.description}
+        src={img}
+        quality={10}
+      /></a
+    >
   </div>
   {(<caption.Content />)}
   <div class="caption">
@@ -97,6 +94,7 @@ const img: ImageMetadata = (
   }
   img {
     width: 80%;
+    height: auto;
     margin-inline: auto;
     margin-block: 20px;
     display: block;

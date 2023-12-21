@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+
+export async function getStaticPaths() {
+    const posts = await Astro.glob("/src/content/illust/*.png");
+    interface Obj {
+        params: {
+            picture: string;
+        };
+    }
+    const pictures: Obj[] = posts.map((p) => {
+        return {
+            params: {
+                picture: p.default.src.split("/").pop().split(".")[0],
+            },
+        };
+    });
+
+    return pictures;
+}
+const { picture } = Astro.params;
+const img = (await Astro.glob("/src/content/illust/*.png")).filter(
+    (p) => p.default.src.split("/").pop().split(".")[0] === picture,
+)[0].default;
+---
+
+<Image class="pic" src={img} alt="" format="png" />
+<style>
+    .pic {
+        width: 100%;
+        height: auto;
+    }
+</style>

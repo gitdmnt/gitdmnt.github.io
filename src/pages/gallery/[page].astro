@@ -1,5 +1,6 @@
 ---
 import Common from "../../layouts/Common.astro";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths({ paginate }) {
     const cap = await Astro.glob("/src/content/illust/*.md");
@@ -34,7 +35,12 @@ const { page } = Astro.props;
                     const name = p[0].file.split("/").pop().split(".")[0];
                     return (
                         <a href={"/gallery/" + name}>
-                            <img class="illust" src={p[1].default.src} alt="" />
+                            <Image
+                                class="illust"
+                                src={p[1].default}
+                                alt=""
+                                quality={1}
+                            />
                         </a>
                     );
                 })
@@ -49,6 +55,7 @@ const { page } = Astro.props;
     }
     .illust {
         width: 80%;
+        height: auto;
     }
     @media (max-width: 600px) {
         .container {
