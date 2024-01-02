@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+interface Props {
+  name: string;
+  line: string;
+  color: string;
+}
+
+const { name, line, color } = Astro.props;
+const img = (await Astro.glob("/src/content/resources/blogicon/*.png")).filter(
+  (p) => p.default.src.split("/").pop().split(".")[0] === name,
+)[0].default;
+---
+
+<div class="container">
+  <div class="face">
+    <div class="picture_border">
+      <Image class="picture" src={img} alt={name} quality={10} />
+    </div>
+    <p class="name">{name}</p>
+  </div>
+  <p class="line">{line}</p>
+</div>
+<style define:vars={{ color }}>
+  .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 54px 1fr;
+  }
+  .picture_border {
+    width: 54px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 30px;
+    border: solid 2px var(--color);
+  }
+  .picture {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 27px;
+    border: solid 2px white;
+  }
+  .name {
+    margin: 0;
+    margin-block-start: -18px;
+    text-align: center;
+    color: var(--color);
+    font-weight: bolder;
+    text-shadow:
+      2px 2px 0 #fff,
+      -2px -2px 0 #fff,
+      -2px 2px 0 #fff,
+      2px -2px 0 #fff,
+      0px 2px 0 #fff,
+      0 -2px 0 #fff,
+      -2px 0 0 #fff,
+      2px 0 0 #fff;
+  }
+</style>
