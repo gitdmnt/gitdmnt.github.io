@@ -2,13 +2,17 @@
 import { Image } from "astro:assets";
 interface Props {
   name: string;
+  file: string;
   line: string;
   color: string;
 }
 
-const { name, line, color } = Astro.props;
+let { name, file, line, color } = Astro.props;
+if (file === "") {
+  file = name;
+}
 const img = (await Astro.glob("/src/content/resources/blogicon/*.png")).filter(
-  (p) => p.default.src.split("/").pop().split(".")[0] === name,
+  (p) => p.default.src.split("/").pop().split(".")[0] === file,
 )[0].default;
 ---
 
@@ -25,10 +29,12 @@ const img = (await Astro.glob("/src/content/resources/blogicon/*.png")).filter(
   .container {
     width: 100%;
     display: grid;
-    grid-template-columns: 54px 1fr;
+    grid-template-columns: 72px 1fr;
     align-items: center;
   }
   .picture_border {
+    margin: auto;
+    justify-self: center;
     width: 54px;
     height: 54px;
     object-fit: cover;
@@ -46,6 +52,7 @@ const img = (await Astro.glob("/src/content/resources/blogicon/*.png")).filter(
     margin: 0;
     margin-block-start: -18px;
     text-align: center;
+    white-space: nowrap;
     color: var(--color);
     font-weight: bolder;
     text-shadow:
