@@ -3,17 +3,17 @@ import { Image } from "astro:assets";
 interface Props {
   name: string;
   file: string;
-  line: string;
   color: string;
 }
 
-let { name, file, line, color } = Astro.props;
+let { name, file, color } = Astro.props;
 if (file === "") {
   file = name;
 }
-const img = (await Astro.glob("/src/content/resources/blogicon/*.png")).filter(
-  (p) => p.default.src.split("/").pop().split(".")[0] === file,
-)[0].default;
+const img = (
+  await Astro.glob("/src/content/resources/blogicon/*.{png,jpg,jpeg,webp}")
+).filter((p) => p.default.src.split("/").pop().split(".")[0] === file)[0]
+  .default;
 ---
 
 <div class="container">
@@ -23,7 +23,9 @@ const img = (await Astro.glob("/src/content/resources/blogicon/*.png")).filter(
     </div>
     <p class="name">{name}</p>
   </div>
-  <p class="line">{line}</p>
+  <div class="line">
+    <slot />
+  </div>
 </div>
 <style define:vars={{ color }}>
   .container {
@@ -66,6 +68,7 @@ const img = (await Astro.glob("/src/content/resources/blogicon/*.png")).filter(
       2px 0 0 #fff;
   }
   .line {
+    white-space: pre-wrap;
     margin-inline-start: 1rem;
   }
 </style>
