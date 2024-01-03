@@ -21,7 +21,7 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
       - name: Install, build, and upload your site
-        uses: withastro/action@v1
+        uses: withastro/action@v1.0.5
         # with:
           # path: . # リポジトリ内のAstroプロジェクトのルートロケーション。(オプション)
           # node-version: 18 # サイト構築に使用するNodeのバージョン。デフォルトは18です。（オプション）
