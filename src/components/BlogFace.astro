@@ -11,7 +11,7 @@ if (file === "") {
   file = name;
 }
 const img = (
-  await Astro.glob("/src/content/resources/blogicon/*.{png,jpg,jpeg,webp}")
+  await Astro.glob("/src/content/resources/blogicon/*.{png,jpg,webp}")
 ).filter((p) => p.default.src.split("/").pop().split(".")[0] === file)[0]
   .default;
 ---
@@ -69,6 +69,7 @@ const img = (
   }
   .line {
     white-space: pre-wrap;
+    margin-block: 0;
     margin-inline-start: 1rem;
   }
 </style>
