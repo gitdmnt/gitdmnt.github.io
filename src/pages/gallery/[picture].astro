@@ -4,7 +4,7 @@ import Common from "../../layouts/Common.astro";
 import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
-  const posts: AstroInstance[] = await Astro.glob("/src/content/illust/*.md");
+  const posts = await Astro.glob("/src/content/illust/*.png");
   interface Obj {
     params: {
       picture: string;
@@ -13,7 +13,7 @@ export async function getStaticPaths() {
   const pictures: Obj[] = posts.map((p) => {
     return {
       params: {
-        picture: p.file.split("/").pop().split(".")[0],
+        picture: p.default.src.split("/").pop().split(".")[0],
       },
     };
   });
