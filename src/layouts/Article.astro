@@ -9,7 +9,7 @@ const { frontmatter } = Astro.props;
   type="article"
   title={frontmatter.title}
   description={frontmatter.description}
-  image=""
+  image={frontmatter.thumbnail}
 >
   <h1>{frontmatter.title}</h1>
   <Md>
