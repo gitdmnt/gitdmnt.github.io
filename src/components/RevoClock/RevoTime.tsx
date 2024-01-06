@@ -7,7 +7,7 @@ export const RevoTime = () => {
   const midnight = Date.UTC(d.getFullYear(), d.getMonth(), d.getDate());
   const rep_second_const = 864;
   function getTime() {
-    const elapsed_time_gregorian_mili = now + 9 * 60 * 60 * 1000 - midnight; //UTC+9
+    const elapsed_time_gregorian_mili = now - midnight; //UTC+9
     const elapsed_time_rep = elapsed_time_gregorian_mili / rep_second_const;
     const hour = (Math.floor(elapsed_time_rep / 100 / 100).toString()).slice(-1);
     const minute = ("0" + (Math.floor(elapsed_time_rep / 100) % 100).toString()).slice(-2);
