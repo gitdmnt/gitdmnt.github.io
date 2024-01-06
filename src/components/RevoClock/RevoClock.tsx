@@ -2,7 +2,6 @@ import React from "react";
 import { RevoTime } from "./RevoTime.tsx";
 import { RevoDate } from "./RevoDate.tsx";
 import styles from "./RevoClock.module.css";
-import type { number } from "astro/zod";
 
 const RevoClock = () => {
   const [[year, month_index, date, day], [year_roman, month_name, left_day]] = RevoDate();
