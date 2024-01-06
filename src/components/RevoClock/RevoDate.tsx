@@ -38,7 +38,6 @@ export const RevoDate = () => {
     const mjd = mjd_from_gregorian(y, m, d);
     const mjd_r_new_year = (m > 8 || m >= 8 && d >= 22) ? mjd_from_gregorian(y, 8, 22) : mjd_from_gregorian(y - 1, 8, 22);
     const day_num_from_beginning = mjd - mjd_r_new_year + 1;
-    console.log(day_num_from_beginning);
     const r_year = y - 1722 + ((m > 8 || m >= 8 && d >= 22) ? 1 : 0);
     const r_year_roman = to_roman(r_year);
     const r_month_index = Math.floor(day_num_from_beginning / 30);

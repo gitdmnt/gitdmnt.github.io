@@ -13,34 +13,11 @@
   margin: 0;
   justify-self: start;
   align-self: end;
+  font-size: 1rem;
 }
-
 
 .time {
   width: 100%;
-  display: grid;
-  grid-template-columns: 0.5fr 0.5fr 1fr 1fr;
-  align-items: center;
-  justify-items: center;
+  margin: 0;
   font-size: 5rem;
-}
-
-.day {
-  margin: 0;
-}
-
-.hour {
-  margin: 0;
-}
-
-.minute {
-  margin: 0;
-}
-
-.second {
-  margin: 0;
-}
-
-.time_separater {
-  margin: 0;
 }
