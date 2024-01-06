@@ -4,14 +4,14 @@ import Top from "../layouts/Top.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<div class="container">
-  <Top
-    url={Astro.url.href}
-    type="article"
-    title="十進時計"
-    description="十進の、時計"
-    image=""
-  >
+<Top
+  url={Astro.url.href}
+  type="article"
+  title="十進時計"
+  description="十進の、時計"
+  image=""
+>
+  <div class="container">
     <div class="main">
       <div class="clock">
         <RevoClock client:load />
@@ -27,38 +27,40 @@ import Footer from "../components/Footer.astro";
         />
       </p>
       <p>
-        hmmss<wbr />の形式で<wbr />表記されて<wbr />います。
+        時計部分は<wbr />1, 2, 3-4, 5-6桁目が<wbr />それぞれ<wbr
+        />曜日、時、分、秒を<wbr />表して<wbr />います。<wbr />
       </p>
     </div>
-  </Top>
-</div>
-<Footer />
-<style>
-  .container {
-    background-color: #101010;
-    color: white;
-    min-height: 100vh;
-  }
-  .main {
-    margin-inline: 1rem;
-  }
-  h1 {
-    margin-block: auto;
-    margin-inline: auto;
-    width: 50%;
-    min-width: 320px;
-    font-size: 20pt;
-    font-family: "Hiragino Sans W3", "Hiragino Kaku Gothic ProN",
-      "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック",
-      "MS PGothic", sans-serif;
-  }
-  .clock {
-    padding-block: 8rem;
-    width: 100%;
-  }
-  p {
-    width: 50%;
-    min-width: 320px;
-    margin-inline: auto;
-  }
-</style>
+  </div>
+  <Footer />
+
+  <style>
+    .container {
+      background-color: #101010;
+      color: white;
+      min-height: 100vh;
+    }
+    .main {
+      margin-inline: 1rem;
+    }
+    h1 {
+      margin-block: auto;
+      margin-inline: auto;
+      width: 50%;
+      min-width: 320px;
+      font-size: 20pt;
+      font-family: "Hiragino Sans W3", "Hiragino Kaku Gothic ProN",
+        "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック",
+        "MS PGothic", sans-serif;
+    }
+    .clock {
+      padding-block: 8rem;
+      width: 100%;
+    }
+    p {
+      width: 50%;
+      min-width: 320px;
+      margin-inline: auto;
+    }
+  </style>
+</Top>

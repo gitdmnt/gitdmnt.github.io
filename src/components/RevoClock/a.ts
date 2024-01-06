@@ -3,12 +3,28 @@ mois[1] = "janvier"; mois[2] = "février"; mois[3] = "mars"; mois[4] = "avril"; 
 let rmois = new Array(13);
 rmois[1] = "vendémiaire"; rmois[2] = "brumaire"; rmois[3] = "frimaire"; rmois[4] = "nivôse"; rmois[5] = "pluviôse"; rmois[6] = "ventôse"; rmois[7] = "germinal"; rmois[8] = "floréal"; rmois[9] = "prairial"; rmois[10] = "messidor"; rmois[11] = "thermidor"; rmois[12] = "fructidor"; rmois[13] = "jour complémentaire";
 let j_mois = new Array(12)
-j_mois[1] = 31; j_mois[2] = 28; j_mois[3] = 31; j_mois[4] = 30; j_mois[5] = 31; j_mois[6] = 30; j_mois[7] = 31; j_mois[8] = 31; j_mois[9] = 30; j_mois[10] = 31; j_mois[11] = 30; j_mois[12] = 31; var pivot_an = 1582; pivot_mois = 10; pivot_jour = 15; rep_max = 14; function jours_cumules(m) {
-  var ind; var res; res = 0; for (ind = 1; ind < m; ind++) { res = res + j_mois[ind] }
+j_mois[1] = 31; j_mois[2] = 28; j_mois[3] = 31; j_mois[4] = 30; j_mois[5] = 31; j_mois[6] = 30; j_mois[7] = 31; j_mois[8] = 31; j_mois[9] = 30; j_mois[10] = 31; j_mois[11] = 30; j_mois[12] = 31; var pivot_an = 1582; pivot_mois = 10; pivot_jour = 15; rep_max = 14;
+function jours_cumules(m) {
+  var ind;
+  var res;
+  res = 0;
+  for (ind = 1; ind < m; ind++) { res = res + j_mois[ind] }
   return res
 }
 function resultat_g() {
-  var res; var cal; var x; var y; var z; var k; var b; var bb; var g; var f; var j2; var m2; var a2; var j3; var m3; var a3; j = self.document.gregorien.elements[0].value; m = self.document.gregorien.elements[1].options[self.document.gregorien.elements[1].selectedIndex].value; a = self.document.gregorien.elements[2].value; res = "choisissez une date et un calendrier"; if ((a == "") & (m == "") & (j == "")) return res; if (m == "") return "choisissez un mois !"; j = parseFloat(j); j = Math.floor(j); if ((j * 0) != 0) { self.document.gregorien.elements[0].focus(); self.document.gregorien.elements[0].select(); return "jour incorrect, ce doit être un nombre" }
+  let res;
+  let cal;
+  var x;
+  var y;
+  var z;
+  var k;
+  var b;
+  var bb;
+  var g;
+  var f;
+  var j2;
+  var m2;
+  var a2; var j3; var m3; var a3; j = self.document.gregorien.elements[0].value; m = self.document.gregorien.elements[1].options[self.document.gregorien.elements[1].selectedIndex].value; a = self.document.gregorien.elements[2].value; res = "choisissez une date et un calendrier"; if ((a == "") & (m == "") & (j == "")) return res; if (m == "") return "choisissez un mois !"; j = parseFloat(j); j = Math.floor(j); if ((j * 0) != 0) { self.document.gregorien.elements[0].focus(); self.document.gregorien.elements[0].select(); return "jour incorrect, ce doit être un nombre" };
   m = parseFloat(m); m = Math.floor(m); if ((m * 0) != 0) { self.document.gregorien.elements[1].focus(); self.document.gregorien.elements[1].select(); return "mois incorrect, ce doit être un nombre" }
   a = parseFloat(a); a = Math.floor(a); if ((a * 0) != 0) { self.document.gregorien.elements[2].focus(); self.document.gregorien.elements[2].select(); return "an incorrect, ce doit être un nombre" }
   x = Math.floor(a / 4); y = Math.floor(a / 100); z = Math.floor(a / 400); g = 0; cal = "(julien)"; if (a > pivot_an) g = 1; if ((a == pivot_an) && (m > pivot_mois)) g = 1; if ((a == pivot_an) && (m == pivot_mois) && (j >= pivot_jour)) g = 1; if (g == 0) { return "date invalide pour le calendrier grégorien" }
