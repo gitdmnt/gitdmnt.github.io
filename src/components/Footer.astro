@@ -1,6 +1,13 @@
 ---
 import * as twitter_icon from "/public/twitter.png";
 import * as github_icon from "/public/github-mark.svg";
+import { string } from "astro/zod";
+
+interface Props {
+    mode?: string;
+}
+
+const { mode = "light" } = Astro.props;
 ---
 
 <footer>
@@ -21,7 +28,9 @@ import * as github_icon from "/public/github-mark.svg";
                 /></a
             >
         </div>
-        <div class="sign">2023 うだ✌️</div>
+        <div class="sign">
+            <a href="/" style="color: #dbd4d4;">2023 うだ✌️</a>
+        </div>
         <div class="button-box" id="r"></div>
     </div>
 </footer>

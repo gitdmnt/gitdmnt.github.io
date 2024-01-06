@@ -1,0 +1,61 @@
+---
+import RevoClock from "../components/RevoClock/RevoClock";
+import Top from "../layouts/Top.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<div class="container">
+  <Top
+    url={Astro.url.href}
+    type="article"
+    title="革命時計"
+    description="革命暦の時計"
+    image=""
+  >
+    <div class="main">
+      <div class="clock">
+        <RevoClock client:load />
+      </div>
+      <h1>十進時計</h1>
+      <p>
+        <a
+          href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%A9%E3%83%B3%E3%82%B9%E9%9D%A9%E5%91%BD%E6%9A%A6"
+          >フランス革命暦</a
+        >に<wbr />おける、<wbr />十進化時間に<wbr />よる<wbr />時計<wbr
+        />です。<wbr />1日を<wbr />10時間に<wbr />分割し、<wbr />1時間を<wbr
+        />100分に、<wbr />1分を<wbr />100秒に<wbr />分割して<wbr />います。<wbr
+        />
+      </p>
+    </div>
+  </Top>
+</div>
+<Footer />
+<style>
+  .container {
+    background-color: #101010;
+    color: white;
+    height: 100vh;
+  }
+  .main {
+    margin-inline: 1rem;
+  }
+  h1 {
+    margin-block: auto;
+    margin-inline: auto;
+    width: 50%;
+    min-width: 320px;
+    font-size: 20pt;
+    font-family: "Hiragino Sans W3", "Hiragino Kaku Gothic ProN",
+      "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック",
+      "MS PGothic", sans-serif;
+  }
+  .clock {
+    padding-block: 10rem;
+    width: 100%;
+  }
+  p {
+    width: 50%;
+    min-width: 320px;
+    margin-inline: auto;
+  }
+</style>

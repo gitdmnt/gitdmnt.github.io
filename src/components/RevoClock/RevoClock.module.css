@@ -1,0 +1,43 @@
+.clock {
+  width: 320px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0fr 1fr;
+  font-family: "Hiragino Sans W6", "Hiragino Kaku Gothic ProN",
+    "ヒラギノ角ゴ ProN W6", "メイリオ", Meiryo, "ＭＳ Ｐゴシック",
+    "MS PGothic", sans-serif;
+}
+
+.date {}
+
+.year {}
+
+.month {}
+
+.day {}
+
+.time {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 0.2fr 1fr 0.2fr 1fr;
+  align-items: center;
+  justify-items: center;
+  font-size: 4rem;
+}
+
+.hour {
+  margin: 0;
+}
+
+.minute {
+  margin: 0;
+}
+
+.second {
+  margin: 0;
+}
+
+.time_separater {
+  margin: 0;
+}
