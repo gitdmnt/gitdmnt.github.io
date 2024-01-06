@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { RevoTime } from "./RevoTime.ts";
-import { RevoDate } from "./RevoDate.tsx";
+import { RevoDate } from "./RevoDate.ts";
 import styles from "./RevoClock.module.css";
 
 const RevoClock = () => {
