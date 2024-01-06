@@ -1,4 +1,4 @@
-export const RevoTime = () => {
+export const repTime = () => {
   const d = new Date();
   const now = d.getHours() * 3600000 + d.getMinutes() * 60000 + d.getSeconds() * 1000 + d.getMilliseconds();
   const rep_second_const = 864;

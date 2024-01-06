@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
-import { RevoTime } from "./RevoTime.ts";
-import { RevoDate } from "./RevoDate.ts";
+import { repTime } from "./repTime.ts";
+import { repDate } from "./repDate.ts";
 import styles from "./RevoClock.module.css";
 
 const RevoClock = () => {
-  const [[[year, month_index, date, day], [year_roman, month_name, left_day]], setDate] = useState(RevoDate());
-  const [[hour, minute, second], setTime] = useState(RevoTime());
+  const [[[year, month_index, date, day], [year_roman, month_name, left_day]], setDate] = useState(repDate());
+  const [[hour, minute, second], setTime] = useState(repTime());
   const callback = () => {
-    setDate(RevoDate());
-    setTime(RevoTime());
+    setDate(repDate());
+    setTime(repTime());
   };
 
   const callbackRef = useRef<() => void>(callback);
