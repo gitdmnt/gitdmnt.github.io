@@ -9,7 +9,7 @@ export const RevoTime = () => {
   function getTime() {
     const elapsed_time_gregorian_mili = now + 9 * 60 * 60 * 1000 - midnight; //UTC+9
     const elapsed_time_revo = elapsed_time_gregorian_mili / revo_second_const;
-    const hour = ("0" + Math.floor(elapsed_time_revo / 100 / 100).toString()).slice(-2);
+    const hour = (Math.floor(elapsed_time_revo / 100 / 100).toString()).slice(-1);
     const minute = ("0" + (Math.floor(elapsed_time_revo / 100) % 100).toString()).slice(-2);
     const second = ("0" + (Math.floor(elapsed_time_revo) % 100).toString()).slice(-2);
     return [hour, minute, second];
