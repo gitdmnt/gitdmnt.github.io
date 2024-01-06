@@ -3,7 +3,7 @@ import { RevoTime } from "./RevoTime.tsx";
 import { RevoDate } from "./RevoDate.tsx";
 import styles from "./RevoClock.module.css";
 
-const RevoClock = () => {
+export const RevoClock = () => {
   const [[year, month_index, date, day], [year_roman, month_name, left_day]] = RevoDate();
   const [hour, minute, second] = RevoTime();
   return (
@@ -13,5 +13,3 @@ const RevoClock = () => {
     </div>
   )
 }
-
-export default RevoClock;
