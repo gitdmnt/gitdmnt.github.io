@@ -11,7 +11,6 @@ const RevoClock = () => {
     <div className={styles.clock}>
       <p className={styles.date}>{month_index !== 12 ? date + " " + month_name + ", an " + year_roman : left_day}</p>
       <p className={styles.time}>{day.toString() + hour + minute + second}</p>
-      <p>{ }</p>
     </div>
   )
 }
