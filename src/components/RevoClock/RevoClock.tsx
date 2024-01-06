@@ -1,11 +1,25 @@
-import React from "react";
-import { RevoTime } from "./RevoTime.tsx";
-import { RevoDate } from "./RevoDate.tsx";
+import React, { useEffect, useRef, useState } from "react";
+import RevoTime from "./RevoTime.tsx";
+import RevoDate from "./RevoDate.tsx";
 import styles from "./RevoClock.module.css";
 
-export const RevoClock = () => {
-  const [[year, month_index, date, day], [year_roman, month_name, left_day]] = RevoDate();
-  const [hour, minute, second] = RevoTime();
+const RevoClock = () => {
+  const [[[year, month_index, date, day], [year_roman, month_name, left_day]], setDate] = useState(RevoDate());
+  const [[hour, minute, second], setTime] = useState(RevoTime());
+  const callback = () => {
+    setDate(RevoDate());
+    setTime(RevoTime());
+  };
+
+  const callbackRef = useRef<() => void>(callback);
+  useEffect(() => {
+    callbackRef.current = callback;
+  })
+  useEffect(() => {
+    const id = setInterval(() => callbackRef.current(), 864)
+    return () => clearInterval(id);
+  }, [])
+
   return (
     <div className={styles.clock}>
       <p className={styles.date}>{month_index !== 12 ? date + " " + month_name + ", an " + year_roman : left_day}</p>
@@ -14,3 +28,4 @@ export const RevoClock = () => {
   )
 }
 
+export default RevoClock;

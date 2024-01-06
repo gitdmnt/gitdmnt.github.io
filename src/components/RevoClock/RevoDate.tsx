@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-export const RevoDate = () => {
+export default function RevoDate() {
   const mjd_from_gregorian = (y, m, d) => {
     return Math.floor(365.25 * (m < 2 ? y - 1 : y)) + Math.floor((m < 2 ? y - 1 : y) / 400) - Math.floor((m < 2 ? y - 1 : y) / 100) + Math.floor(30.59 * ((m < 2 ? m + 1 + 12 : m + 1) - 2)) + d - 678912; // 修正ユリウス日; wikipediaより
 
@@ -52,20 +52,6 @@ export const RevoDate = () => {
   const g_year = today.getFullYear();
   const g_month = today.getMonth();
   const g_date = today.getDate();
-  const [date, setDate] = useState(republican_from_gregorian(g_year, g_month, g_date));
-
-  useEffect(() => {
-    setInterval(
-      () => {
-        const today = new Date();
-        const g_year = today.getFullYear();
-        const g_month = today.getMonth();
-        const g_date = today.getDate();
-        setDate(republican_from_gregorian(g_year, g_month, g_date));
-      },
-      864
-    )
-  })
-  return date;
+  return republican_from_gregorian(g_year, g_month, g_date);
 }
 
