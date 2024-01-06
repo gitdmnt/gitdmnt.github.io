@@ -15,14 +15,17 @@ export const RevoTime = () => {
   }
   const [repTime, setRepTime] = useState(getRepTime());
   useEffect(() => {
-    setInterval(
+    const timeout_id = setTimeout(
       () => {
         const d = new Date();
         setNow(d.getHours() * 3600000 + d.getMinutes() * 60000 + d.getSeconds() * 1000 + d.getMilliseconds());
         setRepTime(getRepTime());
       },
-      rep_second_const
+      50
     )
+    return () => {
+      clearTimeout(timeout_id)
+    }
   });
 
   return repTime;
