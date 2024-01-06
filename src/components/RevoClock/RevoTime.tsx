@@ -1,7 +1,6 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-export default function RevoTime() {
+export const RevoTime = () => {
   const d = new Date();
   const now = d.getHours() * 3600000 + d.getMinutes() * 60000 + d.getSeconds() * 1000 + d.getMilliseconds();
   const rep_second_const = 864;

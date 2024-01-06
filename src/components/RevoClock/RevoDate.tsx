@@ -1,7 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
-
-export default function RevoDate() {
+export const RevoDate = () => {
   const mjd_from_gregorian = (y, m, d) => {
     return Math.floor(365.25 * (m < 2 ? y - 1 : y)) + Math.floor((m < 2 ? y - 1 : y) / 400) - Math.floor((m < 2 ? y - 1 : y) / 100) + Math.floor(30.59 * ((m < 2 ? m + 1 + 12 : m + 1) - 2)) + d - 678912; // 修正ユリウス日; wikipediaより
 
