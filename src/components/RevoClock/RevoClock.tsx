@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { RevoTime } from "./RevoTime.tsx";
+import { RevoTime } from "./RevoTime.ts";
 import { RevoDate } from "./RevoDate.tsx";
 import styles from "./RevoClock.module.css";
 
