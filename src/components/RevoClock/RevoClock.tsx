@@ -16,7 +16,7 @@ const RevoClock = () => {
     callbackRef.current = callback;
   })
   useEffect(() => {
-    const id = setInterval(() => callbackRef.current(), 864)
+    const id = setInterval(() => callbackRef.current(), 40)
     return () => clearInterval(id);
   }, [])
 
