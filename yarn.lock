@@ -3886,6 +3886,18 @@ tar-stream@^3.1.5:
     fast-fifo "^1.2.0"
     streamx "^2.15.0"
 
+temporal-polyfill@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/temporal-polyfill/-/temporal-polyfill-0.2.0.tgz#98d738c3fbbf43aa8f6139952e4a96ca50a6a875"
+  integrity sha512-ra5tfISsVwUlDk9fhvEiIuvfBshV7jDtHYxmC8ACLIVV91MYoVlOBE1RpIrDjqGTYkCrZf0mWhgAW9XSOVPuGw==
+  dependencies:
+    temporal-spec "^0.2.0"
+
+temporal-spec@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/temporal-spec/-/temporal-spec-0.2.0.tgz#f5a2aca4e08232764871ec7c3ec0498b699b3f42"
+  integrity sha512-r1AT0XdEp8TMQ13FLvOt8mOtAxDQsRt2QU5rSWCA7YfshddU651Y1NHVrceLANvixKdf9fYO8B/S9fXHodB7HQ==
+
 text-table@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
