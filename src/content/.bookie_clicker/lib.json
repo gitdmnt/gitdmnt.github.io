@@ -68,24 +68,44 @@
                 "totalPageCount": 176
             },
             "status": {
-                "readStatus": "Read",
+                "readStatus": "Reading",
                 "combinedFlag": {
-                    "hex": "ffffffffffffffffffffffffffffffffffffffffffff"
+                    "hex": "fffffffffff800000000000000000000000000000000"
                 },
                 "progresses": [
-                    {
-                        "termStart": "2024-01-12",
-                        "termEnd": "2024-01-12",
-                        "flag": {
-                            "hex": "fffffffffff800000000000000000000000000000000"
-                        },
-                        "memo": ""
-                    },
                     {
                         "termStart": "2024-01-10",
                         "termEnd": "2024-01-10",
                         "flag": {
-                            "hex": "ffffffffffffffffffffffffffffffffffffffffffff"
+                            "hex": "fffffffffff800000000000000000000000000000000"
+                        },
+                        "memo": ""
+                    }
+                ]
+            }
+        },
+        {
+            "attr": {
+                "isbn": "9784396633462",
+                "title": "木暮荘物語",
+                "subtitle": "",
+                "authors": [
+                    "三浦しをん"
+                ],
+                "imageUrl": "http://books.google.com/books/content?id=T-MdkgAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                "totalPageCount": 267
+            },
+            "status": {
+                "readStatus": "Read",
+                "combinedFlag": {
+                    "hex": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0"
+                },
+                "progresses": [
+                    {
+                        "termStart": "2024-01-10",
+                        "termEnd": "2024-01-10",
+                        "flag": {
+                            "hex": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0"
                         },
                         "memo": ""
                     }
