@@ -1,6 +1,7 @@
 ---
 import Common from "../layouts/Common.astro";
 import json from "../content/.bookie_clicker/lib.json";
+import BookCard from "../components/BookCard.astro";
 ---
 
 <Common
@@ -11,70 +12,17 @@ import json from "../content/.bookie_clicker/lib.json";
     image=""
 >
     <h1>読んだ本</h1>
-    <table>
-        <thead
-            ><tr>
-                <td> タイトル</td>
-                <td> 状態</td>
-                <td> 最後に読んだ日</td>
-                <td> 最後のメモ</td>
-            </tr>
-        </thead>
-        <tbody>
-            {
-                json.items
-                    .sort(
-                        (a, b) =>
-                            Date.parse(b.status.progresses[0].termEnd) -
-                            Date.parse(a.status.progresses[0].termEnd),
-                    )
-                    .map((book) => {
-                        const title =
-                            book.attr.title + " " + book.attr.subtitle;
-                        const readStatus = (() => {
-                            if (book.status.readStatus === "Read") {
-                                return "読了";
-                            } else if (book.status.readStatus === "Reading") {
-                                const sum = book.status.combinedFlag.hex
-                                    .match(/.{2}/g)
-                                    .map((v) => parseInt(v, 16))
-                                    .reduce((sum, cur) => {
-                                        for (let i = 0; i < 8; i++) {
-                                            sum += (cur >> i) & 0b0000_0001;
-                                        }
-                                        return sum;
-                                    }, 0);
-                                const max = book.attr.totalPageCount;
-                                const percentage = Math.floor(
-                                    (sum / max) * 100,
-                                );
-                                return percentage + "%";
-                            } else {
-                                return "0%";
-                            }
-                        })();
-                        const latestReadDate =
-                            book.status.progresses[0].termEnd;
-                        const latestMemo = book.status.progresses[0].memo;
-                        return (
-                            <tr>
-                                <td>
-                                    <a
-                                        href={
-                                            "https://www.amazon.co.jp/s?k=" +
-                                            title
-                                        }
-                                    >
-                                        {title}
-                                    </a>
-                                </td>
-                                <td>{readStatus}</td>
-                                <td>{latestReadDate}</td>
-                                <td>{latestMemo}</td>
-                            </tr>
-                        );
-                    })
-            }</tbody
-        >
-    </table>
+    <ul>
+        {
+            json.items
+                .sort(
+                    (a, b) =>
+                        Date.parse(b.status.progresses[0].termEnd) -
+                        Date.parse(a.status.progresses[0].termEnd),
+                )
+                .map((book) => {
+                    return <BookCard book={book} />;
+                })
+        }
+    </ul>
 </Common>
