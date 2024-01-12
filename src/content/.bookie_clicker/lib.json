@@ -27,6 +27,70 @@
                     }
                 ]
             }
+        },
+        {
+            "attr": {
+                "isbn": "9784122044289",
+                "title": "スカイ・クロラ",
+                "subtitle": "",
+                "authors": [
+                    "森博嗣"
+                ],
+                "imageUrl": "http://books.google.com/books/content?id=Zr0gNwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                "totalPageCount": 333
+            },
+            "status": {
+                "readStatus": "Read",
+                "combinedFlag": {
+                    "hex": "fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8"
+                },
+                "progresses": [
+                    {
+                        "termStart": "2024-01-09",
+                        "termEnd": "2024-01-09",
+                        "flag": {
+                            "hex": "fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8"
+                        },
+                        "memo": ""
+                    }
+                ]
+            }
+        },
+        {
+            "attr": {
+                "isbn": "9784861827358",
+                "title": "ドゥルーズ『差異と反復』を読む",
+                "subtitle": "",
+                "authors": [
+                    "森田裕之"
+                ],
+                "imageUrl": "http://books.google.com/books/content?id=Xrr7wgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                "totalPageCount": 176
+            },
+            "status": {
+                "readStatus": "Read",
+                "combinedFlag": {
+                    "hex": "ffffffffffffffffffffffffffffffffffffffffffff"
+                },
+                "progresses": [
+                    {
+                        "termStart": "2024-01-12",
+                        "termEnd": "2024-01-12",
+                        "flag": {
+                            "hex": "fffffffffff800000000000000000000000000000000"
+                        },
+                        "memo": ""
+                    },
+                    {
+                        "termStart": "2024-01-10",
+                        "termEnd": "2024-01-10",
+                        "flag": {
+                            "hex": "ffffffffffffffffffffffffffffffffffffffffffff"
+                        },
+                        "memo": ""
+                    }
+                ]
+            }
         }
     ]
 }
