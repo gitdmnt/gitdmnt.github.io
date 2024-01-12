@@ -35,9 +35,22 @@ import json from "../content/.bookie_clicker/lib.json";
                             if (book.status.readStatus === "Read") {
                                 return "読了";
                             } else if (book.status.readStatus === "Reading") {
-                                return "読んでいる";
+                                const sum = book.status.combinedFlag.hex
+                                    .match(/.{2}/g)
+                                    .map((v) => parseInt(v, 16))
+                                    .reduce((sum, cur) => {
+                                        for (let i = 0; i < 8; i++) {
+                                            sum += (cur >> i) & 0b0000_0001;
+                                        }
+                                        return sum;
+                                    }, 0);
+                                const max = book.attr.totalPageCount;
+                                const percentage = Math.floor(
+                                    (sum / max) * 100,
+                                );
+                                return percentage + "%";
                             } else {
-                                return "読みたい";
+                                return "0%";
                             }
                         })();
                         const latestReadDate =
