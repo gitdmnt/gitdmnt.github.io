@@ -1,0 +1,32 @@
+{
+    "items": [
+        {
+            "attr": {
+                "isbn": "9784101253329",
+                "title": "西の魔女が死んだ",
+                "subtitle": "",
+                "authors": [
+                    "梨木香步"
+                ],
+                "imageUrl": "http://books.google.com/books/content?id=PGclAAAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                "totalPageCount": 226
+            },
+            "status": {
+                "readStatus": "Read",
+                "combinedFlag": {
+                    "hex": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0"
+                },
+                "progresses": [
+                    {
+                        "termStart": "2024-01-12",
+                        "termEnd": "2024-01-12",
+                        "flag": {
+                            "hex": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0"
+                        },
+                        "memo": ""
+                    }
+                ]
+            }
+        }
+    ]
+}
