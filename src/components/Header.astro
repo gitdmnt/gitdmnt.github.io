@@ -4,21 +4,33 @@
 
 <header>
     <div class="container">
-        <div class="title"><a class="title" href="/">や‐さがされ</a></div>
-        <ul class="page-link">
-            <li class="page-link">
-                <a href="/about">げたばこ</a>
-            </li>
-            <li class="page-link">
-                <a href="/blog/1">やねうら</a>
-            </li>
-            <li class="page-link">
-                <a href="/gallery/1">そうこ</a>
-            </li>
-            <li class="page-link">
-                <a href="/gacha">れいぞうこ</a>
-            </li>
-        </ul>
+        <div class="title">
+            <a class="title" href="/">や‐さがされ</a>
+        </div>
+        <div class="page-link">
+            <ul class="page-link">
+                <li class="page-link">
+                    <a href="/about">げたばこ</a>
+                </li>
+                <li class="page-link">
+                    <a href="/blog/1">やねうら</a>
+                </li>
+                <li class="page-link">
+                    <a href="/gallery/1">そうこ</a>
+                </li>
+            </ul>
+            <ul class="page-link">
+                <li class="page-link">
+                    <a href="/gacha">れいぞうこ</a>
+                </li>
+                <li class="page-link">
+                    <a href="/clock">とけい</a>
+                </li>
+                <li class="page-link">
+                    <a href="/bookshelf">ほんだな</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </header>
 
@@ -33,7 +45,7 @@
         flex-wrap: wrap;
         margin: auto;
         font-family: "Kosugi";
-        border-bottom: 2px solid #1d1d1d;
+        border-bottom: 1px solid #1d1d1d;
     }
     .title {
         display: block;
@@ -51,6 +63,11 @@
         margin: 0;
         color: #fff;
     }
+    div.page-link {
+        margin-block-start: auto;
+        margin-block-end: 0.2rem;
+        margin-inline: 1rem;
+    }
     ul.page-link {
         align-self: end;
         list-style: none;
@@ -58,8 +75,7 @@
         flex-wrap: nowrap;
         flex-shrink: 1;
         justify-content: space-between;
-        margin-block-end: 0.2rem;
-        margin-inline: 1rem;
+        margin: 0;
         padding: 0;
     }
     li.page-link {
