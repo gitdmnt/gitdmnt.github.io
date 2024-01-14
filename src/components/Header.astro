@@ -40,9 +40,9 @@
         margin-block-end: 4rem;
     }
     .container {
-        display: flex;
+        display: grid;
+        grid-template-columns: 110pt repeat(auto-fit, minmax(100px, 1fr));
         justify-content: space-between;
-        flex-wrap: wrap;
         margin: auto;
         font-family: "Kosugi";
         border-bottom: 1px solid #1d1d1d;
@@ -67,15 +67,17 @@
         margin-block-start: auto;
         margin-block-end: 0.2rem;
         margin-inline: 1rem;
+        align-self: end;
+        justify-self: end;
+        display: flex;
+        flex-wrap: wrap;
     }
     ul.page-link {
-        align-self: end;
         list-style: none;
-        display: inline-flex;
-        flex-wrap: nowrap;
-        flex-shrink: 1;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(3, 6rem);
         margin: 0;
+        margin-block-start: 0.4rem;
         padding: 0;
     }
     li.page-link {
