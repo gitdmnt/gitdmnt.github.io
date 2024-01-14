@@ -65,13 +65,13 @@ const latestMemo = status.progresses[0].memo;
 <li class="book-card">
     <h2 class="title">{title}</h2>
     <p class="author">{author}</p>
-    <img src={attr.imageUrl} alt="書影" class="book-image" />
     <p class="memo">{latestMemo}</p>
     <div class="progress">
         <ProgressBar value={readStatus} />
     </div>
     <p class="latest-read">{latestReadDate}</p>
     <p class="star"><span class="yellow">★</span>{status.star}</p>
+    <img src={attr.imageUrl} alt="書影" class="book-image" />
 </li>
 
 <style>
