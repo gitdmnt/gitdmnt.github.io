@@ -11,7 +11,7 @@ type Book = {
     status: {
         readStatus: string;
         combinedFlag: {
-            hex: string;
+            b64: string;
         };
         progresses: {
             termStart: string;
@@ -36,15 +36,16 @@ const readStatus = (() => {
     if (book.status.readStatus === "Read") {
         return "読了";
     } else if (book.status.readStatus === "Reading") {
-        const sum = book.status.combinedFlag.hex
-            .match(/.{2}/g)
-            .map((v) => parseInt(v, 16))
-            .reduce((sum, cur) => {
+        let bstr = atob(book.status.combinedFlag.b64);
+        let sum = Uint8Array.from(bstr, (str) => str.charCodeAt(0)).reduce(
+            (sum, cur) => {
                 for (let i = 0; i < 8; i++) {
                     sum += (cur >> i) & 0b0000_0001;
                 }
                 return sum;
-            }, 0);
+            },
+            0,
+        );
         const max = book.attr.totalPageCount;
         const percentage = Math.floor((sum / max) * 100);
         return percentage + "%";

@@ -1,148 +1,124 @@
 {
-    "items": [
-        {
-            "attr": {
-                "isbn": "9784101253329",
-                "title": "西の魔女が死んだ",
-                "subtitle": "",
-                "authors": [
-                    "梨木香步"
-                ],
-                "imageUrl": "http://books.google.com/books/content?id=PGclAAAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-                "totalPageCount": 226
-            },
-            "status": {
-                "readStatus": "Read",
-                "combinedFlag": {
-                    "hex": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0"
-                },
-                "progresses": [
-                    {
-                        "termStart": "2024-01-12",
-                        "termEnd": "2024-01-12",
-                        "flag": {
-                            "hex": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0"
-                        },
-                        "memo": ""
-                    }
-                ]
-            }
+  "items": [
+    {
+      "attr": {
+        "isbn": "9784122044289",
+        "title": "スカイ・クロラ",
+        "subtitle": "",
+        "authors": [
+          "森博嗣"
+        ],
+        "imageUrl": "http://books.google.com/books/content?id=Zr0gNwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 333
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "///////////////////////////////////////////////////////4"
         },
-        {
-            "attr": {
-                "isbn": "9784122044289",
-                "title": "スカイ・クロラ",
-                "subtitle": "",
-                "authors": [
-                    "森博嗣"
-                ],
-                "imageUrl": "http://books.google.com/books/content?id=Zr0gNwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-                "totalPageCount": 333
+        "progresses": [
+          {
+            "termStart": "2024-01-09",
+            "termEnd": "2024-01-09",
+            "flag": {
+              "b64": "///////////////////////////////////////////////////////4"
             },
-            "status": {
-                "readStatus": "Read",
-                "combinedFlag": {
-                    "hex": "fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8"
-                },
-                "progresses": [
-                    {
-                        "termStart": "2024-01-09",
-                        "termEnd": "2024-01-09",
-                        "flag": {
-                            "hex": "fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8"
-                        },
-                        "memo": ""
-                    }
-                ]
-            }
+            "memo": ""
+          }
+        ]
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784861827358",
+        "title": "ドゥルーズ『差異と反復』を読む",
+        "subtitle": "",
+        "authors": [
+          "森田裕之"
+        ],
+        "imageUrl": "http://books.google.com/books/content?id=Xrr7wgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 176
+      },
+      "status": {
+        "readStatus": "Reading",
+        "combinedFlag": {
+          "b64": "//////////AAAAAAAAAAAAAAAAAAAA=="
         },
-        {
-            "attr": {
-                "isbn": "9784861827358",
-                "title": "ドゥルーズ『差異と反復』を読む",
-                "subtitle": "",
-                "authors": [
-                    "森田裕之"
-                ],
-                "imageUrl": "http://books.google.com/books/content?id=Xrr7wgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-                "totalPageCount": 176
+        "progresses": [
+          {
+            "termStart": "2024-01-10",
+            "termEnd": "2024-01-10",
+            "flag": {
+              "b64": "///////4AAAAAAAAAAAAAAAAAAAAAA=="
             },
-            "status": {
-                "readStatus": "Reading",
-                "combinedFlag": {
-                    "hex": "fffffffffff800000000000000000000000000000000"
-                },
-                "progresses": [
-                    {
-                        "termStart": "2024-01-10",
-                        "termEnd": "2024-01-10",
-                        "flag": {
-                            "hex": "fffffffffff800000000000000000000000000000000"
-                        },
-                        "memo": ""
-                    }
-                ]
-            }
+            "memo": ""
+          },
+          {
+            "termStart": "2024-01-13",
+            "termEnd": "2024-01-13",
+            "flag": {
+              "b64": "AAAAAAAP//AAAAAAAAAAAAAAAAAAAA=="
+            },
+            "memo": ""
+          }
+        ]
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784396633462",
+        "title": "木暮荘物語",
+        "subtitle": "",
+        "authors": [
+          "三浦しをん"
+        ],
+        "imageUrl": "http://books.google.com/books/content?id=T-MdkgAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 267
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "////////////////////////////////////////////4A=="
         },
-        {
-            "attr": {
-                "isbn": "9784396633462",
-                "title": "木暮荘物語",
-                "subtitle": "",
-                "authors": [
-                    "三浦しをん"
-                ],
-                "imageUrl": "http://books.google.com/books/content?id=T-MdkgAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-                "totalPageCount": 267
+        "progresses": [
+          {
+            "termStart": "2024-01-10",
+            "termEnd": "2024-01-10",
+            "flag": {
+              "b64": "////////////////////////////////////////////4A=="
             },
-            "status": {
-                "readStatus": "Read",
-                "combinedFlag": {
-                    "hex": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0"
-                },
-                "progresses": [
-                    {
-                        "termStart": "2024-01-10",
-                        "termEnd": "2024-01-10",
-                        "flag": {
-                            "hex": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0"
-                        },
-                        "memo": ""
-                    }
-                ]
-            }
+            "memo": ""
+          }
+        ]
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784101253329",
+        "title": "西の魔女が死んだ",
+        "subtitle": "",
+        "authors": [
+          "梨木香步"
+        ],
+        "imageUrl": "http://books.google.com/books/content?id=PGclAAAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 226
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "/////////////////////////////////////8A="
         },
-        {
-            "attr": {
-                "isbn": "9784274224478",
-                "title": "マスタリングTCP/IP　入門編（第6版）",
-                "subtitle": "",
-                "authors": [
-                    "井上 直也",
-                    "村山 公保",
-                    "竹下 隆史",
-                    "荒井 透",
-                    "苅田 幸雄"
-                ],
-                "imageUrl": "http://books.google.com/books/content?id=01LADwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-                "totalPageCount": 493
+        "progresses": [
+          {
+            "termStart": "2024-01-12",
+            "termEnd": "2024-01-12",
+            "flag": {
+              "b64": "/////////////////////////////////////8A="
             },
-            "status": {
-                "readStatus": "Reading",
-                "combinedFlag": {
-                    "hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000030000000000000000000000000000000000000"
-                },
-                "progresses": [
-                    {
-                        "termStart": "2024-01-12",
-                        "termEnd": "2024-01-12",
-                        "flag": {
-                            "hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000030000000000000000000000000000000000000"
-                        },
-                        "memo": ""
-                    }
-                ]
-            }
-        }
-    ]
+            "memo": ""
+          }
+        ]
+      }
+    }
+  ]
 }
