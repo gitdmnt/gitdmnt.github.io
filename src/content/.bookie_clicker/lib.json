@@ -128,6 +128,36 @@
         ],
         "star": 5
       }
+    },
+    {
+      "attr": {
+        "isbn": "9784627157620",
+        "title": "宇宙論入門(原著第2版)",
+        "subtitle": "",
+        "authors": [
+          "Barbara Ryden"
+        ],
+        "imageUrl": "http://books.google.com/books/content?id=rR07zwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 272
+      },
+      "status": {
+        "readStatus": "Reading",
+        "combinedFlag": {
+          "b64": "///////////4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-01-14",
+            "termEnd": "2024-01-14",
+            "flag": {
+              "b64": "///////////4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "star": 5
+      }
     }
   ]
 }
