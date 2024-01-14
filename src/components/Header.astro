@@ -10,24 +10,14 @@
         <div class="page-link">
             <ul class="page-link">
                 <li class="page-link">
-                    <a href="/about">げたばこ</a>
+                    <div class="page-link-component">
+                        <a href="/about">げたばこ</a>
+                    </div>
                 </li>
                 <li class="page-link">
-                    <a href="/blog/1">やねうら</a>
-                </li>
-                <li class="page-link">
-                    <a href="/gallery/1">そうこ</a>
-                </li>
-            </ul>
-            <ul class="page-link">
-                <li class="page-link">
-                    <a href="/gacha">れいぞうこ</a>
-                </li>
-                <li class="page-link">
-                    <a href="/bookshelf">ほんだな</a>
-                </li>
-                <li class="page-link">
-                    <a href="/clock">とけい</a>
+                    <div class="page-link-component">
+                        <a href="/blog/1">やねうら</a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -41,7 +31,7 @@
     }
     .container {
         display: grid;
-        grid-template-columns: 110pt repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: 110pt 1fr;
         justify-content: space-between;
         margin: auto;
         font-family: "Kosugi";
@@ -64,8 +54,6 @@
         color: #fff;
     }
     div.page-link {
-        margin-block-start: auto;
-        margin-block-end: 0.2rem;
         margin-inline: 1rem;
         align-self: end;
         justify-self: end;
@@ -75,21 +63,25 @@
     ul.page-link {
         list-style: none;
         display: grid;
-        grid-template-columns: repeat(3, 6rem);
+        grid-template-columns: repeat(2, 6rem);
         margin: 0;
-        margin-block-start: 0.4rem;
+        margin-block-start: auto;
         padding: 0;
     }
     li.page-link {
         display: block;
         white-space: nowrap;
         flex-shrink: 1;
-        padding-inline-start: 0.5rem;
-        padding-inline-end: 1.5rem;
-        margin: 0;
+        padding-block-start: 0.3rem;
+        padding-block-end: 0.3rem;
+        padding-inline: 0rem;
         font-size: 10pt;
     }
-
+    li.page-link:hover {
+        background-color: #eee;
+    }
+    .page-link-component {
+    }
     a {
         color: #1d1d1d;
         text-decoration: none;
