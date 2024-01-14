@@ -1,0 +1,49 @@
+---
+interface Props {
+    value: number;
+}
+const { value } = Astro.props;
+
+const width = value.toString() + "%";
+---
+
+<div class="container">
+    <div class="wrapper">
+        <div class="bar">
+            <p class="value"></p>
+        </div>
+    </div>
+</div>
+
+<style define:vars={{ width }}>
+    :root {
+        --height: 1rem;
+    }
+    .container {
+        margin: 1rem;
+        height: var(--height);
+    }
+    .wrapper {
+        width: 100%;
+        height: var(--height);
+        border-radius: var(--height);
+        background-color: #f8f8f8;
+        border: 1px solid #eee;
+    }
+    .bar {
+        display: grid;
+        margin: 0;
+        width: var(--width);
+        height: var(--height);
+        border-radius: var(--height);
+        background-color: #e07798;
+    }
+    .value {
+        margin-block: auto;
+        margin-inline: 0.2rem;
+        justify-self: end;
+        align-self: center;
+        font-size: 14px;
+        font-weight: normal;
+    }
+</style>

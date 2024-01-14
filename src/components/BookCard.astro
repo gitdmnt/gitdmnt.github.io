@@ -1,4 +1,6 @@
 ---
+import ProgressBar from "./Progressbar.astro";
+
 type Book = {
     attr: {
         isbn: string;
@@ -17,7 +19,7 @@ type Book = {
             termStart: string;
             termEnd: string;
             flag: {
-                hex: string;
+                b64: string;
             };
             memo: string;
         }[];
@@ -34,7 +36,7 @@ const title = attr.title + " " + attr.subtitle;
 
 const readStatus = (() => {
     if (book.status.readStatus === "Read") {
-        return "読了";
+        return 100;
     } else if (book.status.readStatus === "Reading") {
         let bstr = atob(book.status.combinedFlag.b64);
         let sum = Uint8Array.from(bstr, (str) => str.charCodeAt(0)).reduce(
@@ -48,9 +50,9 @@ const readStatus = (() => {
         );
         const max = book.attr.totalPageCount;
         const percentage = Math.floor((sum / max) * 100);
-        return percentage + "%";
+        return percentage;
     } else {
-        return "0%";
+        return 0;
     }
 })();
 const latestReadDate = book.status.progresses[0].termEnd;
@@ -60,38 +62,47 @@ const latestMemo = book.status.progresses[0].memo;
 <li class="book-card">
     <h2 class="title">{title}</h2>
     <img src={attr.imageUrl} alt="書影" class="book-image" />
-    <p class="progress">進捗: {readStatus}</p>
-    <p class="latest-read">最後に読んだ日: {latestReadDate}</p>
-    <p class="memo">メモ: {latestMemo}</p>
+    <p class="memo">{latestMemo}</p>
+    <div class="progress">
+        <ProgressBar value={readStatus} />
+    </div>
+    <p class="latest-read">{latestReadDate}</p>
 </li>
 
 <style>
     .book-card {
         list-style: none;
         display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-template-rows: 3rem repeat(3, 0.5 fr);
-        margin-block: 1rem;
+        grid-template-columns: 2fr 20px 1fr;
+        grid-template-rows: 3rem 5rem 3rem 10pt;
+        border-top: 1px solid #ddd;
+        padding-block: 1rem;
+    }
+    .book-card:hover {
     }
     .title {
         grid-column: 1/2;
         grid-row: 1/2;
+        font-size: 14pt;
     }
     .book-image {
-        grid-column: 2/3;
+        grid-column: 3/4;
         grid-row: 1/5;
-    }
-    .progress {
-        grid-column: 1/2;
-        grid-row: 2/3;
-    }
-    .latest-read {
-        grid-column: 1/2;
-        grid-row: 3/4;
     }
     .memo {
         grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    .progress {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+    .latest-read {
+        grid-column: 1/2;
         grid-row: 4/5;
+        font-size: 8pt;
+        align-self: end;
+        color: #bbb;
     }
     p {
         margin: 0;
