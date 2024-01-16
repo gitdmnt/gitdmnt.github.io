@@ -1,0 +1,22 @@
+---
+import { WaterSort } from "../components/WaterSort/WaterSort";
+import Common from "../layouts/Common.astro";
+---
+
+<Common
+  url={Astro.url.href}
+  type="article"
+  title="ボトル"
+  description="ごちゃごちゃ"
+  image=""
+>
+  <main>
+    <h2>広告のゲーム</h2>
+    <WaterSort client:load />
+    <p>
+      Water Sortっていうゲームらしいです。<wbr
+      />適当にぽちぽちすれば動くと思います。<br
+      />証明はしてないけど多分解けると思います。<wbr />解けなかったらごめん。
+    </p>
+  </main>
+</Common>
