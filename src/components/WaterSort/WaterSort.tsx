@@ -8,6 +8,12 @@ export const WaterSort = () => {
     [0, 0, 0, 0],
     [0, 0, 0, 0],
   ]);
+  const [defaultBottle, setDefaultBottle] = useState([
+    [1, 1, 1, 1],
+    [2, 2, 2, 2],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+  ])
   const [num, setNum] = useState(10);
 
   const color = [
@@ -89,7 +95,35 @@ export const WaterSort = () => {
 
     bottle.push([0, 0, 0, 0]);
     bottle.push([0, 0, 0, 0]);
-    setBottle(bottle)
+    setBottle(bottle);
+    setDefaultBottle(bottle);
+  }
+
+  const reset = () => {
+    setBottle(defaultBottle);
+  }
+
+  const init_hard = (n) => {
+    const arr = [];
+    for (let i = 0; i < n; i++) {
+      for (let j = 0; j < 4; j++) {
+        arr.push(i + 1);
+      }
+    }
+    for (let i = arr.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+
+    const bottle = [];
+    for (let i = 0; i < n; i++) {
+      bottle.push([arr[4 * i], arr[4 * i + 1], arr[4 * i + 2], arr[4 * i + 3]])
+    }
+
+    bottle.push([0, 0, 0, 0]);
+    bottle.push([0, 0, 0, 0]);
+    setBottle(bottle);
+    setDefaultBottle(bottle);
   }
 
   return (
@@ -123,7 +157,13 @@ export const WaterSort = () => {
       </ul>
       <div className="ui">
         <input type="range" min={2} max={20} step={1} className={styles.range} onChange={(e) => { setNum(Number(e.target.value)); init(Number(e.target.value)) }} />
-        <button type="button" onClick={() => init(num)} className={styles.button}>生成</button>
+        <div className={styles.button}>
+          <button type="button" onClick={() => init(num)} className={styles.button}>かんたん</button>
+          <button type="button" onClick={() => init_hard(num)} className={styles.button}>むずかしい</button>
+          <button type="button" onClick={() => reset()} className={styles.button}>リセット</button>
+
+        </div>
+
       </div>
     </div>
   );
