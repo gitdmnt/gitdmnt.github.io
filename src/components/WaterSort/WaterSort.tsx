@@ -76,7 +76,7 @@ export const WaterSort = () => {
       bottle.push([i + 1, i + 1, i + 1, i + 1]);
     }
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < n * 100; i++) {
       const a = Math.floor(Math.random() * n);
       const b = Math.floor(Math.random() * n);
       const range = Math.floor(Math.random() * 4);
@@ -122,7 +122,7 @@ export const WaterSort = () => {
         }
       </ul>
       <div className="ui">
-        <input type="range" min={2} max={20} step={1} className={styles.range} onChange={(e) => setNum(Number(e.target.value))} />
+        <input type="range" min={2} max={20} step={1} className={styles.range} onChange={(e) => { setNum(Number(e.target.value)); init(Number(e.target.value)) }} />
         <button type="button" onClick={() => init(num)} className={styles.button}>生成</button>
       </div>
     </div>
