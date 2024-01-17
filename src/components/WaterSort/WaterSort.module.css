@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   list-style: none;
   justify-content: center;
   margin-block: 2rem;
