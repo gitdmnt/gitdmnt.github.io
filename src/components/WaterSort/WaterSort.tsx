@@ -25,6 +25,8 @@ export const WaterSort = () => {
   ];
 
   const [first, setFirst] = useState(-1);
+  const [isHard, setIsHard] = useState(false);
+
 
   const bottleClick = (i) => {
     if (first === -1) {
@@ -76,23 +78,41 @@ export const WaterSort = () => {
     setFirst(-1);
   }
 
-  const init = (n) => {
-    const bottle = [];
-    for (let i = 0; i < n; i++) {
-      bottle.push([i + 1, i + 1, i + 1, i + 1]);
-    }
+  const init = (n, isHardTemp) => {
 
-    for (let i = 0; i < n * 100; i++) {
-      const a = Math.floor(Math.random() * n);
-      const b = Math.floor(Math.random() * n);
-      const range = Math.floor(Math.random() * 4);
-      for (let j = 0; j < range; j++) {
-        let memo = bottle[a][j];
-        bottle[a][j] = bottle[b][j];
-        bottle[b][j] = memo;
+    if (isHardTemp) { setIsHard(true) } else { setIsHard(false) }
+
+    const bottle = [];
+
+    if (isHardTemp) {
+      const arr = [];
+      for (let i = 0; i < n; i++) {
+        for (let j = 0; j < 4; j++) {
+          arr.push(i + 1);
+        }
+      }
+      for (let i = arr.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      for (let i = 0; i < n; i++) {
+        bottle.push([arr[4 * i], arr[4 * i + 1], arr[4 * i + 2], arr[4 * i + 3]])
+      }
+    } else {
+      for (let i = 0; i < n; i++) {
+        bottle.push([i + 1, i + 1, i + 1, i + 1]);
+      }
+      for (let i = 0; i < n * 100; i++) {
+        const a = Math.floor(Math.random() * n);
+        const b = Math.floor(Math.random() * n);
+        const range = Math.floor(Math.random() * 4);
+        for (let j = 0; j < range; j++) {
+          let memo = bottle[a][j];
+          bottle[a][j] = bottle[b][j];
+          bottle[b][j] = memo;
+        }
       }
     }
-
     bottle.push([0, 0, 0, 0]);
     bottle.push([0, 0, 0, 0]);
     setBottle(bottle);
@@ -103,31 +123,8 @@ export const WaterSort = () => {
     setBottle(defaultBottle);
   }
 
-  const init_hard = (n) => {
-    const arr = [];
-    for (let i = 0; i < n; i++) {
-      for (let j = 0; j < 4; j++) {
-        arr.push(i + 1);
-      }
-    }
-    for (let i = arr.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-
-    const bottle = [];
-    for (let i = 0; i < n; i++) {
-      bottle.push([arr[4 * i], arr[4 * i + 1], arr[4 * i + 2], arr[4 * i + 3]])
-    }
-
-    bottle.push([0, 0, 0, 0]);
-    bottle.push([0, 0, 0, 0]);
-    setBottle(bottle);
-    setDefaultBottle(bottle);
-  }
-
   return (
-    <div className={styles.watersort}>
+    <div className={styles.watersort} >
       <ul className={styles.container}>
         {
           bottle.map((b, i) => {
@@ -156,15 +153,14 @@ export const WaterSort = () => {
         }
       </ul>
       <div className="ui">
-        <input type="range" min={2} max={20} step={1} className={styles.range} onChange={(e) => { setNum(Number(e.target.value)); init(Number(e.target.value)) }} />
+        <input type="range" min={2} max={20} step={1} value={num} className={styles.range} onChange={(e) => { setNum(Number(e.target.value)); init(Number(e.target.value), isHard) }} />
         <div className={styles.button}>
-          <button type="button" onClick={() => init(num)} className={styles.button}>かんたん</button>
-          <button type="button" onClick={() => init_hard(num)} className={styles.button}>むずかしい</button>
+          <button type="button" onClick={() => { init(num, false) }} className={styles.button} style={(() => { if (!isHard) { return { backgroundColor: "#e07798" } } })()} > かんたん</button>
+          <button type="button" onClick={() => { init(num, true) }} className={styles.button} style={(() => { if (isHard) { return { backgroundColor: "#e07798" } } })()}>むずかしい</button>
           <button type="button" onClick={() => reset()} className={styles.button}>リセット</button>
-
         </div>
 
       </div>
-    </div>
+    </div >
   );
 }
