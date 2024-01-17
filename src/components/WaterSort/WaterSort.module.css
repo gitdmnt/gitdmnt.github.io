@@ -113,3 +113,56 @@ button.button {
   padding-block: 0.4rem;
   padding-inline: 1rem;
 }
+
+label.toggle {
+  display: grid;
+  grid-template-columns: 50pt 42px;
+  align-items: center;
+  justify-content: center;
+
+  margin-block: 1rem;
+  margin-inline-start: 1rem;
+  margin-inline-end: auto;
+
+}
+
+input.toggle {
+  display: none;
+}
+
+div.toggle {
+  margin: auto;
+  width: 36px;
+  border-radius: 20px;
+  height: 20px;
+  padding: 2px;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+div.slider {
+  width: 20px;
+  height: 20px;
+  border-radius: 11px;
+  background-color: #ccc;
+  grid-column: 1/2;
+}
+
+p.toggle {
+  margin: auto;
+  font-size: 10pt;
+}
+
+input.toggle:checked~div.toggle {
+  background-color: #f7dae3;
+  border: 1px solid #f6c3d3;
+}
+
+input:checked~div.toggle>div.slider {
+  background-color: #e58da9;
+  grid-column: 2/3;
+}

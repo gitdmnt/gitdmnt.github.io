@@ -13,8 +13,11 @@ export const WaterSort = () => {
     [2, 2, 2, 2],
     [0, 0, 0, 0],
     [0, 0, 0, 0],
-  ])
+  ]);
+  const [first, setFirst] = useState(-1);
+  const [isHard, setIsHard] = useState(false);
   const [num, setNum] = useState(10);
+  const [visiblity, setVisiblity] = useState(false);
 
   const color = [
     "#00000000",
@@ -31,10 +34,6 @@ export const WaterSort = () => {
     "#fff", "#fff", "#fff", "#1d1d1d", "#1d1d1d",
     "#fff", "#fff", "#1d1d1d", "#fff", "#1d1d1d",
   ]
-
-  const [first, setFirst] = useState(-1);
-  const [isHard, setIsHard] = useState(false);
-
 
   const bottleClick = (i) => {
     if (first === -1) {
@@ -158,7 +157,9 @@ export const WaterSort = () => {
                             borderRadius: (() => { if (k === 3) { return "0 0 10px 10px" } })()
                           }}
                         >
-                          <div className={styles.water}>{j}</div>
+                          <div className={styles.water}>{
+                            (() => { if (visiblity) { return j; } })()
+                          }</div>
                         </li>
                       )
                     }
@@ -174,10 +175,18 @@ export const WaterSort = () => {
       <div className="ui">
         <input type="range" min={2} max={20} step={1} value={num} className={styles.range} onChange={(e) => { setNum(Number(e.target.value)); init(Number(e.target.value), isHard) }} />
         <div className={styles.button}>
-          <button type="button" onClick={() => { init(num, false) }} className={styles.button} style={{ backgroundColor: (() => { if (!isHard) { return "#e07798" } })() }} > かんたん</button>
+          <button type="button" onClick={() => { init(num, false) }} className={styles.button} style={{ backgroundColor: (() => { if (!isHard) { return "#e07798" } })() }} >かんたん</button>
           <button type="button" onClick={() => { init(num, true) }} className={styles.button} style={{ backgroundColor: (() => { if (isHard) { return "#e07798" } })() }}>むずかしい</button>
           <button type="button" onClick={() => reset()} className={styles.button}>リセット</button>
         </div>
+        <label htmlFor="switch" className={styles.toggle}>
+          <input type="checkbox" id="switch" className={styles.toggle} defaultChecked={false} onChange={(e) => { if (e.target.checked) { setVisiblity(true) } else { setVisiblity(false) } }} />
+          <p className={styles.toggle}>色覚補助</p>
+          <div className={styles.toggle}>
+            <div className={styles.slider}></div>
+          </div>
+        </label>
+
 
       </div>
     </div >
