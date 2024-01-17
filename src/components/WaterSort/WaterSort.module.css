@@ -23,6 +23,17 @@
   padding: 0;
 }
 
+li.water {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+div.water {
+  text-align: center;
+  font-size: 8pt;
+}
+
 .ui {
   margin-block: 1rem;
 }

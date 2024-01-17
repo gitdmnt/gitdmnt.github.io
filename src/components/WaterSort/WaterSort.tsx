@@ -24,6 +24,14 @@ export const WaterSort = () => {
     "#34b496", "#3A3839", "#c4ca00", "#e40067", "#69c4d0",
   ];
 
+  const fontColor = [
+    "#1d1d1d",
+    "#1d1d1d", "#1d1d1d", "#1d1d1d", "#fff", "#fff",
+    "#fff", "#fff", "#1d1d1d", "#1d1d1d", "#fff",
+    "#fff", "#fff", "#fff", "#1d1d1d", "#1d1d1d",
+    "#fff", "#fff", "#1d1d1d", "#fff", "#1d1d1d",
+  ]
+
   const [first, setFirst] = useState(-1);
   const [isHard, setIsHard] = useState(false);
 
@@ -128,20 +136,31 @@ export const WaterSort = () => {
       <ul className={styles.container}>
         {
           bottle.map((b, i) => {
-            const shadow = ((i) => { if (first === i) { return "0 0 3px 2px rgba(0, 0, 0, 0.2)" } else { return "0 0 3px 2px rgba(0, 0, 0, 0)" } })(i)
             return (
               <li className={styles.wrapper}>
-                <ul className={styles.bottle} style={{ boxShadow: shadow }} onClick={() => bottleClick(i)}>
+                <ul
+                  className={styles.bottle}
+                  style={{
+                    boxShadow: ((i) => { if (first === i) { return "0 0 3px 2px rgba(0, 0, 0, 0.2)" } else { return "0 0 3px 2px rgba(0, 0, 0, 0)" } })(i)
+                  }}
+                  onClick={() => bottleClick(i)}
+                >
                   {
                     b.map((j, k) => {
-                      if (k !== 3) {
-                        return (
-                          <li className={styles.water} style={{ backgroundColor: color[j], width: "20px", height: "20px" }}></li>
-                        )
-                      } else {
-                        return (<li className={styles.water} style={{ backgroundColor: color[j], width: "20px", height: "20px", borderRadius: "0 0 10px 10px" }}></li>)
-
-                      }
+                      return (
+                        <li
+                          className={styles.water}
+                          style={{
+                            color: fontColor[j],
+                            backgroundColor: color[j],
+                            width: "20px",
+                            height: "20px",
+                            borderRadius: (() => { if (k === 3) { return "0 0 10px 10px" } })()
+                          }}
+                        >
+                          <div className={styles.water}>{j}</div>
+                        </li>
+                      )
                     }
 
                     )
@@ -155,8 +174,8 @@ export const WaterSort = () => {
       <div className="ui">
         <input type="range" min={2} max={20} step={1} value={num} className={styles.range} onChange={(e) => { setNum(Number(e.target.value)); init(Number(e.target.value), isHard) }} />
         <div className={styles.button}>
-          <button type="button" onClick={() => { init(num, false) }} className={styles.button} style={(() => { if (!isHard) { return { backgroundColor: "#e07798" } } })()} > かんたん</button>
-          <button type="button" onClick={() => { init(num, true) }} className={styles.button} style={(() => { if (isHard) { return { backgroundColor: "#e07798" } } })()}>むずかしい</button>
+          <button type="button" onClick={() => { init(num, false) }} className={styles.button} style={{ backgroundColor: (() => { if (!isHard) { return "#e07798" } })() }} > かんたん</button>
+          <button type="button" onClick={() => { init(num, true) }} className={styles.button} style={{ backgroundColor: (() => { if (isHard) { return "#e07798" } })() }}>むずかしい</button>
           <button type="button" onClick={() => reset()} className={styles.button}>リセット</button>
         </div>
 
