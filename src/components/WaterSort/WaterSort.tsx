@@ -18,6 +18,8 @@ export const WaterSort = () => {
   const [isHard, setIsHard] = useState(false);
   const [num, setNum] = useState(10);
   const [visiblity, setVisiblity] = useState(false);
+  const [isClear, setIsClear] = useState(false);
+
 
   const color = [
     "#00000000",
@@ -37,12 +39,20 @@ export const WaterSort = () => {
 
   const bottleClick = (i) => {
     if (first === -1) {
+      // 1度目の選択
       setFirst(i)
     } else if (first === i) {
+      // 同じものを選択したとき
       setFirst(-1)
     }
     else {
+      // 正常
       pour(first, i)
+
+      setIsClear(check());
+      if (isClear) {
+        // タイマーストップ
+      }
     }
   }
 
@@ -85,10 +95,22 @@ export const WaterSort = () => {
     setFirst(-1);
   }
 
+  const check = () => {
+    const length = bottle.filter((b) => b[0] === b[1] && b[0] === b[2] && b[0] === b[3]).length;
+    if (length === num) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
   const init = (n, isHardTemp) => {
 
+    // 難易度設定
     if (isHardTemp) { setIsHard(true) } else { setIsHard(false) }
 
+    // 盤面初期化
     const bottle = [];
 
     if (isHardTemp) {
@@ -124,11 +146,19 @@ export const WaterSort = () => {
     bottle.push([0, 0, 0, 0]);
     setBottle(bottle);
     setDefaultBottle(bottle);
+
+    setIsClear(false);
   }
 
-  const reset = () => {
+  const initStable = (n) => {
+
+  }
+
+  const resetBottle = () => {
     setBottle(defaultBottle);
   }
+
+  const seed = defaultBottle.map(e => e.reduce((str, cur) => str + cur.toString(), "")).reduce((str, cur) => str + cur.toString(), "");
 
   return (
     <div className={styles.watersort} >
@@ -171,13 +201,56 @@ export const WaterSort = () => {
             )
           })
         }
+        <li className={styles.wrapper}>
+          <ul
+            className={styles.bottle}
+            style={{
+              border: "2px dashed #888",
+            }}
+            onClick={() => { setBottle(bottle.concat([[0, 0, 0, 0]])) }}
+          >
+            {
+              [0, 1, 2, 3].map((i, j) => {
+                return (
+                  <li
+                    className={styles.water}
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      borderRadius: (() => { if (j === 3) { return "0 0 10px 10px" } })()
+                    }}
+                  >
+                    {(() => {
+                      if (i == 0) {
+                        return (
+                          <p style={{
+                            margin: 0,
+                            position: "relative",
+                            top: "-10px",
+                            left: "10px",
+                            fontSize: "15pt",
+                            fontWeight: "bolder",
+                            textShadow: "2px 0px 0px rgba(0, 0, 0, 1), -2px 0px 0px rgba(0, 0, 0, 1), 0px 2px 0px rgba(0, 0, 0, 1), 0px -2px 0px rgba(0, 0, 0, 1), 2px 2px 0px rgba(0, 0, 0, 1), -2px 2px 0px rgba(0, 0, 0, 1), 2px -2px 0px rgba(0, 0, 0, 1), -2px -2px 0px rgba(0, 0, 0, 1)",
+                            color: "white",
+                          }}>
+                            +
+                          </p>
+                        );
+                      }
+                    })()}
+                  </li>
+                )
+              })
+            }
+          </ul>
+        </li>
       </ul>
       <div className="ui">
         <input type="range" min={2} max={20} step={1} value={num} className={styles.range} onChange={(e) => { setNum(Number(e.target.value)); init(Number(e.target.value), isHard) }} />
         <div className={styles.button}>
           <button type="button" onClick={() => { init(num, false) }} className={styles.button} style={{ backgroundColor: (() => { if (!isHard) { return "#e07798" } })() }} >かんたん</button>
           <button type="button" onClick={() => { init(num, true) }} className={styles.button} style={{ backgroundColor: (() => { if (isHard) { return "#e07798" } })() }}>むずかしい</button>
-          <button type="button" onClick={() => reset()} className={styles.button}>リセット</button>
+          <button type="button" onClick={() => resetBottle()} className={styles.button}>リセット</button>
         </div>
         <label htmlFor="switch" className={styles.toggle}>
           <input type="checkbox" id="switch" className={styles.toggle} defaultChecked={false} onChange={(e) => { if (e.target.checked) { setVisiblity(true) } else { setVisiblity(false) } }} />
@@ -186,8 +259,6 @@ export const WaterSort = () => {
             <div className={styles.slider}></div>
           </div>
         </label>
-
-
       </div>
     </div >
   );
