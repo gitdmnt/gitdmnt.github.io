@@ -156,7 +156,7 @@ export const WaterSort = () => {
         }
       </ul>
       <div className="ui">
-        <input type="range" min={2} max={20} step={1} className={styles.range} onChange={(e) => { setNum(Number(e.target.value)); init(Number(e.target.value)) }} />
+        <input type="range" min={2} max={20} step={1} className={styles.range} onChange={(e) => { setNum(Number(e.target.value)); init_hard(Number(e.target.value)) }} />
         <div className={styles.button}>
           <button type="button" onClick={() => init(num)} className={styles.button}>かんたん</button>
           <button type="button" onClick={() => init_hard(num)} className={styles.button}>むずかしい</button>
