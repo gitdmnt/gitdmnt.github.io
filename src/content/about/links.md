@@ -8,7 +8,8 @@ description: "記事っす！ 2"
 
 ## 相互リンク
 
-- [シャーロットエースの部屋](https://charlotteace.github.io/ "Units_SI")
+- [シャーロットエースの部屋](https://charlotteace.github.io/ "国際単位系！")
+- [ふぁぼんのホームページ](https://www.fabon.info/ "ふぁぼん先生！")
 
 ## バナー
 
