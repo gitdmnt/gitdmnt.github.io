@@ -1,7 +1,8 @@
 ---
 import Common from "../layouts/Common.astro";
-import { Content as Profile } from "/src/content/profile.md";
+import { Content as Profile } from "/src/content/about/profile.md";
 import * as ProfilePic from "/src/content/illust/icon.png";
+import { Content as Links } from "/src/content/about/links.md";
 ---
 
 <Common
@@ -15,6 +16,9 @@ import * as ProfilePic from "/src/content/illust/icon.png";
         <div class="intro">著者近影(気が向いたら撮るぜ！)</div>
         <div class="profile">
             <Profile />
+        </div>
+        <div class="links">
+            <Links />
         </div>
     </main>
 </Common>
