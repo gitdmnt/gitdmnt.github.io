@@ -1,0 +1,31 @@
+---
+import { Tweet as T } from "react-twitter-widgets";
+
+interface props {
+    tweetId: string;
+    hydration: string;
+}
+
+const { tweetId, hydration } = Astro.props;
+---
+
+<div class="container">
+    {
+        (() => {
+            if (hydration === "load") {
+                return <T tweetId={tweetId} client:load />;
+            } else {
+                return <T tweetId={tweetId} client:idle />;
+            }
+        })()
+    }
+</div>
+
+<style>
+    .container {
+        min-height: 200px;
+        width: 100%;
+        background-color: #eee;
+        border-radius: 0.7rem;
+    }
+</style>

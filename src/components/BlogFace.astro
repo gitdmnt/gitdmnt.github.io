@@ -14,6 +14,8 @@ const img = (
   await Astro.glob("/src/content/resources/blogicon/*.{png,jpg,webp}")
 ).filter((p) => p.default.src.split("/").pop().split(".")[0] === file)[0]
   .default;
+
+const size = name.length < 5 ? "12pt" : "10pt";
 ---
 
 <div class="container">
@@ -27,7 +29,7 @@ const img = (
     <slot />
   </div>
 </div>
-<style define:vars={{ color }}>
+<style define:vars={{ color, size }}>
   .container {
     width: 100%;
     display: grid;
@@ -52,11 +54,13 @@ const img = (
   }
   .name {
     margin: 0;
-    margin-block-start: -18px;
+    margin-block-start: -10px;
     text-align: center;
-    white-space: nowrap;
+    white-space: wrap;
     color: var(--color);
     font-weight: bolder;
+    font-size: var(--size);
+    line-height: normal;
     text-shadow:
       2px 2px 0 #fff,
       -2px -2px 0 #fff,

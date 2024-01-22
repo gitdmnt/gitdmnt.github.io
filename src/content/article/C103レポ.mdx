@@ -2,12 +2,12 @@
 layout: /src/layouts/Article.astro
 title: C103レポ
 author: 春瀬
-date: 2024-01-03
+date: 2024-01-23
 description: コミックマーケットに行ってきたぜ！
-thumbnail: {img5}
+thumbnail: /public/thumbnail/宇田ドラゴン.jpg
 ---
 
-import { Tweet } from 'react-twitter-widgets';
+import Tweet from "/src/components/Tweet.astro";
 import BlogFace from "/src/components/BlogFace.astro";
 import { Image } from "astro:assets";
 
@@ -16,80 +16,109 @@ import img2 from "/src/content/resources/blogimg/C103レポ/宇田.jpg";
 import img3 from "/src/content/resources/blogimg/C103レポ/差し入れ.jpg";
 import img4 from "/src/content/resources/blogimg/C103レポ/文化祭.png";
 import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.jpg";
+import img6 from "/src/content/resources/blogimg/C103レポ/watersort.png";
+import img7 from "/src/content/resources/blogimg/C103レポ/描きかけの原稿.jpg";
+import img8 from "/src/content/resources/blogimg/C103レポ/ドラゴン.jpg";
+import img9 from "/src/content/resources/blogimg/C103レポ/陳謝新年.png";
 
-こんにちは。春瀬です。
+こんにちは、春瀬です。
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
-宇田です。
+  宇田です。
 </BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
-あけましておめでとうございます。
-辰年龍 イヤーオブザドラゴンドラゴンです。
+  あけましておめでとうございます。
+  辰年龍 イヤーオブザドラゴンドラゴンです。
+</BlogFace>
+
+<Image src={img9} alt="あけおめ　ごめんね" style="width:100%;height:auto;" />
+
+<BlogFace name="宇田" file="" color="#ce9ac2">
+更新遅れました。
+</BlogFace>
+
+<BlogFace name="ドラゴン" file="" color="#458dcc">
+大変申し訳ありませんでした。
 </BlogFace>
 
 2023年もさっさと終わり、もう新年ですね。
 
-新年と言えばコミックマーケットですが、みなさんはコミックマーケットを知っていますか？
+↑ これを書いたのは1月2日とかだったんですけど、[Water sort](/watersort)で遊んでいたら23日になってしまいました。
+
+<Image src={img6} alt="water sort 下手すぎ" style="width:100%;height:auto;" />
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
-有名な同人誌即売会ですね。
+  解けないんだけど～！！
 </BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
-2024年はコミックマーケットがアツい！！
+  計画性のなさが出てますね。
 </BlogFace>
 
+そう、計画性と言えばコミックマーケットですが、みなさんはコミックマーケットを知っていますか？
+
 <BlogFace name="宇田" file="" color="#ce9ac2">
-実は[もうオワコンらしい](https://note.com/loseheroine_wsd/n/n2b8cdb169664)です。
+  有名な同人誌即売会ですね。
 </BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
-2036年のC128, 129も楽しみにしてます。
-コミケ楽しみ龍 ウェイティンフォーコミックマーケットドラゴンです。
+  2024年はコミックマーケットがアツい！！
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
-お前は今から死ぬけどね。
+  実は[もうオワコンらしい](https://note.com/loseheroine_wsd/n/n2b8cdb169664)です。
+</BlogFace>
+
+<BlogFace name="ドラゴン" file="" color="#458dcc">
+  2036年のC128, 129も楽しみにしてます。
+  コミケ楽しみ龍 ウェイティンフォーコミックマーケットドラゴンです。
+</BlogFace>
+
+<BlogFace name="伝説のドラゴンスレイヤー宇田" file="宇田" color="#ce9ac2">
+  龍だね
+  殺します
 </BlogFace>
 
 以下のツイートの通り、2023年12月30日に開催されたコミックマーケット103(以下C103)に行ってきました。
 
-この記事はそのレポートです。
+というわけで、この記事はその参加レポートです。
 
-<Tweet tweetId="1740873134163841444" client:load/>
+<Tweet tweetId="1740873134163841444" hydration="load"/>
 
 <p style="width:100%; font-size:10pt; text-align:center;">入場の様子。</p>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
-萌えキャラだとコミケにも先行入場できるんですね。
+  萌えキャラ専用のゲートがあるんですか？
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
-萌えキャラはコミケに先立つからね。
+  この門をくぐるもの、一切の萌えを捨てよ。
 </BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
-建国の父と世襲した息子みたいな。
+  地獄 →
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
-美少女ですけども。
+  ← 現実
 </BlogFace>
 
-<Tweet tweetId="1742157724824355062" client:idle/>
+<BlogFace name="ドラゴン" file="" color="#458dcc">
+  ↑ おい(笑)。
+</BlogFace>
 
-<Tweet tweetId="1742158001954508820" client:idle/>
+<Tweet tweetId="1742157724824355062" hydration="idle"/>
+
+<Tweet tweetId="1742158001954508820" hydration="idle"/>
 
 ## 1. 申込
 
-再三申し上げているように、コミケに参加するためには1, 2に手続き、3, 4に準備ときて99番目くらいにようやく画力が必要です。
+日頃から再三申し上げているように、コミケに参加するためには1, 2に手続き、3, 4に準備ときて99番目くらいにようやく画力が必要です。
 
-<Tweet tweetId="1741115125283901687" client:idle/>
+<Tweet tweetId="1741115125283901687" hydration="idle"/>
 
-<Tweet tweetId="1741115178408915440" client:idle/>
-
-<Tweet tweetId="1741115746095448440" client:idle/>
+<Tweet tweetId="1741115178408915440" hydration="idle"/>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
 全部他人にやらせてます。
@@ -104,16 +133,24 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 </BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
-逆の自作発言、やめてくださいね。
+コミケレポ担当の宇田さんもがんばってくださいね。
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
-本当に別人だと思われていたらしいです。すみません。
+なんかさあ！　本当に別人だと思われていたらしいです笑　ごめんね～笑
+肉の筋だけを切り続けていた包丁の付喪神
+全然そんなつもりないんだけど、いつも勘違いされちゃうっていうか笑
+この子の意識が私に乗り替わる形で出産が成し遂げられた場合、今胎の中にいるこの双子の肉塊のことはどうしたらいいんだろうね？
+いや、お前は妹みたいなもんだから笑
+より高次元にある脳は大脳皮質の割合が高くなるから、脳にシワがいらなくなるらしいです。
+拡散希望！　と書いてある工場の煙突
+ここから出して～！
 </BlogFace>
 
-今回は
+今回のコミケには、ちょうど
 [C102レポ](https://haruse-humi.fanbox.cc/posts/6520921 "C102 なんかやった記録")
 に書いてあるように、C102が終わったあとの報酬で脳が麻痺しているときのノリで申し込みました。
+
 詳しくはそっちを見てください。
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
@@ -122,6 +159,10 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
 未来の自分に丸投げするよりはだいぶマシっすね。
+</BlogFace>
+
+<BlogFace name="未来の宇田" file="宇田" color="#ce9ac2">
+↑ 丸投げやめてね～
 </BlogFace>
 
 ## 2. 原稿
@@ -137,30 +178,26 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 </BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
-ずっと自分のために作りたがってますもんね。
+ずっと作りたがってますもんね。
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
-量産効果で安くしたい。
+自分のために作って、ついでに量産効果で安くしたい。
 </BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
 剣のキーホルダーとかどう？
 </BlogFace>
 
-<BlogFace name="宇田" file="" color="#ce9ac2">
-七草粥の八草目ってドラゴン肉らしいです。
+<BlogFace name="世界一の剣豪 宇田" file="宇田" color="#ce9ac2">
+あいにくこれ以下の刃物は持ち合わせていないのだ
 </BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
-新鮮なのでまだ動きます。
+見事
 </BlogFace>
 
-<BlogFace name="宇田" file="" color="#ce9ac2">
-軟体龍 イカドラゴンの踊り食い。
-</BlogFace>
-
-原稿について語ることは特にないので、修羅場中にお世話になったものを紹介します。
+出展にあたって原稿は必要ですが、コミケレポ3本目ともなると原稿について語ることは特にないので、修羅場中にお世話になったものを紹介します。
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
 1ヶ月家に篭ってただけですからね。
@@ -185,9 +222,11 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 ### 2.1 液タブ用手袋
 
 液晶タブレットの画面には、多くの場合ペーパーライクフィルムが貼られています。
-その上で手を滑らせるときに必須なのが、この液タブ用手袋です。
+その上で手を滑らせるときに必須なアイテムが、この液タブ用手袋です。
 
 <Image src={img1} alt="液タブの、手袋" style="width:100%;height:auto;"/>
+
+<p style="width:100%; font-size:10pt; text-align:center;">画像はイメージです。</p>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
 変な形ですね。
@@ -212,10 +251,27 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
-ニタァ
+闇の炎(萌え)にぎゅーされて汗かけ！
 </BlogFace>
 
-液タブ用手袋は滑らかな素材で作られているため、これを装着するとより滑らかに線を引くことができるようになります。
+<BlogFace name="闇の炎" file="" color="#440044">
+そのプランだと追加で6000円いただきますけど……
+</BlogFace>
+
+<BlogFace name="宇田" file="" color="#ce9ac2">
+えーっ！？　お金取るんですか？
+</BlogFace>
+
+<BlogFace name="ドラゴン" file="" color="#458dcc">
+こうしてトラブルが発生してしまいました。
+Twitterのみなさんは、どちらが悪いと思いますか？
+</BlogFace>
+
+<BlogFace name="闇の炎" file="" color="#440044">
+みんなで一緒に考えてみましょう。
+</BlogFace>
+
+液タブ用手袋は滑らかな素材で作られているため、装着するとより滑らかに線を引くことができるようになります。
 
 一度慣れてしまうと、これなしでは二度と絵を描ける気がしません。
 
@@ -229,13 +285,18 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 
 ### 2.2 sm37402120
 
-作画をしている間、暇な脳の処理能力を別の処理に割くことは、集中力を維持するという観点からは重要です。
+日頃から絵を描いている人はご存知でしょうが、手癖で作画をしている間、脳は割と暇です。
+上達するためにはそのリソースも絵に割り当てるべきですが、とにかく作画のスピードが重要な状況においてはその限りではありません。
+
+そのような状況において、暇な脳の処理能力を別の仕事に割くことは、集中力を維持するという観点からは重要です。
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
 いわゆる作業用BGMですね。
 </BlogFace>
 
-今回は[ヨッシーアイランドのアスレチックを「おぎやはぎ」で歌ってみたら楽しくなってきた](https://www.nicovideo.jp/watch/sm37402120)をそれに割り当てていました。
+今回は
+[ヨッシーアイランドのアスレチックを「おぎやはぎ」で歌ってみたら楽しくなってきた](https://www.nicovideo.jp/watch/sm37402120)
+をそれに割り当てていました。
 
 適度な長さとランダム性、どこかで聞いたことのあるような普通の声が脳の形にピッタリはまったので、作業が大変捗りました。
 1分の動画を毎日14時間×1週間くらい聞いていたので、都合6000回弱再生した計算になります。
@@ -245,17 +306,25 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
-なんかお経みたいな人の声が聞こえていることしかわからなくなったので、聞くのをやめました。
+お経みたいな声が聞こえていることしかわからなくなったので、聞くのをやめました。
 </BlogFace>
 
 ### 2.3 オモコロチャンネル
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
-お前らちゃんと見てから冷笑してるか？
+お前らちゃんと見てるか？
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
 おれは原稿中にほとんど全部の動画見終わったけど。
+</BlogFace>
+
+<BlogFace name="宇田" file="" color="#ce9ac2">
+お前は？
+</BlogFace>
+
+<BlogFace name="宇田" file="" color="#ce9ac2">
+休憩中はトイレでオモコロの記事読んでたけど。
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
@@ -275,6 +344,14 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
+sm37402120と違って声のトーンに変化があるので、正気が保てました。
+</BlogFace>
+
+<BlogFace name="ドラゴン" file="" color="#458dcc">
+PDCA回してるね。
+</BlogFace>
+
+<BlogFace name="宇田" file="" color="#ce9ac2">
 小泉さんぽ内閣、おもしろかったです。
 </BlogFace>
 
@@ -286,16 +363,21 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 次の修羅場はいつになることか、という感じですね。
 </BlogFace>
 
+<BlogFace name="宇田2" file="宇田" color="#ce9ac2">
+↑ 今って試験期間中なんですけど、見てます。
+</BlogFace>
+
 ### 2.4 @Units_SI
 
-漫画原稿というものはただ描けばそれで終わりというものではありません。
-ページ順が間違っていないか、あるいは消し忘れの不要な線が残っていないか、入稿テンプレートに沿った原稿サイズになっているか、ということを全てチェックする必要があります。
+漫画原稿というものは、ただ描けばそれで終わりというものではありません。
+ページ順が間違っていないか、消し忘れの不要な線が残っていないか、あるいは入稿テンプレートに沿った原稿サイズになっているか、という入稿要件を、全てチェックする必要があります。
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
 全部春瀬さんがやらかしたことです。
 </BlogFace>
 
-[国際単位系(@Units_SI)](https://twitter.com/Units_SI)は、そのような誤りを発見するためのデータチェックを請け負ってくれました。
+[国際単位系(@Units_SI)](https://twitter.com/Units_SI)
+は、そのような誤りを発見するためのデータチェックを請け負ってくれました。
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
 毎度お世話になっております。
@@ -310,7 +392,7 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 </BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
-データが7往復くらいしてましたからね。かわいそうに。
+完成データが7往復くらいしてましたからね。かわいそうに。
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
@@ -325,11 +407,11 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 不注意人 アホアホヒューマン
 </BlogFace>
 
-<Tweet tweetId="1742496168175919294" client:idle/>
+<Tweet tweetId="1742496168175919294" hydration="idle"/>
 
-<Tweet tweetId="1742503473449693506" client:idle/>
+<Tweet tweetId="1742503473449693506" hydration="idle"/>
 
-<Tweet tweetId="1742504423761563752" client:idle/>
+<Tweet tweetId="1742504423761563752" hydration="idle"/>
 
 <div style="width:100%; height:18rem; background-color:black; display:grid; grid-template-columns:repeat(6, 1fr); grid-template-rows:repeat(1, 1fr);">
   <Image src={img2} alt="宇田の顔" style="width:70px; height:70px; object-fit: cover;
@@ -353,35 +435,35 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 
 <div>
 
-  <Tweet tweetId="1740577486856212854" client:idle/>
+  <Tweet tweetId="1740577486856212854" hydration="idle"/>
 
-  <Tweet tweetId="1740579169334100430" client:idle/>
+  <Tweet tweetId="1740579169334100430" hydration="idle"/>
 
-  <Tweet tweetId="1740596460130025520" client:idle/>
+  <Tweet tweetId="1740596460130025520" hydration="idle"/>
 
-  <Tweet tweetId="1740600591913820366" client:idle/>
+  <Tweet tweetId="1740600591913820366" hydration="idle"/>
 
-  <Tweet tweetId="1740596397429440711" client:idle/>
+  <Tweet tweetId="1740596397429440711" hydration="idle"/>
 
-  <Tweet tweetId="1740600704165912811" client:idle/>
+  <Tweet tweetId="1740600704165912811" hydration="idle"/>
 
-  <Tweet tweetId="1740603358984220698" client:idle/>
+  <Tweet tweetId="1740603358984220698" hydration="idle"/>
 
-  <Tweet tweetId="1740603604472643902" client:idle/>
+  <Tweet tweetId="1740603604472643902" hydration="idle"/>
 
-  <Tweet tweetId="1740605490252722437" client:idle/>
+  <Tweet tweetId="1740605490252722437" hydration="idle"/>
 
-  <Tweet tweetId="1740606625793339694" client:idle/>
+  <Tweet tweetId="1740606625793339694" hydration="idle"/>
 
-  <Tweet tweetId="1740606988982391223" client:idle/>
+  <Tweet tweetId="1740606988982391223" hydration="idle"/>
 
-  <Tweet tweetId="1740626217899008084" client:idle/>
+  <Tweet tweetId="1740626217899008084" hydration="idle"/>
 
-  <Tweet tweetId="1740628060842643793" client:idle/>
+  <Tweet tweetId="1740628060842643793" hydration="idle"/>
 
-  <Tweet tweetId="1740635478809100649" client:idle/>
+  <Tweet tweetId="1740635478809100649" hydration="idle"/>
 
-  <Tweet tweetId="1740635633176150468" client:idle/>
+  <Tweet tweetId="1740635633176150468" hydration="idle"/>
 
 </div>
 
@@ -393,48 +475,58 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 生きるのが下手だねえ。
 </BlogFace>
 
-いつも通りに壮行会を挙行しました。
+前日は特に問題なく、いつも通りに壮行会を挙行しました。
 
-<Tweet tweetId="1740724968802115717" client:idle/>
+<Tweet tweetId="1740724968802115717" hydration="idle"/>
 
-<Tweet tweetId="1740724974833529283" client:idle/>
+<Tweet tweetId="1740724974833529283" hydration="idle"/>
+
+<BlogFace name="宇田" file="" color="#ce9ac2">
+クソボケ写真ですみません。
+カメラが壊れておりまして……
+</BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
 いい加減新しいスマホ買おうね。
 </BlogFace>
 
+<BlogFace name="世界一の剣豪 宇田" file="宇田" color="#ce9ac2">
+あいにくこれ以上の金銭は持ち合わせていないのだ
+</BlogFace>
+
+<BlogFace name="ドラゴン" file="" color="#458dcc">
+ジャンプしてみな。
+</BlogFace>
+
+ゴトッ
+
+<BlogFace name="ドラゴン" file="" color="#458dcc">
+これは……？
+</BlogFace>
+
+<Image src={img7} alt="描きかけの無配ペーパー" style="width:100%;height:auto;" />
+
+<p style="width:100%; font-size:10pt; text-align:center;">これは……？</p>
+
 <BlogFace name="宇田" file="" color="#ce9ac2">
-しかし、この刀は武士の魂にて候へば……
+描きかけの原稿です。
 </BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
-なまくらがよ。
+え？
 </BlogFace>
 
-<BlogFace name="ドラゴン" file="" color="#458dcc">
-でも原稿が終わっていると気持ちが楽ですね。
-後は寝るだけでしょう？
-</BlogFace>
+<Tweet tweetId="1740725278526361813" hydration="idle"/>
 
-<BlogFace name="宇田" file="" color="#ce9ac2">
-まあそんな感じっす。
-</BlogFace>
+<Tweet tweetId="1740768960369553572" hydration="idle"/>
 
-<Tweet tweetId="1740725278526361813" client:idle/>
+<Tweet tweetId="1740790149464887679" hydration="idle"/>
 
-<Tweet tweetId="1740768960369553572" client:idle/>
+<Tweet tweetId="1740792364523000168" hydration="idle"/>
 
-<Tweet tweetId="1740790149464887679" client:idle/>
+<Tweet tweetId="1740780318578311665" hydration="idle"/>
 
-<Tweet tweetId="1740792364523000168" client:idle/>
-
-<Tweet tweetId="1740780318578311665" client:idle/>
-
-<Tweet tweetId="1740795146818793952" client:idle/>
-
-<BlogFace name="ドラゴン" file="" color="#458dcc">
-なまくらがよ。
-</BlogFace>
+<Tweet tweetId="1740795146818793952" hydration="idle"/>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
 結局4時前くらいまで起きてました。
@@ -449,7 +541,7 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 </BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
-無配彼女という、同人作家モノNTR同人誌。
+無配彼女という、同人作家モノNTR同人誌
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
@@ -464,9 +556,9 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 
 ### 4.1 朝
 
-<Tweet tweetId="1740833472166687128" client:idle/>
+<Tweet tweetId="1740833472166687128" hydration="idle"/>
 
-<Tweet tweetId="1740835035958432228" client:idle/>
+<Tweet tweetId="1740835035958432228" hydration="idle"/>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
 この後はいつものメイクですよね。
@@ -481,15 +573,15 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 オタク特有の話を盛るやつやめてくださいね。
 </BlogFace>
 
-<Tweet tweetId="1740838368723009816" client:idle/>
+<Tweet tweetId="1740838368723009816" hydration="idle"/>
 
-<Tweet tweetId="1740841449934241886" client:idle/>
+<Tweet tweetId="1740841449934241886" hydration="idle"/>
 
-<Tweet tweetId="1740844422777233642" client:idle/>
+<Tweet tweetId="1740844422777233642" hydration="idle"/>
 
-<Tweet tweetId="1740849923053285544" client:idle/>
+<Tweet tweetId="1740849923053285544" hydration="idle"/>
 
-<Tweet tweetId="1740856851053572414" client:idle/>
+<Tweet tweetId="1740856851053572414" hydration="idle"/>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
 本当なことある？
@@ -500,18 +592,18 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 </BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
-オタク特有の話を盛るやつやめてくださいね。
+話盛の宇田龍
 </BlogFace>
 
 ### 4.2 臨場
 
-<Tweet tweetId="1740856304502255882" client:idle/>
+<Tweet tweetId="1740856304502255882" hydration="idle"/>
 
-<Tweet tweetId="1740856943609348368" client:idle/>
+<Tweet tweetId="1740856943609348368" hydration="idle"/>
 
 全く関係ないオタク2人と一緒にベースメイクを諦めたのち、荷物をまとめて急いで出発します。
 
-<Tweet tweetId="1740857517302046721" client:idle/>
+<Tweet tweetId="1740857517302046721" hydration="idle"/>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
 オワコンのカラコン、オワコン。
@@ -521,7 +613,7 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 既出です。
 </BlogFace>
 
-<Tweet tweetId="1740837068631318632" client:idle/>
+<Tweet tweetId="1740837068631318632" hydration="idle"/>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
 世界は、広い。
@@ -531,7 +623,7 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 電車はクソ狭かったです。
 </BlogFace>
 
-<Tweet tweetId="1740866703310139515" client:idle/>
+<Tweet tweetId="1740866703310139515" hydration="idle"/>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
 知りませんけど。
@@ -541,30 +633,35 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 何はともあれ、入場です。
 </BlogFace>
 
-<Tweet tweetId="1740873134163841444" client:idle/>
+<Tweet tweetId="1740873134163841444" hydration="idle"/>
 
 ### 4.3 開場
 
-<Tweet tweetId="1740909405384912956" client:idle/>
+<Tweet tweetId="1740909405384912956" hydration="idle"/>
 
 コミックマーケット参戦3回目ともなれば慣れたもので、特に問題なく設営が終わりました。
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
-相変わらず周りで一番最後まで設営してたらしいですね。
+今回も周りで一番最後まで設営してたらしいですね。
 </BlogFace>
 
+コミケでは、開場前に余裕をもって設営を行えるように、1時間半ほどの準備時間が設営や挨拶の時間として割り当てられています。
+1時間半もあれば、天然ウナギ専門店のような軽量サークルは余裕を持って設営を終えられるはずです。
+
+しかし、天然ウナギ専門店には、サークル主も売り子もコスプレをするという慣習があります。
+そのため、本来は設営に費やすべき時間は、コスプレ準備に割り当てられてしまいます。
+このような理由で、毎回ギリギリの時間まで設営が続いています。
+
 <BlogFace name="宇田" file="" color="#ce9ac2">
-2人ともコスプレしてますから。
 早くサークルチケット3枚に戻してほしいです。
-</BlogFace>
-
-<BlogFace name="宇田" file="" color="#ce9ac2">
-まあそうなったら3人でコスプレするんですけど。
+まあ、そうなったら3人でコスプレするんですけど。
 </BlogFace>
 
 <BlogFace name="ドラゴン？" file="ドラゴン" color="#458dcc">
 キッショ。なんで？
 </BlogFace>
+
+この慣習が生まれた理由は不明ですが、コスプレの負担は正直なところ洒落になっていないので、早く加齢によってコスプレができない年齢になりたいです。
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
 偽夏油もまあコスプレっちゃコスプレになるのかな？
@@ -575,7 +672,7 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
-萌えキャラは……死なない。
+でも、萌えキャラは……死なない。
 </BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
@@ -600,19 +697,19 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 <p style="font-size: 18pt">暇ですわ〜〜〜〜〜！！！！！</p>
 </BlogFace>
 
-<Tweet tweetId="1740928200656785601" client:idle/>
+<Tweet tweetId="1740928200656785601" hydration="idle"/>
 
-<Tweet tweetId="1740933772839891406" client:idle/>
+<Tweet tweetId="1740933772839891406" hydration="idle"/>
 
-<Tweet tweetId="1740934005254701119" client:idle/>
+<Tweet tweetId="1740934005254701119" hydration="idle"/>
 
-<Tweet tweetId="1740939465915584912" client:idle/>
+<Tweet tweetId="1740939465915584912" hydration="idle"/>
 
-<Tweet tweetId="1740941943071457348" client:idle/>
+<Tweet tweetId="1740941943071457348" hydration="idle"/>
 
-<Tweet tweetId="1740942546661179659" client:idle/>
+<Tweet tweetId="1740942546661179659" hydration="idle"/>
 
-<Tweet tweetId="1740943535137051023" client:idle/>
+<Tweet tweetId="1740943535137051023" hydration="idle"/>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
 みんな来てくださってるんだから、ぬい活はやめなさい。
@@ -631,11 +728,12 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 </BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
-あなたの存在の痕跡だけでもさっさと残してください。
+あなたの存在の痕跡ももっと残してくださいね。
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
-来てくださったみなさんもこんなに痕跡を残してってくれたことですしね。
+がんばって作っていきますよ！
+来てくださったみなさんもこんなに痕跡を残してってくれたことですしね！
 </BlogFace>
 
 <Image src={img3} alt="差し入れ" style="width:100%;height:auto;"/>
@@ -656,9 +754,13 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 一生感謝謹行龍 あざざドラゴン
 </BlogFace>
 
-差し入れ本当にありがとうございました。生の糧になっております。
+差し入れ本当にありがとうございました。
 
-<Tweet tweetId="1740964354038898852" client:idle/>
+本来であれば一件一件取り上げてお礼を申し上げたいところですが、紙面の都合上まとめさせていただきます。
+
+本当の意味で、生の糧になっております。
+
+<Tweet tweetId="1740964354038898852" hydration="idle"/>
 
 ### 4.5 訪問者の話でもするか
 
@@ -675,13 +777,13 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 
 #### 4.5.1 ひつじ先生
 
-<Tweet tweetId="1740958945836253282" client:idle/>
+<Tweet tweetId="1740958945836253282" hydration="idle"/>
 
 2021年ごろからTwitterで延々と空リプを飛ばし合い続けていた変な関係の人こと[ひつじ](https://twitter.com/myn_Mei)先生と、ようやく会うことができました。
 
-<Tweet tweetId="1740959679327653954" client:idle/>
+<Tweet tweetId="1740959679327653954" hydration="idle"/>
 
-<Tweet tweetId="1740959995750199638" client:idle/>
+<Tweet tweetId="1740959995750199638" hydration="idle"/>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
 もっと家から出てください。
@@ -708,14 +810,15 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
 おれが名前を覚えているくらいですからね。
+大好きですよ。
 </BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
-じゃあオモコロのライターと同じくらいってことですね。
+ネット論客と同じくらいってことですか？
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
-欠史八代とかの可能性もまだあるけどね。
+唯一神とかの可能性もまだあるけどね。
 </BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
@@ -727,7 +830,7 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 </BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
-量子もつれもノーベル賞取ったことですしね。
+ベルの不等式の破れもノーベル賞取ったことですしね。
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
@@ -738,15 +841,15 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 詳しくはご本人の記事で。
 </BlogFace>
 
-<Tweet tweetId="1741112622639198280" client:idle/>
+<Tweet tweetId="1741112622639198280" hydration="idle"/>
 
 #### 4.5.3 家族
 
-<Tweet tweetId="1741396415518236741" client:idle/>
+<Tweet tweetId="1741396415518236741" hydration="idle"/>
 
-<Tweet tweetId="1741396552768528713" client:idle/>
+<Tweet tweetId="1741396552768528713" hydration="idle"/>
 
-<Tweet tweetId="1741396837670723907" client:idle/>
+<Tweet tweetId="1741396837670723907" hydration="idle"/>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
 なんなんすかね。
@@ -757,7 +860,7 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
-同人バレとかいうレベルではない。
+同人バレとかいうレベルじゃない！
 アカウントから何から何まで素っ裸です。
 </BlogFace>
 
@@ -772,7 +875,7 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 #### 4.5.4 高校同期
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
-来たんですよ。2人で。
+来るんですよね。2人で。
 </BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
@@ -788,7 +891,7 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
-それで結局持っていき忘れたみたいです。
+飲み会には結局持っていき忘れたみたいです。
 </BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
@@ -803,7 +906,7 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 
 数々の訪問者をちぎっては投げちぎっては投げとしていた13時半すぎ、持ってきた本が全てなくなってしまいました。
 
-<Tweet tweetId="1740956802467188789" client:idle/>
+<Tweet tweetId="1740956802467188789" hydration="idle"/>
 
 あまりにもあっさり完売してしまい、呆気に取られて国際単位系と顔を見合わせました。
 
@@ -811,7 +914,7 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 島中だし少なめだろ、と思っていたら、想定の2時間前くらいに完売しちゃったね。
 </BlogFace>
 
-<Tweet tweetId="1740959847712244197" client:idle/>
+<Tweet tweetId="1740959847712244197" hydration="idle"/>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
 見るに堪えないボーッとしたツイートですね。
@@ -823,11 +926,11 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 
 その後はブースに残って無配を配り続けたり、更衣室待機列の意味不明な長さの列に怒ったりしていました。
 
-<Tweet tweetId="1740994206112653483" client:idle/>
+<Tweet tweetId="1740994206112653483" hydration="idle"/>
 
-<Tweet tweetId="1740994246939942991" client:idle/>
+<Tweet tweetId="1740994246939942991" hydration="idle"/>
 
-<Tweet tweetId="1740994565040226436" client:idle/>
+<Tweet tweetId="1740994565040226436" hydration="idle"/>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
 特記事項なしという感じですね。
@@ -837,9 +940,9 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 普通に色んな人に会ったり国際単位系に迷惑をかけたりしたんですけど、まあいつものことなので。
 </BlogFace>
 
-<Tweet tweetId="1742529326497808530" client:idle/>
+<Tweet tweetId="1742529326497808530" hydration="idle"/>
 
-<Tweet tweetId="1742529586557317417" client:idle/>
+<Tweet tweetId="1742529586557317417" hydration="idle"/>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
 向こうにとっては違うみたいですけど。
@@ -851,11 +954,11 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 
 ### 4.7 撤収
 
-<Tweet tweetId="1741014210509975654" client:idle/>
+<Tweet tweetId="1741014210509975654" hydration="idle"/>
 
-<Tweet tweetId="1741067251405746270" client:idle/>
+<Tweet tweetId="1741067251405746270" hydration="idle"/>
 
-<Tweet tweetId="1741100506410549363" client:idle/>
+<Tweet tweetId="1741100506410549363" hydration="idle"/>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
 アホ疲れでクソ眠いバカ混みの中食べたチュロスのなんとおいしかったことか。
@@ -876,7 +979,7 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
-向こうが会話の中で擦ってきたからね。
+国際単位系が会話の中で擦ってきたからね。
 </BlogFace>
 
 撤収後は合流した逆たまごかけごはんの2人とサイゼでミニ打ち上げをしましたが、全員死ぬほど疲れていたので写真もツイートもありませんでした。
@@ -891,22 +994,22 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
-やめてくださいね。
+手抜きバラすのやめてね～。
 </BlogFace>
 
 ### 4.8 帰宅
 
-<Tweet tweetId="1741083187852587454" client:idle/>
+<Tweet tweetId="1741083187852587454" hydration="idle"/>
 
 解散後に待っているのは、毎回恒例、オタクの死体が詰まったキャリーバッグを引きずりながらの徒歩帰宅です。
 
 どうしてコミケは一番寒い時期と一番暑い時期にしかやらないのか、と文句を垂れながら、最寄り駅から家まで1時間かけて帰ります。
 
-<Tweet tweetId="1741080906725736691" client:idle/>
+<Tweet tweetId="1741080906725736691" hydration="idle"/>
 
-<Tweet tweetId="1741083226289164694" client:idle/>
+<Tweet tweetId="1741083226289164694" hydration="idle"/>
 
-<Tweet tweetId="1741086335040172360" client:idle/>
+<Tweet tweetId="1741086335040172360" hydration="idle"/>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
 半期で一番しょうもないツイートしか生まれないシーズンですね。
@@ -916,32 +1019,32 @@ import img5 from "/src/content/resources/blogimg/C103レポ/宇田ドラゴン.j
 半期で一番疲れてるからね。
 </BlogFace>
 
-<Tweet tweetId="1741085572146643401" client:idle/>
+<Tweet tweetId="1741085572146643401" hydration="idle"/>
 
-<Tweet tweetId="1741087173137559908" client:idle/>
+<Tweet tweetId="1741087173137559908" hydration="idle"/>
 
-<Tweet tweetId="1741087428847563234" client:idle/>
+<Tweet tweetId="1741087428847563234" hydration="idle"/>
 
-<Tweet tweetId="1741088980568006715" client:idle/>
+<Tweet tweetId="1741088980568006715" hydration="idle"/>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
 でも今回はまともな方でしたよ。
 途中からスペースやったから。
 </BlogFace>
 
-<Tweet tweetId="1741090508204810354" client:idle/>
+<Tweet tweetId="1741090508204810354" hydration="idle"/>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
 そっちはそっちで散々言われてますけど。
 </BlogFace>
 
-<Tweet tweetId="1741091304308891782" client:idle/>
+<Tweet tweetId="1741091304308891782" hydration="idle"/>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
 褒められてもいるんですよ。
 </BlogFace>
 
-<Tweet tweetId="1741092511542858207" client:idle/>
+<Tweet tweetId="1741092511542858207" hydration="idle"/>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
 賛否両論が一番面白いんですから。
@@ -955,7 +1058,7 @@ Steamでクソゲー漁ってる人が全く同じこと言ってました。
 そいつのことは信用しても大丈夫です。
 </BlogFace>
 
-<Tweet tweetId="1741095274729345124" client:idle/>
+<Tweet tweetId="1741095274729345124" hydration="idle"/>
 
 おつかれさまでした。
 
@@ -976,11 +1079,11 @@ C104は多分忙しすぎるので行きません。
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
-創作活動のマグロですからね。
+作業のマグロですからね。
 </BlogFace>
 
 <BlogFace name="ドラゴン" file="" color="#458dcc">
-もっと生き汚いでしょう。鯉とか。
+もっと生き汚いでしょ。ザリガニとか、鯉とか。
 </BlogFace>
 
 <BlogFace name="宇田" file="" color="#ce9ac2">
@@ -999,9 +1102,24 @@ C104は多分忙しすぎるので行きません。
 萌龍(ほうりゅう)目指して、今年も1年がんばりましょう。
 </BlogFace>
 
+
+<div style="width:100%; height:18rem; background-color:black; display:grid; grid-template-columns:repeat(6, 1fr); grid-template-rows:repeat(1, 1fr);">
+  <Image src={img8} alt="ドラゴンの顔" style="width:70px; height:70px; object-fit: cover;
+    border-radius: 35px; margin:auto; grid-column: 5/6; grid-row: 1/1; align-self:end;" />
+</div>
+
 <BlogFace name="ドラゴン" file="" color="#458dcc">
 <p style="font-size: 18pt">このままじゃ、萌え萌えドラゴンブログになっちゃうよ〜〜！！！</p>
 </BlogFace>
+
+<div style="width:100%; height:18rem; background-color:black; ">
+</div>
+
+<BlogFace name="ドラゴン" file="黒" color="#458dcc">
+ティウン
+</BlogFace>
+
+おしまい
 
 <br/>
 <br/>
@@ -1063,8 +1181,4 @@ C104は多分忙しすぎるので行きません。
 <BlogFace name="宇田龍" file="宇田ドラゴン" color="#ce9ac2">
 ありがとう、Bing Image Creater.
 </BlogFace>
-
-
-
-
 
