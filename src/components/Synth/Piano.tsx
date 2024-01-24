@@ -19,7 +19,8 @@ export const KeyPiano = () => {
 
   const isKeyPressed = useRef([false, false, false, false, false, false, false, false, false, false, false, false]);
   const isAltPressed = useRef(false);
-  const scaleVar = useRef(0);
+  const [scale, setScale] = useState(0);
+  const scaleRef = useRef(scale);
   const velocity = useRef(100);
 
 
@@ -32,7 +33,7 @@ export const KeyPiano = () => {
       }
 
       console.log("down", e.code);
-      const freqBasis = 440 * Math.pow(2, (-9 + scaleVar.current) / 12)
+      const freqBasis = 440 * Math.pow(2, (-9 + scaleRef.current) / 12)
       const freq = freqBasis * Math.pow(2, i / 12) * (isAltPressed.current ? 2 : 1);
       // console.log(freqVar.current, freq);
       isKeyPressed.current[i] = true;
@@ -78,17 +79,17 @@ export const KeyPiano = () => {
 
   return (
     <div className={style.piano} >
-      ピアノ工事中
-      Gキーから右の8鍵と上の5鍵で音が鳴る。
-      左Shiftを押してる間はオクターブ上がる。
-      バーをいじるとドが移動する。
-      それだけ。
-      <br />
-      <p>スケール</p>
-      <input type="range" defaultValue={0} min={0} max={12} step={1} onChange={(e) => scaleVar.current = Number(e.target.value)} />
+      <h1>ピアノ工事中</h1>
+      <ul>
+        <li>Gキーから右の8鍵と上の5鍵で音が鳴る。</li>
+        <li>左Shiftを押してる間はオクターブ上がる。</li>
+        <li>バーをいじるとドが移動する。</li>
+        <li>それだけ。</li>
+      </ul>
+      <p>スケール: {scaleArray[scale]}</p>
+      <input type="range" defaultValue={0} min={0} max={12} step={1} onChange={(e) => { setScale(Number(e.target.value)); scaleRef.current = Number(e.target.value); }} />
       <p>音量</p>
       <input type="range" defaultValue={100} min={0} max={100} step={1} onChange={(e) => velocity.current = Number(e.target.value)} />
-
     </div >
 
   )
