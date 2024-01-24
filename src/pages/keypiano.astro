@@ -1,0 +1,14 @@
+---
+import Top from "../layouts/Top.astro";
+import { KeyPiano } from "../components/Synth/Piano";
+---
+
+<Top
+  url={Astro.url.href}
+  type="article"
+  title="ピアノ！"
+  description="音量注意！"
+  image=""
+>
+  <KeyPiano client:only="React" />
+</Top>

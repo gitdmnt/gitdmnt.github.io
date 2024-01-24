@@ -1,0 +1,14 @@
+---
+import Top from "../layouts/Top.astro";
+import { NodeSynth } from "../components/Synth/Synth";
+---
+
+<Top
+  url={Astro.url.href}
+  type="article"
+  title="シンセ！"
+  description="音量注意！"
+  image=""
+>
+  <NodeSynth client:only="React" />
+</Top>

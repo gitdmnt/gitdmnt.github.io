@@ -1,0 +1,22 @@
+.synth {
+  height: 100dvh;
+  background-color: #ddd;
+}
+
+.node {
+  border: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 100rem;
+  background-color: #fff;
+}
+
+.canvas {
+  height: 100dvh;
+  width: 80%;
+}
+
+.piano {
+  padding: 2rem;
+  background-color: #eee;
+}
