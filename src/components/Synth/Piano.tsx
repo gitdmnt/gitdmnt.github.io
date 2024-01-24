@@ -3,9 +3,6 @@ import style from "./Synth.module.css"
 import { PianoHandler } from "./SynthHandler";
 
 /*
-キーバインドを下側に(自然だし、拡張可能性が高い)
-左手に押すだけでコードが鳴るやつ
-SynthHandlerのクラスを作り、そこでチャンネルを管理する
 */
 
 
