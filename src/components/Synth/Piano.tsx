@@ -2,6 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import style from "./Synth.module.css"
 import { play, stop } from "./SynthHandler";
 
+/*
+左手に押すだけでコードが鳴るやつ
+SynthHandlerのクラスを作り、そこでチャンネルを管理する
+*/
+
+
 const scaleArray = ["C", "C# Db", "D", "D# Eb", "E", "F", "F# Gb", "G", "G# Ab", "A", "A# Bb", "B", "C"]
 const keyNumRightHandArray = ["KeyG", "KeyY", "KeyH", "KeyU", "KeyJ", "KeyK", "KeyO", "KeyL", "KeyP", "Semicolon", "BracketLeft", "Quote", "Backslash"];
 
