@@ -1,65 +1,6 @@
 import React, { useState } from "react";
 import styles from "./WaterSort.module.css";
 
-const color = [
-  "#00000000",
-  "#ffe600", "#0db8d9", "#a2ca0e", "#c84283", "#2660ac",
-  "#ea5419", "#008442", "#f08a37", "#f8b800", "#de6c31",
-  "#00a0e8", "#153692", "#ea6088", "#aecfed", "#efcf2e",
-  "#34b496", "#3A3839", "#c4ca00", "#e40067", "#69c4d0",
-];
-
-const fontColor = [
-  "#1d1d1d",
-  "#1d1d1d", "#1d1d1d", "#1d1d1d", "#fff", "#fff",
-  "#fff", "#fff", "#1d1d1d", "#1d1d1d", "#fff",
-  "#fff", "#fff", "#fff", "#1d1d1d", "#1d1d1d",
-  "#fff", "#fff", "#1d1d1d", "#fff", "#1d1d1d",
-]
-
-// 1つだけ移す
-const pourOne = (server: number[], client: number[]) => {
-  const serverIsEmpty = server[server.length - 1] === 0;
-  const clientIsFull = client[0] !== 0;
-  if (serverIsEmpty || clientIsFull) { return; }
-
-  const serverFirstNonZeroIndex = server.findIndex(e => e !== 0);
-  const clientLastZeroIndex = client.findIndex(e => e !== 0) - 1;
-
-  const element = server[serverFirstNonZeroIndex];
-  server[serverFirstNonZeroIndex] = 0;
-  client[clientLastZeroIndex] = element;
-}
-
-// n回だけ移すpourOneを返す
-const pourN = (n: number) => {
-  return (s: number[], c: number[]) => { for (let i = 0; i < n; i++) { pourOne(s, c); } }
-}
-
-// 先頭の色を返す
-const top = (bottle: number[]) => {
-  const isEmpty = bottle.filter(e => e !== 0).length === 0 ? true : false;
-  if (isEmpty) {
-    return 0;
-  }
-  else {
-    return bottle.find(e => e !== 0);
-  }
-}
-
-// 先頭の色の量を返す
-const topLen = (bottle: number[]) => {
-  const isEmpty = bottle.filter(e => e !== 0).length === 0 ? true : false;
-  if (isEmpty) {
-    return 0;
-  } else {
-    const firstIndex = bottle.findIndex(e => e !== 0);
-    const color = bottle[firstIndex];
-    const lastIndex = bottle.findIndex(e => e !== 0 && e !== color);
-    return lastIndex - firstIndex + 1;
-  }
-}
-
 export const WaterSort = () => {
   const [bottle, setBottle] = useState([
     [1, 1, 1, 1],
@@ -80,6 +21,21 @@ export const WaterSort = () => {
   const [isClear, setIsClear] = useState(false);
 
 
+  const color = [
+    "#00000000",
+    "#ffe600", "#0db8d9", "#a2ca0e", "#c84283", "#2660ac",
+    "#ea5419", "#008442", "#f08a37", "#f8b800", "#de6c31",
+    "#00a0e8", "#153692", "#ea6088", "#aecfed", "#efcf2e",
+    "#34b496", "#3A3839", "#c4ca00", "#e40067", "#69c4d0",
+  ];
+
+  const fontColor = [
+    "#1d1d1d",
+    "#1d1d1d", "#1d1d1d", "#1d1d1d", "#fff", "#fff",
+    "#fff", "#fff", "#1d1d1d", "#1d1d1d", "#fff",
+    "#fff", "#fff", "#fff", "#1d1d1d", "#1d1d1d",
+    "#fff", "#fff", "#1d1d1d", "#fff", "#1d1d1d",
+  ]
 
   const bottleClick = (i) => {
     if (first === -1) {
@@ -112,10 +68,27 @@ export const WaterSort = () => {
     }
     else {
       const amount = Math.min(first_element_length, space_length);
-      for (let k = 0; k < amount; k++) {
-        pourOne(bottle[i], bottle[j])
+      let result_host = bottle[i].concat();
+      let result_client = bottle[j].concat();
+      let count = 0;
+      let point_host = first_element_index_start
+      let point_client = 3;
+      // console.log("amount:", amount, first_element_index_start, first_element_index_end, space_length)
+      // 無理やり入れ替えててキモいと思う
+      while (count < amount) {
+        if (result_client[point_client] === 0) {
+          result_host[point_host] = 0;
+          result_client[point_client] = bottle[i][point_host];
+          // console.log("replace", point_client, "with", point_host);
+          count++;
+          point_host++;
+        }
+        point_client--;
       }
-      setBottle(bottle);
+      let result = bottle.concat();
+      result[i] = result_host;
+      result[j] = result_client;
+      setBottle(result);
     }
 
     // 1本目を適当に
@@ -177,93 +150,8 @@ export const WaterSort = () => {
     setIsClear(false);
   }
 
-  // 動かない！
   const initStable = (n) => {
-    // 初期化
-    const bottle = [[0, 0, 0, 0], [0, 0, 0, 0]];
-    for (let i = 0; i < n; i++) {
-      bottle.push([i + 1, i + 1, i + 1, i + 1]);
-    }
 
-    // 逆回しで入れ替える
-    for (let i = 0; i < bottle.length * 1; i++) {
-      console.log(i)
-      const a = Math.floor(Math.random() * bottle.length);
-      const b = Math.floor(Math.random() * bottle.length);
-
-      const serverSpace = bottle[a].filter((e) => e === 0).length;
-      const serverAmount = 4 - serverSpace;
-      const clientSpace = bottle[b].filter((e) => e === 0).length;
-
-      /*
-        順：連結している色はまとめて動く→
-        逆：下に同じ色があるところへは移動できない
-      */
-      if (top(bottle[a]) === top(bottle[b])) { continue; }
-
-      /*
-        順：下に同じ色がある場所、または空の瓶にしか移せない→
-        逆：連続する色の途中、または瓶を空にする移動だけが可能
-      */
-
-      const maxLen = Math.min(serverAmount, clientSpace);
-      const len = Math.floor(Math.random() * maxLen);
-      if (!(bottle[a][serverSpace + len - 1] === bottle[a][serverSpace + len] || len === serverAmount)) {
-        continue;
-      }
-
-      for (let j = 0; j < len; j++) {
-        /* 
-          最終的に（つまり初期盤面状態で）空の瓶が空になるようにするにはもうすこし工夫が必要で、
-          最終的に空の瓶にしたい2つの瓶に対してのみ、
-          「空でなければすでに入っている色と異なる色を入れてはいけない」ルールが要るかも
-        */
-        console.log("b")
-        if (b === n || b === n + 1) {
-          const isEmpty = bottle[b].filter(e => e !== 0).length === 0 ? true : false;
-          if (!isEmpty && (bottle[b][clientSpace - j] !== bottle[a][serverSpace + len])) {
-            continue;
-          }
-        }
-        pourOne(bottle[a], bottle[b]);
-      }
-    }
-
-    // 最後の2本を空にする。
-    while (true) {
-      console.log("c")
-      for (let i = 0; i < n; i++) {
-        console.log("d")
-        if (bottle[i][0] !== 0) {
-          continue;
-        }
-        if (top(bottle[n]) !== top(bottle[i])) {
-          bottle[n].forEach(() => pourOne(bottle[n], bottle[i]));
-        }
-      }
-      for (let i = 0; i < n; i++) {
-        console.log("e")
-        if (bottle[i][0] !== 0) {
-          continue;
-        }
-        if (top(bottle[n + 1]) !== top(bottle[i])) {
-          bottle[n + 1].forEach(() => pourOne(bottle[n + 1], bottle[i]));
-        }
-      }
-      if (bottle[n][3] !== 0 || bottle[n + 1][3] !== 0) {
-        pourN(3)(bottle[n], bottle[n + 1]);
-        const a = Math.floor(Math.random() * bottle.length);
-        const len = topLen(bottle[a]);
-        pourN(len)(bottle[a], bottle[n]);
-      }
-      else {
-        break;
-      }
-    }
-    setBottle(bottle)
-    setDefaultBottle(bottle);
-
-    setIsClear(false);
   }
 
   const resetBottle = () => {
