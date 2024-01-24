@@ -1,40 +1,67 @@
-const context = new window.AudioContext();
-let source = [null, null, null, null, null, null, null, null, null, null, null, null];
-
 type isPressed = AudioBufferSourceNode | null;
 
 export class PianoHandler {
-  melodySource: isPressed[];
   context: AudioContext;
-  gainNode: GainNode;
+  melodySource: isPressed[];
+  codeSource: isPressed[];
+  melodyGainNode: GainNode;
+  codeGainNode: GainNode;
 
   constructor() {
     this.context = new window.AudioContext();
     this.melodySource = [null, null, null, null, null, null, null, null, null, null, null, null, null];
-    this.gainNode = context.createGain();
+    this.codeSource = [null, null, null, null];
+    this.melodyGainNode = this.context.createGain();
+    this.codeGainNode = this.context.createGain();
   }
 
   play(channel, freq, velocity) {
-    source[channel] = context.createBufferSource();
-    source[channel].loop = true;
-    const buf = this.createSound(this.sine(freq), 1);
-    source[channel].buffer = buf;
-    this.gainNode.gain.value = velocity / 100 // ボリュームを小さく
-    source[channel].connect(this.gainNode)
-    this.gainNode.connect(context.destination);
-    source[channel].start(0);
+    this.melodySource[channel] = this.context.createBufferSource();
+    this.melodySource[channel].loop = true;
+    const buf = this.createSound(this.sine(freq), 3.142);
+    this.melodySource[channel].buffer = buf;
+    this.melodyGainNode.gain.value = velocity / 100 * 0.5// ボリュームを小さく
+    this.melodySource[channel].connect(this.melodyGainNode)
+    this.melodyGainNode.connect(this.context.destination);
+    this.melodySource[channel].start(0);
   }
 
   stop(channel) {
-    source[channel].stop()
-    source[channel] = null;
+    if (this.melodySource[channel] != null) {
+      this.melodySource[channel].stop()
+      this.melodySource[channel] = null;
+    }
+  }
+
+  playCode(code, velocity) {
+    code.forEach((e, i) => {
+      if (e != null) {
+        this.codeSource[i] = this.context.createBufferSource();
+        this.codeSource[i].loop = true;
+        const buf = this.createSound(this.sine(e), 3.142);
+        this.codeSource[i].buffer = buf;
+        this.codeGainNode.gain.value = velocity / 100 * 0.25; // ボリュームを小さく
+        this.codeSource[i].connect(this.codeGainNode);
+        this.codeGainNode.connect(this.context.destination);
+        this.codeSource[i].start(0);
+      }
+    })
+  }
+
+  stopCode() {
+    [0, 1, 2, 3].forEach(i => {
+      if (this.codeSource[i] != null) {
+        this.codeSource[i].stop();
+      }
+    })
+    this.codeSource = [null, null, null, null];
   }
 
   // fnをエンコードするだけ
   private createSound(fn, duration) {
-    let sampleRate = context.sampleRate;
+    let sampleRate = this.context.sampleRate;
     let dt = 1 / sampleRate;
-    let buffer = context.createBuffer(1, sampleRate * duration, sampleRate);
+    let buffer = this.context.createBuffer(1, sampleRate * duration, sampleRate);
     let data = buffer.getChannelData(0);
     // data.map((d, i) => fn(dt * i));
     for (let i = 0; i < data.length; i++) {

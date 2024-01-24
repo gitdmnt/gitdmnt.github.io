@@ -3,7 +3,6 @@ import style from "./Synth.module.css"
 import { PianoHandler } from "./SynthHandler";
 
 /*
-音量調整
 キーバインドを下側に(自然だし、拡張可能性が高い)
 左手に押すだけでコードが鳴るやつ
 SynthHandlerのクラスを作り、そこでチャンネルを管理する
@@ -12,37 +11,65 @@ SynthHandlerのクラスを作り、そこでチャンネルを管理する
 
 const scaleArray = ["C", "C# Db", "D", "D# Eb", "E", "F", "F# Gb", "G", "G# Ab", "A", "A# Bb", "B", "C"]
 const keyNumRightHandArray = ["KeyG", "KeyY", "KeyH", "KeyU", "KeyJ", "KeyK", "KeyO", "KeyL", "KeyP", "Semicolon", "BracketLeft", "Quote", "Backslash"];
-
+const keyNumLeftHandArray = ["KeyQ", "KeyW", "KeyE", "KeyA", "KeyS", "KeyD", "KeyZ", "KeyX", "KeyC"];
 
 export const KeyPiano = () => {
   const piano = new PianoHandler();
 
   const isKeyPressed = useRef([false, false, false, false, false, false, false, false, false, false, false, false]);
   const isAltPressed = useRef(false);
+  const isCodePressed = useRef(false);
   const [scale, setScale] = useState(0);
   const scaleRef = useRef(scale);
   const velocity = useRef(100);
 
 
   const pianoFireHandler = (e) => {
-    const i = keyNumRightHandArray.findIndex((element) => element === e.code);
-    if (i !== -1) {
+    // console.log("down", e.code);
+    const r = keyNumRightHandArray.findIndex((element) => element === e.code);
+    const l = keyNumLeftHandArray.findIndex((element) => element === e.code);
+
+    if (r !== -1) {
       // 右手の処理
-      if (isKeyPressed.current[i]) {
+      if (isKeyPressed.current[r]) {
         return;
       }
-
-      console.log("down", e.code);
       const freqBasis = 440 * Math.pow(2, (-9 + scaleRef.current) / 12)
-      const freq = freqBasis * Math.pow(2, i / 12) * (isAltPressed.current ? 2 : 1);
+      const freq = freqBasis * Math.pow(2, r / 12) * (isAltPressed.current ? 2 : 1);
       // console.log(freqVar.current, freq);
-      isKeyPressed.current[i] = true;
+      isKeyPressed.current[r] = true;
 
-      piano.play(i, freq, velocity.current);
+      piano.play(r, freq, velocity.current);
     }
-    else {
+    else if (l !== -1) {
       // 左手の処理
+      if (isCodePressed.current) {
+        return;
+      }
+      let code = [0, 0, 0, 0];
+      switch (l) {
+        case 0: // I
+          code = [0, 4, 7, null];
+          break;
+        case 1: // IV
+          code = [0, 5, 9, null];
+          break;
+        case 2: // V7
+          code = [-1, 2, 5, 7];
+          break;
+        case 3: // VIm
+          code = [0, 4, 9, null];
+          break;
+        case 6: //IIIm
+          code = [-1, 4, 7, 11];
+          break;
+      }
+      const freqBasis = 440 * Math.pow(2, (-9 + scaleRef.current) / 12);
+      const freqs = code.map(e => { return freqBasis * Math.pow(2, e / 12); });
+      isCodePressed.current = true;
 
+      piano.playCode(freqs, velocity.current);
+    } else {
       // キーシフト
       if (e.code === "ShiftLeft") {
         isAltPressed.current = true;
@@ -51,14 +78,22 @@ export const KeyPiano = () => {
     }
   }
   const pianoStopHandler = (e) => {
-    const i = keyNumRightHandArray.findIndex((element) => element === e.code);
-    if (i !== -1) {
+    const r = keyNumRightHandArray.findIndex((element) => element === e.code);
+    const l = keyNumLeftHandArray.findIndex((element) => element === e.code);
+
+    if (r !== -1) {
 
       // console.log("up");
-      isKeyPressed.current[i] = false;
-      piano.stop(i)
+      isKeyPressed.current[r] = false;
+      piano.stop(r)
+
+    } else if (l !== -1) {
+
+      isCodePressed.current = false;
+      piano.stopCode();
 
     } else {
+
       if (e.code === "ShiftLeft") {
         isAltPressed.current = false;
       }
@@ -84,6 +119,7 @@ export const KeyPiano = () => {
         <li>Gキーから右の8鍵と上の5鍵で音が鳴る。</li>
         <li>左Shiftを押してる間はオクターブ上がる。</li>
         <li>バーをいじるとドが移動する。</li>
+        <li>QWEにI IV V7が入ってて、あとAとZにVImとIIImが入ってる。</li>
         <li>それだけ。</li>
       </ul>
       <p>スケール: {scaleArray[scale]}</p>
