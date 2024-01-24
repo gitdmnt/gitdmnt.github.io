@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import style from "./Synth.module.css"
-import { play, stop } from "./SynthHandler";
+import { PianoHandler } from "./SynthHandler";
 
 /*
+音量調整
+キーバインドを下側に(自然だし、拡張可能性が高い)
 左手に押すだけでコードが鳴るやつ
 SynthHandlerのクラスを作り、そこでチャンネルを管理する
 */
@@ -13,9 +15,13 @@ const keyNumRightHandArray = ["KeyG", "KeyY", "KeyH", "KeyU", "KeyJ", "KeyK", "K
 
 
 export const KeyPiano = () => {
-  const scaleVar = useRef(0);
+  const piano = new PianoHandler();
+
   const isKeyPressed = useRef([false, false, false, false, false, false, false, false, false, false, false, false]);
   const isAltPressed = useRef(false);
+  const scaleVar = useRef(0);
+  const velocity = useRef(100);
+
 
   const pianoFireHandler = (e) => {
     const i = keyNumRightHandArray.findIndex((element) => element === e.code);
@@ -25,13 +31,13 @@ export const KeyPiano = () => {
         return;
       }
 
-      // console.log("down", e.code);
+      console.log("down", e.code);
       const freqBasis = 440 * Math.pow(2, (-9 + scaleVar.current) / 12)
       const freq = freqBasis * Math.pow(2, i / 12) * (isAltPressed.current ? 2 : 1);
       // console.log(freqVar.current, freq);
       isKeyPressed.current[i] = true;
 
-      play(i, freq);
+      piano.play(i, freq, velocity.current);
     }
     else {
       // 左手の処理
@@ -46,11 +52,12 @@ export const KeyPiano = () => {
   const pianoStopHandler = (e) => {
     const i = keyNumRightHandArray.findIndex((element) => element === e.code);
     if (i !== -1) {
+
       // console.log("up");
       isKeyPressed.current[i] = false;
-      stop(i)
-    }
-    else {
+      piano.stop(i)
+
+    } else {
       if (e.code === "ShiftLeft") {
         isAltPressed.current = false;
       }
@@ -76,7 +83,13 @@ export const KeyPiano = () => {
       左Shiftを押してる間はオクターブ上がる。
       バーをいじるとドが移動する。
       それだけ。
-      <input type="range" min={0} max={12} step={1} onChange={(e) => scaleVar.current = Number(e.target.value)}></input>
+      <br />
+      <p>スケール</p>
+      <input type="range" defaultValue={0} min={0} max={12} step={1} onChange={(e) => scaleVar.current = Number(e.target.value)} />
+      <p>音量</p>
+      <input type="range" defaultValue={100} min={0} max={100} step={1} onChange={(e) => velocity.current = Number(e.target.value)} />
+
     </div >
+
   )
 }
