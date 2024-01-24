@@ -27,6 +27,7 @@ export const play = (i, freq) => {
 
 export const stop = (i) => {
   source[i].stop()
+  source[i] = null;
 }
 
 const sine = (freq) => {
