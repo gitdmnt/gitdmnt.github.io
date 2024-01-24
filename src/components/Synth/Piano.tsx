@@ -71,7 +71,11 @@ export const KeyPiano = () => {
 
   return (
     <div className={style.piano} >
-      ぴあの
+      ピアノ工事中
+      Gキーから右の8鍵と上の5鍵で音が鳴る。
+      左Shiftを押してる間はオクターブ上がる。
+      バーをいじるとドが移動する。
+      それだけ。
       <input type="range" min={0} max={12} step={1} onChange={(e) => scaleVar.current = Number(e.target.value)}></input>
     </div >
   )
