@@ -96,9 +96,10 @@ export class PianoHandler {
   }
 
   stopCode() {
+    const g = this.codeGainNode.gain.value;
     let currTime = this.context.currentTime;
     this.codeGainNode.gain.cancelScheduledValues(currTime);
-    this.codeGainNode.gain.linearRampToValueAtTime(this.codeGainNode.gain.value, currTime);
+    this.codeGainNode.gain.linearRampToValueAtTime(g, currTime);
     this.codeGainNode.gain.linearRampToValueAtTime(0, currTime + this.ocilloParams.release);
   }
   setMasterGain(volume) {
