@@ -18,8 +18,6 @@ export const KeyPiano = () => {
   const isCodePressed = useRef(false);
   const [scale, setScale] = useState(0);
   const scaleRef = useRef(scale);
-  const velocity = useRef(100);
-
 
   const pianoFireHandler = (e) => {
     // console.log("down", e.code);
@@ -36,7 +34,7 @@ export const KeyPiano = () => {
       // console.log(freqVar.current, freq);
       isKeyPressed.current[r] = true;
 
-      piano.play(r, freq, velocity.current);
+      piano.play(r, freq);
     }
     else if (l !== -1) {
       // 左手の処理
@@ -65,7 +63,7 @@ export const KeyPiano = () => {
       const freqs = code.map(e => { return freqBasis * Math.pow(2, e / 12); });
       isCodePressed.current = true;
 
-      piano.playCode(freqs, velocity.current);
+      piano.playCode(freqs);
     } else {
       // キーシフト
       if (e.code === "ShiftLeft") {
@@ -106,7 +104,6 @@ export const KeyPiano = () => {
 
     window.removeEventListener("keydown", () => pianoFireHandler(event))
     window.removeEventListener("keyup", () => pianoStopHandler(event));
-
   }, [])
 
   return (
@@ -122,7 +119,17 @@ export const KeyPiano = () => {
       <p>スケール: {scaleArray[scale]}</p>
       <input type="range" defaultValue={0} min={0} max={12} step={1} onChange={(e) => { setScale(Number(e.target.value)); scaleRef.current = Number(e.target.value); }} />
       <p>音量</p>
-      <input type="range" defaultValue={100} min={0} max={100} step={1} onChange={(e) => velocity.current = Number(e.target.value)} />
+      <input type="range" defaultValue={100} min={0} max={100} step={1} onChange={(e) => piano.setMasterGain(Number(e.target.value))} />
+
+      <p>Attack</p>
+      <input type="range" defaultValue={0.01} min={0} max={1} step={0.01} onChange={(e) => piano.setAttack(Number(e.target.value))} />
+      <p>Decay</p>
+      <input type="range" defaultValue={0} min={0} max={1} step={0.01} onChange={(e) => piano.setDecay(Number(e.target.value))} />
+      <p>Sustain</p>
+      <input type="range" defaultValue={1} min={0} max={1} step={0.01} onChange={(e) => piano.setSustain(Number(e.target.value))} />
+      <p>Release</p>
+      <input type="range" defaultValue={0.1} min={0} max={1} step={0.01} onChange={(e) => piano.setRelease(Number(e.target.value))} />
+
     </div >
 
   )
