@@ -1,6 +1,4 @@
 ---
-import * as favicon from "/src/content/illust/favicon.png";
-
 interface Props {
 	url: string;
 	type: string;
@@ -12,8 +10,8 @@ const { url, type, title, description, image } = Astro.props;
 const site_name = "家";
 let img = "";
 let card = "";
-if (image === "") {
-	img = "https://" + Astro.url.host + favicon.default.src;
+if (image == "") {
+	img = "https://gitdmnt.github.io/favicon.png";
 	card = "summary";
 } else {
 	img = image;

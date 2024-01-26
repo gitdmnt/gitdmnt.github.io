@@ -3,51 +3,80 @@ interface Props {
   title: string;
   body: string;
   href: string;
+  date: string;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, body, date } = Astro.props;
 ---
 
 <li class="link-card">
   <a href={href}>
     <h2>
       {title}
-      <span>&rarr;</span>
     </h2>
     <p class="description">
       {body}
     </p>
+    <div class="datearrow">
+      <p class="date">{date}</p>
+      <p class="arrow">&rarr;</p>
+    </div>
   </a>
 </li>
 
 <style>
   li {
-    margin: 1rem;
+    list-style: none;
+    margin-block: 1rem;
     padding: 0rem;
-    min-width: 15rem;
-    max-width: 49rem;
-    border-block-start: 0.2rem solid #1d1d1d;
-    border-inline-start: 1rem solid #1d1d1d;
+    width: 50rem;
     box-sizing: border-box;
+    background-color: #ffffff;
+    border-block-start: 1px solid #ddd;
   }
   a {
-    padding: 1rem;
+    padding-block-start: 1rem;
+    margin-block-end: 1rem;
+    padding-inline-start: 1rem;
     padding-inline-end: 0rem;
     color: #1d1d1d;
     text-decoration: none;
     display: grid;
-    grid-template-rows: 2fr 3fr;
+    grid-template-rows: minmax(3rem, max-content) minmax(4rem, max-content) 2rem;
+    min-height: 8rem;
+  }
+  a:hover {
+    background-color: #f8f8f8;
   }
   h2 {
     grid-row: 1/2;
     margin-block: 0.5rem;
     padding-block: 0.5rem;
-    border-block-end: 0.1rem solid #1d1d1d;
-
-    border-inline-end: 0.4rem solid #1d1d1d;
+    border-block-end: 1px solid #1d1d1d;
   }
   .description {
     margin-block: 0;
+    margin-inline: 0;
     grid-row: 2/3;
+  }
+  .datearrow {
+    grid-row: 3/4;
+    display: flex;
+    justify-content: space-between;
+    text-indent: 0;
+    margin: 0;
+    padding: 0;
+  }
+  .date {
+    font-size: 8pt;
+    color: #ccc;
+    margin: 0;
+    padding: 0;
+  }
+  .arrow {
+    margin-block: 0;
+    margin-inline: 1rem;
+    padding: 0;
+    color: #d56a8a;
   }
 </style>

@@ -1,6 +1,7 @@
 ---
 import Common from "../../layouts/Common.astro";
 import Card from "../../components/Card.astro";
+import { Temporal } from "temporal-polyfill";
 
 export async function getStaticPaths({ paginate }) {
     const posts = (await Astro.glob("/src/content/article/*.{md,mdx}")).sort(
@@ -28,6 +29,9 @@ const { page } = Astro.props;
                         title={p.frontmatter.title}
                         href={"/blog/" + p.file.split("/").pop().split(".")[0]}
                         body={p.frontmatter.description}
+                        date={Temporal.PlainDate.from(
+                            p.frontmatter.date.slice(0, 10),
+                        ).toString()}
                     />
                 ))
             }
