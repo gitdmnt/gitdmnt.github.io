@@ -7,6 +7,6 @@ description: ""
 thumbnail: 
 ---
 
-import { Tweet } from 'react-twitter-widgets';
+import Tweet from "/src/components/Tweet.astro";
 import BlogFace from "/src/components/BlogFace.astro";
 import { Image } from "astro:assets";

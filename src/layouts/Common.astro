@@ -21,11 +21,17 @@ interface Props {
     description={description}
     image={image}
 >
-    <Header />
-    <div class="main">
-        <slot />
+    <div class="container">
+        <div class="leftside">
+            <Header />
+        </div>
+        <div class="rightside">
+            <div class="main">
+                <slot />
+            </div>
+            <Footer />
+        </div>
     </div>
-    <Footer />
 </Top>
 <style>
     .main {
