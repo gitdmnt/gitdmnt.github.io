@@ -2,6 +2,7 @@
 import type { AstroInstance } from "astro";
 import Common from "../../layouts/Common.astro";
 import { Image } from "astro:assets";
+import { Temporal } from "temporal-polyfill";
 
 export async function getStaticPaths() {
   const posts = await Astro.glob("/src/content/illust/*.png");
@@ -51,10 +52,9 @@ const img = (await Astro.glob("/src/content/illust/*.png")).filter(
     <h1 class="title">{caption.frontmatter.title}</h1>
     <p class="date">
       {
-        () => {
-          const d: Date = new Date(caption.frontmatter.date);
-          return d.toLocaleDateString();
-        }
+        Temporal.PlainDate.from(
+          caption.frontmatter.date.slice(0, 10),
+        ).toString()
       }
     </p>
     <ul class="tags">
