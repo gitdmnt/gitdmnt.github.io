@@ -1,10 +1,9 @@
 ---
 import type { AstroInstance } from "astro";
-import Common from "../../layouts/Common.astro";
 
 export async function getStaticPaths() {
   const posts: AstroInstance[] = await Astro.glob(
-    "../../content/article/*.{md,mdx}",
+    "../../content/article/*.{md,mdx}"
   );
   interface Obj {
     params: {
@@ -23,7 +22,7 @@ export async function getStaticPaths() {
 }
 const { article } = Astro.params;
 const content = (await Astro.glob("/src/content/article/*.{md,mdx}")).filter(
-  (p) => p.file.split("/").pop().split(".")[0] === article,
+  (p) => p.file.split("/").pop().split(".")[0] === article
 )[0];
 ---
 
