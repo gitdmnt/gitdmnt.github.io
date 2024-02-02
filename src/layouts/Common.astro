@@ -6,37 +6,66 @@ import Top from "./Top.astro";
 const { url, type, title, description, image } = Astro.props;
 
 interface Props {
-    url: string;
-    type: string;
-    title: string;
-    description: string;
-    image: string;
+  url: string;
+  type: string;
+  title: string;
+  description: string;
+  image: string;
 }
 ---
 
 <Top
-    url={url}
-    type={type}
-    title={title}
-    description={description}
-    image={image}
+  url={url}
+  type={type}
+  title={title}
+  description={description}
+  image={image}
 >
-    <div class="container">
-        <div class="leftside">
-            <Header />
-        </div>
-        <div class="rightside">
-            <div class="main">
-                <slot />
-            </div>
-            <Footer />
-        </div>
+  <div class="container">
+    <div class="sizer">
+      <div class="start">
+        <Header />
+      </div>
+      <div class="centerpart">
+        <slot />
+      </div>
+      <div class="rightside">
+        <Footer />
+      </div>
     </div>
+  </div>
 </Top>
 <style>
-    .main {
-        margin: auto;
-        min-width: 320px;
-        width: 50%;
+  .container {
+    container-type: inline-size;
+  }
+  .sizer {
+    display: grid;
+    grid-template-columns: 80px 1fr 80px;
+  }
+  .centerpart {
+    margin-inline: auto;
+    margin-block: 3rem;
+    padding-inline: 5rem;
+    padding-block: 2rem;
+    min-width: 320px;
+    width: 60%;
+    max-width: 800px;
+    border: 1px solid #d56a8a;
+    border-radius: 20pt;
+  }
+  @container (max-width: 600px) {
+    .sizer {
+      grid-template-rows: repeat(3, auto);
+      grid-template-columns: 1fr;
+
+      background-color: #f2f2ed;
     }
+    .centerpart {
+      margin-block: 0;
+      padding-block: 0;
+      padding-inline: 0;
+      border: none;
+    }
+  }
 </style>

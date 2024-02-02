@@ -3,87 +3,90 @@
 ---
 
 <header>
-    <div class="container">
-        <div class="title">
-            <a class="title" href="/">や‐さがされ</a>
-        </div>
-        <div class="page-link">
-            <ul class="page-link">
-                <li class="page-link">
-                    <div class="page-link-component">
-                        <a href="/about">げたばこ</a>
-                    </div>
-                </li>
-                <li class="page-link">
-                    <div class="page-link-component">
-                        <a href="/blog/1">やねうら</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
+  <div class="title">
+    <a class="title" href="/"> や<span class="title">-</span>さがされ</a>
+  </div>
+  <ul class="link-container">
+    <li class="page-link">
+      <div class="page-link-component">
+        <a href="/about">げたばこ</a>
+      </div>
+    </li>
+    <li class="page-link">
+      <div class="page-link-component">
+        <a href="/blog/1">やねうら</a>
+      </div>
+    </li>
+  </ul>
 </header>
 
 <style>
+  header {
+    display: grid;
+    place-items: center center;
+
+    width: 100%;
+    height: 100dvh;
+
+    position: sticky;
+    top: 0;
+
+    border-inline-end: 1px dashed #1d1d1d;
+
+    font-family: "Noto Sans CJK JP";
+    font-weight: 300;
+  }
+  .title {
+    writing-mode: sideways-lr;
+  }
+  .link-container {
+    display: none;
+  }
+
+  a {
+    color: #1d1d1d;
+    text-decoration: none;
+  }
+  @container (max-width: 600px) {
     header {
-        width: 100%;
-        margin-block-end: 4rem;
-    }
-    .container {
-        display: grid;
-        grid-template-columns: 110pt 1fr;
-        justify-content: space-between;
-        margin: auto;
-        font-family: "Kosugi";
-        border-bottom: 1px solid #1d1d1d;
+      grid-template-columns: auto 1fr;
+      justify-items: stretch;
+      justify-content: start;
+
+      width: 100%;
+      height: auto;
+
+      border-inline-end: none;
+
+      margin-block-end: 4rem;
+      padding-block-end: 4rem;
     }
     .title {
-        display: block;
-        text-align: center;
-        font-size: 15pt;
-        white-space: nowrap;
-        padding-block-start: 4px;
-        padding-block-end: 2px;
-        padding-inline: 0.5rem;
-        margin: 0;
-        background-color: #1d1d1d;
+      margin-block: 2rem;
+      margin-inline: 1rem;
+      writing-mode: horizontal-tb;
+      font-size: 12pt;
+      white-space: nowrap;
     }
-    a.title {
-        display: block;
-        margin: 0;
-        color: #fff;
+    div.title:first-letter {
+      font-size: 20pt;
     }
-    div.page-link {
-        margin-inline: 1rem;
-        align-self: end;
-        justify-self: end;
-        display: flex;
-        flex-wrap: wrap;
+    span.title {
+      display: none;
     }
-    ul.page-link {
-        list-style: none;
-        display: grid;
-        grid-template-columns: repeat(2, 6rem);
-        margin: 0;
-        margin-block-start: auto;
-        padding: 0;
+    .link-container {
+      justify-self: end;
+      display: flex;
+      font-size: 10pt;
+      margin-block-start: calc(2rem + 9pt);
+      margin-block-end: calc(2rem + 1pt);
+      padding: 0;
     }
-    li.page-link {
-        display: block;
-        white-space: nowrap;
-        flex-shrink: 1;
-        padding-block-start: 0.3rem;
-        padding-block-end: 0.3rem;
-        padding-inline: 0rem;
-        font-size: 10pt;
+    .page-link {
+      display: block;
+      margin-inline-end: 1rem;
+      padding: 0;
+      border-block-end: 1px dashed #1d1d1d;
     }
-    li.page-link:hover {
-        background-color: #eee;
-    }
-    .page-link-component {
-    }
-    a {
-        color: #1d1d1d;
-        text-decoration: none;
-    }
+  }
 </style>
