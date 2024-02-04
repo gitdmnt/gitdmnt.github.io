@@ -92,7 +92,7 @@
       "status": {
         "readStatus": "Reading",
         "combinedFlag": {
-          "b64": "////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+          "b64": "//////////////////////////////AAAAAAAAAAAAAAAAAAAAAAAA=="
         },
         "progresses": [
           {
@@ -100,6 +100,15 @@
             "termEnd": "2024-01-31",
             "flag": {
               "b64": "////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            },
+            "memo": "",
+            "star": 5
+          },
+          {
+            "termStart": "2024-02-04",
+            "termEnd": "2024-02-04",
+            "flag": {
+              "b64": "AAAAAAAA//////////////////////AAAAAAAAAAAAAAAAAAAAAAAA=="
             },
             "memo": "",
             "star": 5
