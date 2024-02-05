@@ -54,6 +54,34 @@
     },
     {
       "attr": {
+        "isbn": "9784167673048",
+        "title": "少年少女飛行倶楽部",
+        "subtitle": "",
+        "authors": ["加納朋子"],
+        "imageUrl": "http://books.google.com/books/content?id=fH17pwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 350
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "//////////////////////////////////////////////////////////w="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-02-05",
+            "termEnd": "2024-02-05",
+            "flag": {
+              "b64": "//////////////////////////////////////////////////////////w="
+            },
+            "memo": "無礼(なめ)るなよ、データベースを直接いじって評価を5より上げることなんて造作もないんだからな",
+            "star": 10
+          }
+        ],
+        "star": 10
+      }
+    },
+    {
+      "attr": {
         "isbn": "9784396633462",
         "title": "木暮荘物語",
         "subtitle": "",
