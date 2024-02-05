@@ -2,33 +2,34 @@
 import ProgressBar from "./Progressbar.astro";
 
 type Book = {
-    attr: {
-        isbn: string;
-        title: string;
-        subtitle: string;
-        authors: string[];
-        imageUrl: string;
-        totalPageCount: number;
+  attr: {
+    isbn: string;
+    title: string;
+    subtitle: string;
+    authors: string[];
+    imageUrl: string;
+    totalPageCount: number;
+  };
+  status: {
+    readStatus: string;
+    combinedFlag: {
+      b64: string;
     };
-    status: {
-        readStatus: string;
-        combinedFlag: {
-            b64: string;
-        };
-        progresses: {
-            termStart: string;
-            termEnd: string;
-            flag: {
-                b64: string;
-            };
-            memo: string;
-            star: number;
-        }[];
-        star: number;
-    };
+    progresses: {
+      termStart: string;
+      termEnd: string;
+      flag: {
+        b64: string;
+      };
+      memo: string;
+      star: number;
+    }[];
+    lastRead: string;
+    star: number;
+  };
 };
 interface Props {
-    book: Book;
+  book: Book;
 }
 const { book } = Astro.props;
 const attr = book.attr;
@@ -38,104 +39,104 @@ const title = attr.title + " " + attr.subtitle;
 const author = attr.authors.reduce((a, p) => a + ", " + p);
 
 const readStatus = (() => {
-    if (status.readStatus === "Read") {
-        return 100;
-    } else if (status.readStatus === "Reading") {
-        let bstr = atob(status.combinedFlag.b64);
-        let sum = Uint8Array.from(bstr, (str) => str.charCodeAt(0)).reduce(
-            (sum, cur) => {
-                for (let i = 0; i < 8; i++) {
-                    sum += (cur >> i) & 0b0000_0001;
-                }
-                return sum;
-            },
-            0,
-        );
-        const max = attr.totalPageCount;
-        const percentage = Math.floor((sum / max) * 100);
-        return percentage;
-    } else {
-        return 0;
-    }
+  if (status.readStatus === "Read") {
+    return 100;
+  } else if (status.readStatus === "Reading") {
+    let bstr = atob(status.combinedFlag.b64);
+    let sum = Uint8Array.from(bstr, (str) => str.charCodeAt(0)).reduce(
+      (sum, cur) => {
+        for (let i = 0; i < 8; i++) {
+          sum += (cur >> i) & 0b0000_0001;
+        }
+        return sum;
+      },
+      0
+    );
+    const max = attr.totalPageCount;
+    const percentage = Math.floor((sum / max) * 100);
+    return percentage;
+  } else {
+    return 0;
+  }
 })();
-const latestReadDate = status.progresses[0].termEnd;
+const latestReadDate = status.lastRead;
 const latestMemo = status.progresses[0].memo;
 ---
 
 <li class="book-card">
-    <h2 class="title">{title}</h2>
-    <p class="author">{author}</p>
-    <p class="memo">{latestMemo}</p>
-    <div class="progress">
-        <ProgressBar value={readStatus} />
-    </div>
-    <p class="latest-read">{latestReadDate}</p>
-    <p class="star"><span class="yellow">★</span>{status.star}</p>
-    <img src={attr.imageUrl} alt="書影" class="book-image" />
+  <h2 class="title">{title}</h2>
+  <p class="author">{author}</p>
+  <p class="memo">{latestMemo}</p>
+  <div class="progress">
+    <ProgressBar value={readStatus} />
+  </div>
+  <p class="latest-read">{latestReadDate}</p>
+  <p class="star"><span class="yellow">★</span>{status.star}</p>
+  <img src={attr.imageUrl} alt="書影" class="book-image" />
 </li>
 
 <style>
-    .book-card {
-        list-style: none;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1rem 128px;
-        grid-template-rows: 1.5fr 1rem 5rem 3rem 1rem;
-        border-top: 1px solid #ddd;
-        padding-block: 1rem;
-    }
-    @media (max-width: 600px) {
-    }
-    .book-card:hover {
-    }
-    .title {
-        grid-column: 1/3;
-        grid-row: 1/2;
-        font-size: 14pt;
-        font-weight: normal;
-    }
-    .author {
-        grid-column: 1/3;
-        grid-row: 2/3;
-        font-size: 8pt;
-        font-weight: normal;
-        margin: 0;
-        align-self: center;
-    }
-    .book-image {
-        grid-column: 4/5;
-        grid-row: 1/6;
-    }
-    .memo {
-        grid-column: 1/3;
-        grid-row: 3/4;
-        font-size: 8px;
-    }
-    .progress {
-        grid-column: 1/3;
-        grid-row: 4/5;
-    }
-    .latest-read {
-        grid-column: 1/2;
-        grid-row: 5/6;
-        font-size: 8pt;
-        align-self: end;
-        color: #bbb;
-    }
-    .star {
-        grid-column: 2/3;
-        grid-row: 5/6;
-        font-size: 8pt;
-        align-self: end;
-        justify-self: end;
-        margin-inline: 1rem;
-    }
-    .yellow {
-        color: #f8b706;
-    }
-    p {
-        margin: 0;
-    }
-    h2 {
-        margin: 0;
-    }
+  .book-card {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1rem 128px;
+    grid-template-rows: 1.5fr 1rem 5rem 3rem 1rem;
+    border-top: 1px solid #ddd;
+    padding-block: 1rem;
+  }
+  @media (max-width: 600px) {
+  }
+  .book-card:hover {
+  }
+  .title {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    font-size: 14pt;
+    font-weight: normal;
+  }
+  .author {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    font-size: 8pt;
+    font-weight: normal;
+    margin: 0;
+    align-self: center;
+  }
+  .book-image {
+    grid-column: 4/5;
+    grid-row: 1/6;
+  }
+  .memo {
+    grid-column: 1/3;
+    grid-row: 3/4;
+    font-size: 8px;
+  }
+  .progress {
+    grid-column: 1/3;
+    grid-row: 4/5;
+  }
+  .latest-read {
+    grid-column: 1/2;
+    grid-row: 5/6;
+    font-size: 8pt;
+    align-self: end;
+    color: #bbb;
+  }
+  .star {
+    grid-column: 2/3;
+    grid-row: 5/6;
+    font-size: 8pt;
+    align-self: end;
+    justify-self: end;
+    margin-inline: 1rem;
+  }
+  .yellow {
+    color: #f8b706;
+  }
+  p {
+    margin: 0;
+  }
+  h2 {
+    margin: 0;
+  }
 </style>

@@ -5,31 +5,30 @@ import BookCard from "../components/BookCard.astro";
 ---
 
 <Common
-    url={Astro.url.href}
-    type="article"
-    title="ほんだな"
-    description="しまっていくぜ"
-    image=""
+  url={Astro.url.href}
+  type="article"
+  title="ほんだな"
+  description="しまっていくぜ"
+  image=""
 >
-    <h1>読んだ本</h1>
-    <ul>
-        {
-            json.items
-                .sort(
-                    (a, b) =>
-                        Date.parse(b.status.progresses[0].termEnd) -
-                        Date.parse(a.status.progresses[0].termEnd),
-                )
-                .map((book) => {
-                    return <BookCard book={book} />;
-                })
-        }
-    </ul>
+  <h1>読んだ本</h1>
+  <ul>
+    {
+      json.items
+        .sort(
+          (a, b) =>
+            Date.parse(b.status.lastRead) - Date.parse(a.status.lastRead)
+        )
+        .map((book) => {
+          return <BookCard book={book} />;
+        })
+    }
+  </ul>
 </Common>
 
 <style>
-    ul {
-        margin: 1rem;
-        padding: 0;
-    }
+  ul {
+    margin: 1rem;
+    padding: 0;
+  }
 </style>
