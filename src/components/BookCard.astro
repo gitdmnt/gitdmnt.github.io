@@ -60,7 +60,7 @@ const readStatus = (() => {
   }
 })();
 const latestReadDate = status.lastRead;
-const latestMemo = status.progresses[0].memo;
+const latestMemo = status.progresses[status.progresses.length - 1].memo;
 ---
 
 <li class="book-card">
