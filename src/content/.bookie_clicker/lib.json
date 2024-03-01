@@ -209,9 +209,9 @@
         "totalPageCount": 368
       },
       "status": {
-        "readStatus": "Reading",
+        "readStatus": "Read",
         "combinedFlag": {
-          "b64": "/////////////////////////////////wAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+          "b64": "/////////////////////////////////////////////////////////////w=="
         },
         "progresses": [
           {
@@ -219,6 +219,15 @@
             "termEnd": "2024-03-01",
             "flag": {
               "b64": "/////////////////////////////////wAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            },
+            "memo": "",
+            "star": 5
+          },
+          {
+            "termStart": "2024-03-01",
+            "termEnd": "2024-03-01",
+            "flag": {
+              "b64": "/////////////////////////////////////////////////////////////w=="
             },
             "memo": "",
             "star": 5
