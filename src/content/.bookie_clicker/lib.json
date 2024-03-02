@@ -2,6 +2,35 @@
   "items": [
     {
       "attr": {
+        "isbn": "9784101167626",
+        "title": "天国旅行",
+        "subtitle": "",
+        "authors": ["三浦しをん"],
+        "imageUrl": "http://books.google.com/books/content?id=Xs0jngEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 312
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "////////////////////////////////////////////////////"
+        },
+        "progresses": [
+          {
+            "termStart": "2024-03-02",
+            "termEnd": "2024-03-02",
+            "flag": {
+              "b64": "////////////////////////////////////////////////////"
+            },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-03-02",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
         "isbn": "9784101253329",
         "title": "西の魔女が死んだ",
         "subtitle": "",
