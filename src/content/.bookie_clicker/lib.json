@@ -2,6 +2,31 @@
   "items": [
     {
       "attr": {
+        "isbn": "9784041067734",
+        "title": "涼宮ハルヒの憂鬱(18)",
+        "subtitle": "",
+        "authors": ["ツガノ　ガク"],
+        "imageUrl": "http://books.google.com/books/content?id=oziewtdjD04C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "totalPageCount": 175
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": { "b64": "/////////////////////////////g==" },
+        "progresses": [
+          {
+            "termStart": "2024-03-07",
+            "termEnd": "2024-03-07",
+            "flag": { "b64": "/////////////////////////////g==" },
+            "memo": "これじゃなくて角川文庫のやつを読んだんだけど、google books apiがISBNから正しい本を返してくれない！　おい！　いい加減にしてくれよな！",
+            "star": 4
+          }
+        ],
+        "lastRead": "2024-03-07",
+        "star": 4
+      }
+    },
+    {
+      "attr": {
         "isbn": "9784101167626",
         "title": "天国旅行",
         "subtitle": "",
@@ -80,6 +105,35 @@
           }
         ],
         "lastRead": "2024-02-17",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784101339214",
+        "title": "東京タワー",
+        "subtitle": "",
+        "authors": ["江國香織"],
+        "imageUrl": "http://books.google.com/books/content?id=Tf8pAQAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 372
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "//////////////////////////////////////////////////////////////A="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-03-07",
+            "termEnd": "2024-03-07",
+            "flag": {
+              "b64": "//////////////////////////////////////////////////////////////A="
+            },
+            "memo": "変",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-03-07",
         "star": 5
       }
     },
@@ -230,6 +284,35 @@
     },
     {
       "attr": {
+        "isbn": "9784163904290",
+        "title": "存在と時間哲学探究",
+        "subtitle": "",
+        "authors": ["永井均"],
+        "imageUrl": "http://books.google.com/books/content?id=NdfbjwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 332
+      },
+      "status": {
+        "readStatus": "Reading",
+        "combinedFlag": {
+          "b64": "////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "progresses": [
+          {
+            "termStart": "2024-03-01",
+            "termEnd": "2024-03-07",
+            "flag": {
+              "b64": "////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            },
+            "memo": "",
+            "star": 4
+          }
+        ],
+        "lastRead": "2024-03-07",
+        "star": 4
+      }
+    },
+    {
+      "attr": {
         "isbn": "9784167174033",
         "title": "池袋ウエストゲートパーク",
         "subtitle": "",
@@ -341,6 +424,31 @@
           }
         ],
         "lastRead": "2024-01-10",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784479782995",
+        "title": "フランス人は10着しか服を持たない",
+        "subtitle": "パリで学んだ“暮らしの質”を高める秘訣",
+        "authors": ["ジェニファー・L. スコット"],
+        "imageUrl": "http://books.google.com/books/content?id=WlnvoQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 239
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": { "b64": "///////////////////////////////////////+" },
+        "progresses": [
+          {
+            "termStart": "2024-03-07",
+            "termEnd": "2024-03-07",
+            "flag": { "b64": "///////////////////////////////////////+" },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-03-07",
         "star": 5
       }
     },
@@ -492,6 +600,35 @@
     },
     {
       "attr": {
+        "isbn": "9784873117874",
+        "title": "Cooking for Geeks",
+        "subtitle": "料理の科学と実践レシピ",
+        "authors": ["Jeff Potter", "ジェフポッター"],
+        "imageUrl": "http://books.google.com/books/content?id=YS1PMQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 504
+      },
+      "status": {
+        "readStatus": "Reading",
+        "combinedFlag": {
+          "b64": "///////////////////////////+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "progresses": [
+          {
+            "termStart": "2024-03-07",
+            "termEnd": "2024-03-07",
+            "flag": {
+              "b64": "///////////////////////////+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-03-07",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
         "isbn": "9784894347427",
         "title": "キリスト教の歴史",
         "subtitle": "現代をよりよく理解するために",
@@ -521,4 +658,3 @@
     }
   ]
 }
-
