@@ -14,14 +14,14 @@
         "combinedFlag": { "b64": "/////////////////////////////g==" },
         "progresses": [
           {
-            "termStart": "2024-03-07",
-            "termEnd": "2024-03-07",
+            "termStart": "2024-03-09",
+            "termEnd": "2024-03-11",
             "flag": { "b64": "/////////////////////////////g==" },
             "memo": "これじゃなくて角川文庫のやつを読んだんだけど、google books apiがISBNから正しい本を返してくれない！　おい！　いい加減にしてくれよな！",
             "star": 4
           }
         ],
-        "lastRead": "2024-03-07",
+        "lastRead": "2024-03-11",
         "star": 4
       }
     },
@@ -299,7 +299,7 @@
         "progresses": [
           {
             "termStart": "2024-03-01",
-            "termEnd": "2024-03-07",
+            "termEnd": "2024-03-10",
             "flag": {
               "b64": "////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
             },
@@ -307,7 +307,7 @@
             "star": 5
           }
         ],
-        "lastRead": "2024-03-07",
+        "lastRead": "2024-03-10",
         "star": 5
       }
     },
