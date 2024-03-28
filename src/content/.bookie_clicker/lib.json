@@ -2,6 +2,62 @@
   "items": [
     {
       "attr": {
+        "isbn": "4061496670",
+        "title": "悪女入門",
+        "subtitle": "ファム・ファタル恋愛論",
+        "authors": ["鹿島茂"],
+        "imageUrl": "http://books.google.com/books/content?id=0JgxPQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 246
+      },
+      "status": {
+        "readStatus": "Reading",
+        "combinedFlag": {
+          "b64": "///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-03-28",
+            "termEnd": "2024-03-28",
+            "flag": { "b64": "///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==" },
+            "memo": "",
+            "star": 4
+          }
+        ],
+        "lastRead": "2024-03-28",
+        "star": 4
+      }
+    },
+    {
+      "attr": {
+        "isbn": "4062639246",
+        "title": "すべてがFになる",
+        "subtitle": "",
+        "authors": ["森博嗣"],
+        "imageUrl": "http://books.google.com/books/content?id=RaC9PQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 522
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "///////////////////////////////////////////////////////////////////////////////////////A"
+        },
+        "progresses": [
+          {
+            "termStart": "2024-03-15",
+            "termEnd": "2024-03-27",
+            "flag": {
+              "b64": "///////////////////////////////////////////////////////////////////////////////////////A"
+            },
+            "memo": "",
+            "star": 4
+          }
+        ],
+        "lastRead": "2024-03-27",
+        "star": 4
+      }
+    },
+    {
+      "attr": {
         "isbn": "9784041067734",
         "title": "涼宮ハルヒの憂鬱(18)",
         "subtitle": "",
@@ -14,14 +70,14 @@
         "combinedFlag": { "b64": "/////////////////////////////g==" },
         "progresses": [
           {
-            "termStart": "2024-03-09",
-            "termEnd": "2024-03-11",
+            "termStart": "2024-03-07",
+            "termEnd": "2024-03-07",
             "flag": { "b64": "/////////////////////////////g==" },
             "memo": "これじゃなくて角川文庫のやつを読んだんだけど、google books apiがISBNから正しい本を返してくれない！　おい！　いい加減にしてくれよな！",
             "star": 4
           }
         ],
-        "lastRead": "2024-03-11",
+        "lastRead": "2024-03-07",
         "star": 4
       }
     },
@@ -197,6 +253,31 @@
     },
     {
       "attr": {
+        "isbn": "9784130120579",
+        "title": "圏論による論理学",
+        "subtitle": "高階論理とトポス",
+        "authors": ["清水義夫"],
+        "imageUrl": "http://books.google.com/books/content?id=xb0eNwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 216
+      },
+      "status": {
+        "readStatus": "Reading",
+        "combinedFlag": { "b64": "////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" },
+        "progresses": [
+          {
+            "termStart": "2024-03-28",
+            "termEnd": "2024-03-28",
+            "flag": { "b64": "////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" },
+            "memo": "",
+            "star": 4
+          }
+        ],
+        "lastRead": "2024-03-28",
+        "star": 4
+      }
+    },
+    {
+      "attr": {
         "isbn": "9784150309688",
         "title": "天冥の標",
         "subtitle": "メニー・メニー・シープ",
@@ -294,21 +375,30 @@
       "status": {
         "readStatus": "Reading",
         "combinedFlag": {
-          "b64": "////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          "b64": "///////////////////4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         },
         "progresses": [
           {
             "termStart": "2024-03-01",
-            "termEnd": "2024-03-10",
+            "termEnd": "2024-03-07",
             "flag": {
               "b64": "////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
             },
             "memo": "",
-            "star": 5
+            "star": 4
+          },
+          {
+            "termStart": "2024-03-07",
+            "termEnd": "2024-03-29",
+            "flag": {
+              "b64": "AAAAAAAAAAAAAAAAD//4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            },
+            "memo": "",
+            "star": 4
           }
         ],
-        "lastRead": "2024-03-10",
-        "star": 5
+        "lastRead": "2024-03-29",
+        "star": 4
       }
     },
     {
@@ -425,6 +515,31 @@
         ],
         "lastRead": "2024-01-10",
         "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784409030905",
+        "title": "有限性の後で",
+        "subtitle": "偶然性の必然性についての試論",
+        "authors": ["カンタンメイヤスー"],
+        "imageUrl": "http://books.google.com/books/content?id=wkpujwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 236
+      },
+      "status": {
+        "readStatus": "Reading",
+        "combinedFlag": { "b64": "/////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" },
+        "progresses": [
+          {
+            "termStart": "2024-03-28",
+            "termEnd": "2024-03-28",
+            "flag": { "b64": "/////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" },
+            "memo": "",
+            "star": 4
+          }
+        ],
+        "lastRead": "2024-03-28",
+        "star": 4
       }
     },
     {
@@ -658,4 +773,3 @@
     }
   ]
 }
-
