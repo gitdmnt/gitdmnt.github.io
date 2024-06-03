@@ -1,1 +1,852 @@
-{"items":[{"attr":{"isbn":"4061496670","title":"悪女入門","subtitle":"ファム・ファタル恋愛論","authors":["鹿島茂"],"imageUrl":"http://books.google.com/books/content?id=0JgxPQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":246},"status":{"readStatus":"Reading","combinedFlag":{"b64":"///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="},"progresses":[{"termStart":"2024-03-28","termEnd":"2024-03-28","flag":{"b64":"///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="},"memo":"","star":4}],"lastRead":"2024-03-28","star":4}},{"attr":{"isbn":"4062639246","title":"すべてがFになる","subtitle":"","authors":["森博嗣"],"imageUrl":"http://books.google.com/books/content?id=RaC9PQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":522},"status":{"readStatus":"Read","combinedFlag":{"b64":"///////////////////////////////////////////////////////////////////////////////////////A"},"progresses":[{"termStart":"2024-03-15","termEnd":"2024-03-27","flag":{"b64":"///////////////////////////////////////////////////////////////////////////////////////A"},"memo":"","star":4}],"lastRead":"2024-03-27","star":4}},{"attr":{"isbn":"9784041067734","title":"涼宮ハルヒの憂鬱(18)","subtitle":"","authors":["ツガノ　ガク"],"imageUrl":"http://books.google.com/books/content?id=oziewtdjD04C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api","totalPageCount":175},"status":{"readStatus":"Read","combinedFlag":{"b64":"/////////////////////////////g=="},"progresses":[{"termStart":"2024-03-07","termEnd":"2024-03-07","flag":{"b64":"/////////////////////////////g=="},"memo":"これじゃなくて角川文庫のやつを読んだんだけど、google books apiがISBNから正しい本を返してくれない！　おい！　いい加減にしてくれよな！","star":4}],"lastRead":"2024-03-07","star":4}},{"attr":{"isbn":"9784049121117","title":"私が大好きな小説家を殺すまで","subtitle":"","authors":["斜線堂有紀"],"imageUrl":"http://books.google.com/books/content?id=4cBCvQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":272},"status":{"readStatus":"Read","combinedFlag":{"b64":"/////////////////////////////////////////////w=="},"progresses":[{"termStart":"2024-03-29","termEnd":"2024-03-29","flag":{"b64":"/////////////////////////////////////////////w=="},"memo":"","star":5}],"lastRead":"2024-03-29","star":5}},{"attr":{"isbn":"9784101167626","title":"天国旅行","subtitle":"","authors":["三浦しをん"],"imageUrl":"http://books.google.com/books/content?id=Xs0jngEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":312},"status":{"readStatus":"Read","combinedFlag":{"b64":"////////////////////////////////////////////////////"},"progresses":[{"termStart":"2024-03-02","termEnd":"2024-03-02","flag":{"b64":"////////////////////////////////////////////////////"},"memo":"","star":5}],"lastRead":"2024-03-02","star":5}},{"attr":{"isbn":"9784101253329","title":"西の魔女が死んだ","subtitle":"","authors":["梨木香步"],"imageUrl":"http://books.google.com/books/content?id=PGclAAAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":226},"status":{"readStatus":"Read","combinedFlag":{"b64":"/////////////////////////////////////8A="},"progresses":[{"termStart":"2024-01-12","termEnd":"2024-01-12","flag":{"b64":"/////////////////////////////////////8A="},"memo":"","star":5}],"lastRead":"2024-01-12","star":5}},{"attr":{"isbn":"9784101339153","title":"流しのしたの骨","subtitle":"","authors":["江國香織"],"imageUrl":"http://books.google.com/books/content?id=UDosAQAAIAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":324},"status":{"readStatus":"Read","combinedFlag":{"b64":"//////////////////////////////////////////////////////A="},"progresses":[{"termStart":"2024-02-17","termEnd":"2024-02-17","flag":{"b64":"//////////////////////////////////////////////////////A="},"memo":"","star":5}],"lastRead":"2024-02-17","star":5}},{"attr":{"isbn":"9784101339214","title":"東京タワー","subtitle":"","authors":["江國香織"],"imageUrl":"http://books.google.com/books/content?id=Tf8pAQAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":372},"status":{"readStatus":"Read","combinedFlag":{"b64":"//////////////////////////////////////////////////////////////A="},"progresses":[{"termStart":"2024-03-07","termEnd":"2024-03-07","flag":{"b64":"//////////////////////////////////////////////////////////////A="},"memo":"変","star":5}],"lastRead":"2024-03-07","star":5}},{"attr":{"isbn":"9784102122013","title":"夜間飛行","subtitle":"","authors":["サン=テグジュペリ"],"imageUrl":"http://books.google.com/books/content?id=OhTWOwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":283},"status":{"readStatus":"Reading","combinedFlag":{"b64":"////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"},"progresses":[{"termStart":"2024-02-16","termEnd":"2024-02-16","flag":{"b64":"////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"},"memo":"","star":5}],"lastRead":"2024-02-16","star":5}},{"attr":{"isbn":"9784122044289","title":"スカイ・クロラ","subtitle":"","authors":["森博嗣"],"imageUrl":"http://books.google.com/books/content?id=Zr0gNwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":333},"status":{"readStatus":"Read","combinedFlag":{"b64":"///////////////////////////////////////////////////////4"},"progresses":[{"termStart":"2024-01-09","termEnd":"2024-01-09","flag":{"b64":"///////////////////////////////////////////////////////4"},"memo":"","star":5}],"lastRead":"2024-01-09","star":5}},{"attr":{"isbn":"9784130120579","title":"圏論による論理学","subtitle":"高階論理とトポス","authors":["清水義夫"],"imageUrl":"http://books.google.com/books/content?id=xb0eNwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":216},"status":{"readStatus":"Reading","combinedFlag":{"b64":"////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"},"progresses":[{"termStart":"2024-03-28","termEnd":"2024-03-28","flag":{"b64":"////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"},"memo":"","star":4}],"lastRead":"2024-03-28","star":4}},{"attr":{"isbn":"9784150309688","title":"天冥の標","subtitle":"メニー・メニー・シープ","authors":["小川一水"],"imageUrl":"http://books.google.com/books/content?id=DTh1QgAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":341},"status":{"readStatus":"Read","combinedFlag":{"b64":"////////////////////////////////////////////////////////+A=="},"progresses":[{"termStart":"2024-02-27","termEnd":"2024-02-27","flag":{"b64":"////////////////////////////////////////////////////////+A=="},"memo":"","star":5}],"lastRead":"2024-02-27","star":5}},{"attr":{"isbn":"9784150309862","title":"ゼロ年代SF傑作選","subtitle":"","authors":["S-Fマガジン編集部"],"imageUrl":"","totalPageCount":380},"status":{"readStatus":"Read","combinedFlag":{"b64":"///////////////////////////////////////////////////////////////w"},"progresses":[{"termStart":"2024-02-06","termEnd":"2024-02-06","flag":{"b64":"///////////////////////////////////////////////////////////////w"},"memo":"","star":5}],"lastRead":"2024-02-06","star":5}},{"attr":{"isbn":"9784150313531","title":"revisions(リヴィジョンズ) 時間SFアンソロジー","subtitle":"","authors":["大森望"],"imageUrl":"http://books.google.com/books/content?id=sAxtvwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":352},"status":{"readStatus":"Reading","combinedFlag":{"b64":"/////////////////////////////////wAAAAAAAAAAAAAAAAAAAAAAAAA="},"progresses":[{"termStart":"2024-02-28","termEnd":"2024-02-28","flag":{"b64":"/////////////////////////////////wAAAAAAAAAAAAAAAAAAAAAAAAA="},"memo":"","star":5}],"lastRead":"2024-02-28","star":5}},{"attr":{"isbn":"9784163904290","title":"存在と時間哲学探究","subtitle":"","authors":["永井均"],"imageUrl":"http://books.google.com/books/content?id=NdfbjwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":332},"status":{"readStatus":"Reading","combinedFlag":{"b64":"///////////////////4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"},"progresses":[{"termStart":"2024-03-01","termEnd":"2024-03-07","flag":{"b64":"////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"},"memo":"","star":4},{"termStart":"2024-03-07","termEnd":"2024-03-29","flag":{"b64":"AAAAAAAAAAAAAAAAD//4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"},"memo":"","star":4}],"lastRead":"2024-03-29","star":4}},{"attr":{"isbn":"9784167174033","title":"池袋ウエストゲートパーク","subtitle":"","authors":["石田衣良"],"imageUrl":"","totalPageCount":368},"status":{"readStatus":"Read","combinedFlag":{"b64":"/////////////////////////////////////////////////////////////w=="},"progresses":[{"termStart":"2024-03-01","termEnd":"2024-03-01","flag":{"b64":"/////////////////////////////////////////////////////////////w=="},"memo":"","star":5}],"lastRead":"2024-03-01","star":5}},{"attr":{"isbn":"9784167673048","title":"少年少女飛行倶楽部","subtitle":"","authors":["加納朋子"],"imageUrl":"http://books.google.com/books/content?id=fH17pwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":350},"status":{"readStatus":"Read","combinedFlag":{"b64":"//////////////////////////////////////////////////////////w="},"progresses":[{"termStart":"2024-02-05","termEnd":"2024-02-05","flag":{"b64":"//////////////////////////////////////////////////////////w="},"memo":"無礼(なめ)るなよ、データベースを直接いじって評価を5より上げることなんて造作もないんだからな","star":10}],"lastRead":"2024-02-05","star":10}},{"attr":{"isbn":"9784167761011","title":"まほろ駅前多田便利軒","subtitle":"","authors":["三浦しをん"],"imageUrl":"http://books.google.com/books/content?id=ahQpPwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":351},"status":{"readStatus":"Read","combinedFlag":{"b64":"//////////////////////////////////////////////////////////4="},"progresses":[{"termStart":"2024-02-19","termEnd":"2024-02-19","flag":{"b64":"//////////////////////////////////////////////////////////4="},"memo":"","star":5}],"lastRead":"2024-02-19","star":5}},{"attr":{"isbn":"9784396633462","title":"木暮荘物語","subtitle":"","authors":["三浦しをん"],"imageUrl":"http://books.google.com/books/content?id=T-MdkgAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":267},"status":{"readStatus":"Read","combinedFlag":{"b64":"////////////////////////////////////////////4A=="},"progresses":[{"termStart":"2024-01-10","termEnd":"2024-01-10","flag":{"b64":"////////////////////////////////////////////4A=="},"memo":"","star":5}],"lastRead":"2024-01-10","star":5}},{"attr":{"isbn":"9784409030905","title":"有限性の後で","subtitle":"偶然性の必然性についての試論","authors":["カンタンメイヤスー"],"imageUrl":"http://books.google.com/books/content?id=wkpujwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":236},"status":{"readStatus":"Reading","combinedFlag":{"b64":"///////////gAAAAAAAAAAAAAAAAAAAAAAAAAAAA"},"progresses":[{"termStart":"2024-03-28","termEnd":"2024-03-28","flag":{"b64":"/////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"},"memo":"","star":4},{"termStart":"2024-03-29","termEnd":"2024-03-29","flag":{"b64":"AAAAAAAAB//gAAAAAAAAAAAAAAAAAAAAAAAAAAAA"},"memo":"","star":5},{"termStart":"2024-03-29","termEnd":"2024-03-29","flag":{"b64":"////////+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"},"memo":"","star":5}],"lastRead":"2024-03-29","star":5}},{"attr":{"isbn":"9784479782995","title":"フランス人は10着しか服を持たない","subtitle":"パリで学んだ“暮らしの質”を高める秘訣","authors":["ジェニファー・L. スコット"],"imageUrl":"http://books.google.com/books/content?id=WlnvoQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":239},"status":{"readStatus":"Read","combinedFlag":{"b64":"///////////////////////////////////////+"},"progresses":[{"termStart":"2024-03-07","termEnd":"2024-03-07","flag":{"b64":"///////////////////////////////////////+"},"memo":"","star":5}],"lastRead":"2024-03-07","star":5}},{"attr":{"isbn":"9784486021742","title":"神なき国の科学思想","subtitle":"ソヴィエト連邦における物理学哲学論争","authors":["金山浩司"],"imageUrl":"http://books.google.com/books/content?id=r06wDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api","totalPageCount":317},"status":{"readStatus":"Read","combinedFlag":{"b64":"////////////////////////////////////////////////////+A=="},"progresses":[{"termStart":"2024-01-31","termEnd":"2024-01-31","flag":{"b64":"////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="},"memo":"","star":5},{"termStart":"2024-02-04","termEnd":"2024-02-04","flag":{"b64":"AAAAAAAA//////////////////////AAAAAAAAAAAAAAAAAAAAAAAA=="},"memo":"","star":5},{"termStart":"2024-02-10","termEnd":"2024-02-10","flag":{"b64":"////////////////////////////////////////////////////+A=="},"memo":"1920年代後半からWW2突入直前までのソ連における科学哲学論争と、それと並行して進むアカデミアの政治抗争を、当時のジャーナル『マルクス主義の旗の下に』周辺から描画し直した本。\n当時新しく発見された現代物理学のトピック(相対性理論や量子力学、またその各論など)を、いかにしてソ連の公式イデオロギーであるところの弁証法的唯物論とすり合わせるか、または拒絶するか、ということに関する科学者たちの物理学解釈論争が明らかにされている。\nなんか微妙に思ってたのと違ったけどおもしろかった。","star":5}],"lastRead":"2024-02-10","star":5}},{"attr":{"isbn":"9784627157620","title":"宇宙論入門(原著第2版)","subtitle":"","authors":["Barbara Ryden"],"imageUrl":"http://books.google.com/books/content?id=rR07zwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":272},"status":{"readStatus":"Reading","combinedFlag":{"b64":"//////////////////gAAAAAAAAAAAAAAAAAAAAAAAAAAA=="},"progresses":[{"termStart":"2024-01-14","termEnd":"2024-01-14","flag":{"b64":"///////////4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="},"memo":"","star":5},{"termStart":"2024-01-14","termEnd":"2024-01-14","flag":{"b64":"AAAAAAAAAAAH//////gAAAAAAAAAAAAAAAAAAAAAAAAAAA=="},"memo":"後半をさっさと読みたい。","star":5}],"lastRead":"2024-01-14","star":5}},{"attr":{"isbn":"9784860620364","title":"知った気でいるあなたのためのポストモダン再入門","subtitle":"","authors":["高田明典"],"imageUrl":"http://books.google.com/books/content?id=DF5uAAAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":342},"status":{"readStatus":"Reading","combinedFlag":{"b64":"//////////////////////////////wAAAAAAAAAAAAAAAAAAAAAAAAAAA=="},"progresses":[{"termStart":"2024-02-10","termEnd":"2024-02-10","flag":{"b64":"//////////////////////////////wAAAAAAAAAAAAAAAAAAAAAAAAAAA=="},"memo":"「ノイズくん」というキャラクターを用意して対話形式で文章を進めているため語り口がかなりたるいけど、ほにゃほにゃした文学評論家への怒りは本物なので、悪い人ではないと思う。","star":3}],"lastRead":"2024-02-10","star":3}},{"attr":{"isbn":"9784861827358","title":"ドゥルーズ『差異と反復』を読む","subtitle":"","authors":["森田裕之"],"imageUrl":"http://books.google.com/books/content?id=Xrr7wgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":176},"status":{"readStatus":"Reading","combinedFlag":{"b64":"//////////AAAAAAAAAAAAAAAAAAAA=="},"progresses":[{"termStart":"2024-01-10","termEnd":"2024-01-10","flag":{"b64":"///////4AAAAAAAAAAAAAAAAAAAAAA=="},"memo":"","star":3},{"termStart":"2024-01-13","termEnd":"2024-01-13","flag":{"b64":"AAAAAAAP//AAAAAAAAAAAAAAAAAAAA=="},"memo":"","star":4}],"lastRead":"2024-01-13","star":3}},{"attr":{"isbn":"9784873117874","title":"Cooking for Geeks","subtitle":"料理の科学と実践レシピ","authors":["Jeff Potter","ジェフポッター"],"imageUrl":"http://books.google.com/books/content?id=YS1PMQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api","totalPageCount":504},"status":{"readStatus":"Reading","combinedFlag":{"b64":"///////////////////////////+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"},"progresses":[{"termStart":"2024-03-07","termEnd":"2024-03-07","flag":{"b64":"///////////////////////////+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"},"memo":"","star":5}],"lastRead":"2024-03-07","star":5}},{"attr":{"isbn":"9784894347427","title":"キリスト教の歴史","subtitle":"現代をよりよく理解するために","authors":["アラン・コルバン"],"imageUrl":"","totalPageCount":536},"status":{"readStatus":"Read","combinedFlag":{"b64":"/////////////////////////////////////////////////////////////////////////////////////////w=="},"progresses":[{"termStart":"2024-02-12","termEnd":"2024-02-12","flag":{"b64":"/////////////////////////////////////////////////////////////////////////////////////////w=="},"memo":"ブルーアーカイブのために読みました。","star":5}],"lastRead":"2024-02-12","star":5}}]}
+{
+  "version": 1,
+  "items": [
+    {
+      "attr": {
+        "isbn": "4061496670",
+        "title": "悪女入門",
+        "subtitle": "ファム・ファタル恋愛論",
+        "authors": ["鹿島茂"],
+        "imageUrl": "http://books.google.com/books/content?id=0JgxPQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 246
+      },
+      "status": {
+        "readStatus": "Reading",
+        "combinedFlag": {
+          "b64": "///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-03-28",
+            "termEnd": "2024-03-28",
+            "flag": { "b64": "///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==" },
+            "memo": "",
+            "star": 4
+          }
+        ],
+        "lastRead": "2024-03-28",
+        "star": 4
+      }
+    },
+    {
+      "attr": {
+        "isbn": "4062639246",
+        "title": "すべてがFになる",
+        "subtitle": "",
+        "authors": ["森博嗣"],
+        "imageUrl": "http://books.google.com/books/content?id=RaC9PQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 522
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "///////////////////////////////////////////////////////////////////////////////////////A"
+        },
+        "progresses": [
+          {
+            "termStart": "2024-03-15",
+            "termEnd": "2024-03-27",
+            "flag": {
+              "b64": "///////////////////////////////////////////////////////////////////////////////////////A"
+            },
+            "memo": "",
+            "star": 4
+          }
+        ],
+        "lastRead": "2024-03-27",
+        "star": 4
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784041067734",
+        "title": "涼宮ハルヒの憂鬱(18)",
+        "subtitle": "",
+        "authors": ["ツガノ　ガク"],
+        "imageUrl": "http://books.google.com/books/content?id=oziewtdjD04C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "totalPageCount": 175
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": { "b64": "/////////////////////////////g==" },
+        "progresses": [
+          {
+            "termStart": "2024-03-07",
+            "termEnd": "2024-03-07",
+            "flag": { "b64": "/////////////////////////////g==" },
+            "memo": "これじゃなくて角川文庫のやつを読んだんだけど、google books apiがISBNから正しい本を返してくれない！　おい！　いい加減にしてくれよな！",
+            "star": 4
+          }
+        ],
+        "lastRead": "2024-03-07",
+        "star": 4
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784049121117",
+        "title": "私が大好きな小説家を殺すまで",
+        "subtitle": "",
+        "authors": ["斜線堂有紀"],
+        "imageUrl": "http://books.google.com/books/content?id=4cBCvQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 272
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "/////////////////////////////////////////////w=="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-03-29",
+            "termEnd": "2024-03-29",
+            "flag": {
+              "b64": "/////////////////////////////////////////////w=="
+            },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-03-29",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784061497382",
+        "title": "大人のための文章教室",
+        "subtitle": "",
+        "authors": ["清水義範"],
+        "imageUrl": "http://books.google.com/books/content?id=ZCzUAAAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 207
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": { "b64": "//////////////////////////////////4=" },
+        "progresses": [
+          {
+            "termStart": "2024-04-05",
+            "termEnd": "2024-04-05",
+            "flag": { "b64": "//////////////////////////////////4=" },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-04-05",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784101167626",
+        "title": "天国旅行",
+        "subtitle": "",
+        "authors": ["三浦しをん"],
+        "imageUrl": "http://books.google.com/books/content?id=Xs0jngEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 312
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "////////////////////////////////////////////////////"
+        },
+        "progresses": [
+          {
+            "termStart": "2024-03-02",
+            "termEnd": "2024-03-02",
+            "flag": {
+              "b64": "////////////////////////////////////////////////////"
+            },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-03-02",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784101253329",
+        "title": "西の魔女が死んだ",
+        "subtitle": "",
+        "authors": ["梨木香步"],
+        "imageUrl": "http://books.google.com/books/content?id=PGclAAAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 226
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": { "b64": "/////////////////////////////////////8A=" },
+        "progresses": [
+          {
+            "termStart": "2024-01-12",
+            "termEnd": "2024-01-12",
+            "flag": { "b64": "/////////////////////////////////////8A=" },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-01-12",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784101339153",
+        "title": "流しのしたの骨",
+        "subtitle": "",
+        "authors": ["江國香織"],
+        "imageUrl": "http://books.google.com/books/content?id=UDosAQAAIAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 324
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "//////////////////////////////////////////////////////A="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-02-17",
+            "termEnd": "2024-02-17",
+            "flag": {
+              "b64": "//////////////////////////////////////////////////////A="
+            },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-02-17",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784101339214",
+        "title": "東京タワー",
+        "subtitle": "",
+        "authors": ["江國香織"],
+        "imageUrl": "http://books.google.com/books/content?id=Tf8pAQAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 372
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "//////////////////////////////////////////////////////////////A="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-03-07",
+            "termEnd": "2024-03-07",
+            "flag": {
+              "b64": "//////////////////////////////////////////////////////////////A="
+            },
+            "memo": "変",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-03-07",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784102122013",
+        "title": "夜間飛行",
+        "subtitle": "",
+        "authors": ["サン=テグジュペリ"],
+        "imageUrl": "http://books.google.com/books/content?id=OhTWOwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 283
+      },
+      "status": {
+        "readStatus": "Reading",
+        "combinedFlag": {
+          "b64": "////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "progresses": [
+          {
+            "termStart": "2024-02-16",
+            "termEnd": "2024-02-16",
+            "flag": {
+              "b64": "////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-02-16",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784122044289",
+        "title": "スカイ・クロラ",
+        "subtitle": "",
+        "authors": ["森博嗣"],
+        "imageUrl": "http://books.google.com/books/content?id=Zr0gNwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 333
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "///////////////////////////////////////////////////////4"
+        },
+        "progresses": [
+          {
+            "termStart": "2024-01-09",
+            "termEnd": "2024-01-09",
+            "flag": {
+              "b64": "///////////////////////////////////////////////////////4"
+            },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-01-09",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784130120579",
+        "title": "圏論による論理学",
+        "subtitle": "高階論理とトポス",
+        "authors": ["清水義夫"],
+        "imageUrl": "http://books.google.com/books/content?id=xb0eNwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 216
+      },
+      "status": {
+        "readStatus": "Reading",
+        "combinedFlag": { "b64": "////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" },
+        "progresses": [
+          {
+            "termStart": "2024-03-28",
+            "termEnd": "2024-03-28",
+            "flag": { "b64": "////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" },
+            "memo": "",
+            "star": 4
+          }
+        ],
+        "lastRead": "2024-03-28",
+        "star": 4
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784150309688",
+        "title": "天冥の標",
+        "subtitle": "メニー・メニー・シープ",
+        "authors": ["小川一水"],
+        "imageUrl": "http://books.google.com/books/content?id=DTh1QgAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 341
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "////////////////////////////////////////////////////////+A=="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-02-27",
+            "termEnd": "2024-02-27",
+            "flag": {
+              "b64": "////////////////////////////////////////////////////////+A=="
+            },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-02-27",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784150309862",
+        "title": "ゼロ年代SF傑作選",
+        "subtitle": "",
+        "authors": ["S-Fマガジン編集部"],
+        "imageUrl": "",
+        "totalPageCount": 380
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "///////////////////////////////////////////////////////////////w"
+        },
+        "progresses": [
+          {
+            "termStart": "2024-02-06",
+            "termEnd": "2024-02-06",
+            "flag": {
+              "b64": "///////////////////////////////////////////////////////////////w"
+            },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-02-06",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784150313531",
+        "title": "revisions(リヴィジョンズ) 時間SFアンソロジー",
+        "subtitle": "",
+        "authors": ["大森望"],
+        "imageUrl": "http://books.google.com/books/content?id=sAxtvwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 352
+      },
+      "status": {
+        "readStatus": "Reading",
+        "combinedFlag": {
+          "b64": "/////////////////////////////////wAAAAAAAAAAAAAAAAAAAAAAAAA="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-02-28",
+            "termEnd": "2024-02-28",
+            "flag": {
+              "b64": "/////////////////////////////////wAAAAAAAAAAAAAAAAAAAAAAAAA="
+            },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-02-28",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784163904290",
+        "title": "存在と時間哲学探究",
+        "subtitle": "",
+        "authors": ["永井均"],
+        "imageUrl": "http://books.google.com/books/content?id=NdfbjwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 332
+      },
+      "status": {
+        "readStatus": "Reading",
+        "combinedFlag": {
+          "b64": "///////////////////4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "progresses": [
+          {
+            "termStart": "2024-03-01",
+            "termEnd": "2024-03-07",
+            "flag": {
+              "b64": "////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            },
+            "memo": "",
+            "star": 4
+          },
+          {
+            "termStart": "2024-03-07",
+            "termEnd": "2024-03-29",
+            "flag": {
+              "b64": "AAAAAAAAAAAAAAAAD//4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            },
+            "memo": "",
+            "star": 4
+          }
+        ],
+        "lastRead": "2024-03-29",
+        "star": 4
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784167174033",
+        "title": "池袋ウエストゲートパーク",
+        "subtitle": "",
+        "authors": ["石田衣良"],
+        "imageUrl": "",
+        "totalPageCount": 368
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "/////////////////////////////////////////////////////////////w=="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-03-01",
+            "termEnd": "2024-03-01",
+            "flag": {
+              "b64": "/////////////////////////////////////////////////////////////w=="
+            },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-03-01",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784167673048",
+        "title": "少年少女飛行倶楽部",
+        "subtitle": "",
+        "authors": ["加納朋子"],
+        "imageUrl": "http://books.google.com/books/content?id=fH17pwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 350
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "//////////////////////////////////////////////////////////w="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-02-05",
+            "termEnd": "2024-02-05",
+            "flag": {
+              "b64": "//////////////////////////////////////////////////////////w="
+            },
+            "memo": "無礼(なめ)るなよ、データベースを直接いじって評価を5より上げることなんて造作もないんだからな",
+            "star": 10
+          }
+        ],
+        "lastRead": "2024-02-05",
+        "star": 10
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784167761011",
+        "title": "まほろ駅前多田便利軒",
+        "subtitle": "",
+        "authors": ["三浦しをん"],
+        "imageUrl": "http://books.google.com/books/content?id=ahQpPwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 351
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "//////////////////////////////////////////////////////////4="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-02-19",
+            "termEnd": "2024-02-19",
+            "flag": {
+              "b64": "//////////////////////////////////////////////////////////4="
+            },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-02-19",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784396633462",
+        "title": "木暮荘物語",
+        "subtitle": "",
+        "authors": ["三浦しをん"],
+        "imageUrl": "http://books.google.com/books/content?id=T-MdkgAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 267
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "////////////////////////////////////////////4A=="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-01-10",
+            "termEnd": "2024-01-10",
+            "flag": {
+              "b64": "////////////////////////////////////////////4A=="
+            },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-01-10",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784409030905",
+        "title": "有限性の後で",
+        "subtitle": "偶然性の必然性についての試論",
+        "authors": ["カンタンメイヤスー"],
+        "imageUrl": "http://books.google.com/books/content?id=wkpujwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 236
+      },
+      "status": {
+        "readStatus": "Reading",
+        "combinedFlag": { "b64": "///////////wAAAAAAAAAAAAAAAAAAAAAAAAAAAA" },
+        "progresses": [
+          {
+            "termStart": "2024-03-28",
+            "termEnd": "2024-03-28",
+            "flag": { "b64": "/////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" },
+            "memo": "",
+            "star": 4
+          },
+          {
+            "termStart": "2024-03-29",
+            "termEnd": "2024-03-29",
+            "flag": { "b64": "AAAAAAAAB//gAAAAAAAAAAAAAAAAAAAAAAAAAAAA" },
+            "memo": "",
+            "star": 5
+          },
+          {
+            "termStart": "2024-03-29",
+            "termEnd": "2024-03-29",
+            "flag": { "b64": "////////+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" },
+            "memo": "",
+            "star": 5
+          },
+          {
+            "termStart": "2024-04-04",
+            "termEnd": "2024-04-04",
+            "flag": { "b64": "AAAAAAAAB//wAAAAAAAAAAAAAAAAAAAAAAAAAAAA" },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-04-04",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784479782995",
+        "title": "フランス人は10着しか服を持たない",
+        "subtitle": "パリで学んだ“暮らしの質”を高める秘訣",
+        "authors": ["ジェニファー・L. スコット"],
+        "imageUrl": "http://books.google.com/books/content?id=WlnvoQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 239
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": { "b64": "///////////////////////////////////////+" },
+        "progresses": [
+          {
+            "termStart": "2024-03-07",
+            "termEnd": "2024-03-07",
+            "flag": { "b64": "///////////////////////////////////////+" },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-03-07",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784486021742",
+        "title": "神なき国の科学思想",
+        "subtitle": "ソヴィエト連邦における物理学哲学論争",
+        "authors": ["金山浩司"],
+        "imageUrl": "http://books.google.com/books/content?id=r06wDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "totalPageCount": 317
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "////////////////////////////////////////////////////+A=="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-01-31",
+            "termEnd": "2024-01-31",
+            "flag": {
+              "b64": "////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            },
+            "memo": "",
+            "star": 5
+          },
+          {
+            "termStart": "2024-02-04",
+            "termEnd": "2024-02-04",
+            "flag": {
+              "b64": "AAAAAAAA//////////////////////AAAAAAAAAAAAAAAAAAAAAAAA=="
+            },
+            "memo": "",
+            "star": 5
+          },
+          {
+            "termStart": "2024-02-10",
+            "termEnd": "2024-02-10",
+            "flag": {
+              "b64": "////////////////////////////////////////////////////+A=="
+            },
+            "memo": "1920年代後半からWW2突入直前までのソ連における科学哲学論争と、それと並行して進むアカデミアの政治抗争を、当時のジャーナル『マルクス主義の旗の下に』周辺から描画し直した本。\n当時新しく発見された現代物理学のトピック(相対性理論や量子力学、またその各論など)を、いかにしてソ連の公式イデオロギーであるところの弁証法的唯物論とすり合わせるか、または拒絶するか、ということに関する科学者たちの物理学解釈論争が明らかにされている。\nなんか微妙に思ってたのと違ったけどおもしろかった。",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-02-10",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784627157620",
+        "title": "宇宙論入門(原著第2版)",
+        "subtitle": "",
+        "authors": ["Barbara Ryden"],
+        "imageUrl": "http://books.google.com/books/content?id=rR07zwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 272
+      },
+      "status": {
+        "readStatus": "Reading",
+        "combinedFlag": {
+          "b64": "//////////////////gAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-01-14",
+            "termEnd": "2024-01-14",
+            "flag": {
+              "b64": "///////////4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            },
+            "memo": "",
+            "star": 5
+          },
+          {
+            "termStart": "2024-01-14",
+            "termEnd": "2024-01-14",
+            "flag": {
+              "b64": "AAAAAAAAAAAH//////gAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            },
+            "memo": "後半をさっさと読みたい。",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-01-14",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784860620364",
+        "title": "知った気でいるあなたのためのポストモダン再入門",
+        "subtitle": "",
+        "authors": ["高田明典"],
+        "imageUrl": "http://books.google.com/books/content?id=DF5uAAAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 342
+      },
+      "status": {
+        "readStatus": "Reading",
+        "combinedFlag": {
+          "b64": "//////////////////////////////wAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-02-10",
+            "termEnd": "2024-02-10",
+            "flag": {
+              "b64": "//////////////////////////////wAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            },
+            "memo": "「ノイズくん」というキャラクターを用意して対話形式で文章を進めているため語り口がかなりたるいけど、ほにゃほにゃした文学評論家への怒りは本物なので、悪い人ではないと思う。",
+            "star": 3
+          }
+        ],
+        "lastRead": "2024-02-10",
+        "star": 3
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784861827358",
+        "title": "ドゥルーズ『差異と反復』を読む",
+        "subtitle": "",
+        "authors": ["森田裕之"],
+        "imageUrl": "http://books.google.com/books/content?id=Xrr7wgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 176
+      },
+      "status": {
+        "readStatus": "Reading",
+        "combinedFlag": { "b64": "//////////AAAAAAAAAAAAAAAAAAAA==" },
+        "progresses": [
+          {
+            "termStart": "2024-01-10",
+            "termEnd": "2024-01-10",
+            "flag": { "b64": "///////4AAAAAAAAAAAAAAAAAAAAAA==" },
+            "memo": "",
+            "star": 3
+          },
+          {
+            "termStart": "2024-01-13",
+            "termEnd": "2024-01-13",
+            "flag": { "b64": "AAAAAAAP//AAAAAAAAAAAAAAAAAAAA==" },
+            "memo": "",
+            "star": 4
+          }
+        ],
+        "lastRead": "2024-01-13",
+        "star": 3
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784873117874",
+        "title": "Cooking for Geeks",
+        "subtitle": "料理の科学と実践レシピ",
+        "authors": ["Jeff Potter", "ジェフポッター"],
+        "imageUrl": "http://books.google.com/books/content?id=YS1PMQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 504
+      },
+      "status": {
+        "readStatus": "Reading",
+        "combinedFlag": {
+          "b64": "///////////////////////////+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "progresses": [
+          {
+            "termStart": "2024-03-07",
+            "termEnd": "2024-03-07",
+            "flag": {
+              "b64": "///////////////////////////+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-03-07",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784894347427",
+        "title": "キリスト教の歴史",
+        "subtitle": "現代をよりよく理解するために",
+        "authors": ["アラン・コルバン"],
+        "imageUrl": "",
+        "totalPageCount": 536
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "/////////////////////////////////////////////////////////////////////////////////////////w=="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-02-12",
+            "termEnd": "2024-02-12",
+            "flag": {
+              "b64": "/////////////////////////////////////////////////////////////////////////////////////////w=="
+            },
+            "memo": "ブルーアーカイブのために読みました。",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-02-12",
+        "star": 5
+      }
+    }
+  ]
+}
+

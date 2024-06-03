@@ -1,0 +1,17 @@
+---
+import Common from "../layouts/Common.astro";
+import Game from "../components/2048/game.svelte";
+---
+
+<Common
+  url={Astro.url.href}
+  type="article"
+  title="すいどう"
+  description="ごちゃごちゃ"
+  image=""
+>
+  <main>
+    <h2>2048</h2>
+    <Game />
+  </main>
+</Common>
