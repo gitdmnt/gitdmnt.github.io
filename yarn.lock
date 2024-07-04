@@ -1391,6 +1391,11 @@ caniuse-lite@^1.0.30001587:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001627.tgz#8071c42d468e06ed2fb2c545efe79a663fd326ab"
   integrity sha512-4zgNiB8nTyV/tHhwZrFs88ryjls/lHiqFhrxCW4qSTeuRByBVnPYpDInchOIySWknznucaf31Z4KYqjfbrecVw==
 
+canvas-size@^1.2.6:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/canvas-size/-/canvas-size-1.2.6.tgz#1eaa6b56167cf2a70fa4021680829d2073b45706"
+  integrity sha512-x2iVHOrZ5x9V0Hwx6kBz+Yxf/VCAII+jrD6WLjJbytJLozHq/oDJjEva432Os0eHxWMFR0vYlLJwTr6QxyxQqw==
+
 ccount@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/ccount/-/ccount-2.0.1.tgz#17a3bf82302e0870d6da43a01311a8bc02a3ecf5"
@@ -2358,6 +2363,11 @@ hastscript@^8.0.0:
     hast-util-parse-selector "^4.0.0"
     property-information "^6.0.0"
     space-separated-tokens "^2.0.0"
+
+hit-canvas@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/hit-canvas/-/hit-canvas-0.2.0.tgz#58a509caef9b6141bb1558ab56776388a6e99d4e"
+  integrity sha512-sHOot00xR+k58jprp6G9/VH0W0cRRj1JUSroaDF77qIJ8EhaVkvWxvFv8JdVfQ28dcSlPF60DlnDAE0gBjuOdg==
 
 html-escaper@^3.0.3:
   version "3.0.3"
@@ -4280,6 +4290,15 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
+svelte-canvas@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/svelte-canvas/-/svelte-canvas-1.2.0.tgz#01b552637fa4b9da4ef2235f7f7b323d1e93e27f"
+  integrity sha512-Xp7NH9EMkO/cuAH4M2IdZK/jzrh8HKLcBHSO7Hs2Nnc2IBGXDyhE8sRfG49PldyhmgPti5DTnR7OTZ0Dv9p52A==
+  dependencies:
+    canvas-size "^1.2.6"
+    hit-canvas "^0.2.0"
+    svelte "^4.0.0"
+
 svelte-hmr@^0.16.0:
   version "0.16.0"
   resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.16.0.tgz#9f345b7d1c1662f1613747ed7e82507e376c1716"
@@ -4293,7 +4312,7 @@ svelte2tsx@^0.6.27:
     dedent-js "^1.0.1"
     pascal-case "^3.1.1"
 
-svelte@^4.2.15:
+svelte@^4.0.0, svelte@^4.2.15:
   version "4.2.17"
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-4.2.17.tgz#e8f4d70be8cac6bf4dbfa89ca2fcb1a99445933f"
   integrity sha512-N7m1YnoXtRf5wya5Gyx3TWuTddI4nAyayyIWFojiWV5IayDYNV5i2mRp/7qNGol4DtxEYxljmrbgp1HM6hUbmQ==
