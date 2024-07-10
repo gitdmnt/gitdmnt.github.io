@@ -1,9 +1,16 @@
 <script>
-  const svelte = "SVELTE";
+  import { Canvas, Layer } from "svelte-canvas";
+
+  const col = 3;
+  const grids = [...Array(col)].map();
 </script>
 
 <main>
-  <h1>hello from {svelte}</h1>
+  <div class="canvas">
+    <Canvas>
+      <Layer {render} />
+    </Canvas>
+  </div>
   <p>
     canvasを使って何かゲームを作りたい。
     https://developer.mozilla.org/ja/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Svelte_getting_started
@@ -15,7 +22,9 @@
 </main>
 
 <style>
-  h1 {
-    color: red;
+  .canvas {
+    margin: auto;
+    height: 320px;
+    width: 240px;
   }
 </style>
