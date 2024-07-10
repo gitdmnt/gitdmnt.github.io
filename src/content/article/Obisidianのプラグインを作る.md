@@ -51,7 +51,7 @@ git clone https://github.com/obsidianmd/obsidian-sample-plugin
 ```
 git clone https://github.com/pjeby/hot-reload
 ```
-サンプルのリポジトリにはnodeやeslintの設定も同梱されているため、
+サンプルのリポジトリにはnpmやesbuildの設定も同梱されているため、
 ```
 cd obsidian-sample-plugin
 npm install
