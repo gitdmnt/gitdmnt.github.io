@@ -102,7 +102,7 @@ bunやpnpmなど、別のパッケージマネージャーを使いたい人は�
 
 まず、論文情報を入力するウィンドウを定義します。
 サンプルプラグインの挙動を、次のように置き換えます。
-``` TypeScript
+``` typescript
 export default class MyFinestPlugin extends Plugin {
 	async onload() {
 		new Notice("Hi!");
@@ -122,7 +122,7 @@ export default class MyFinestPlugin extends Plugin {
 今回は、読み込み時に "Hi!" と挨拶をし、サイドリボンにモーダルを開くアイコンを追加するスクリプトを、無効化時に "Bye!" と挨拶をするよう記述しました。
 
 これに合わせて、`SampleModal`を次のように書き換えます。
-```TypeScript
+```typescript
 class SuperModal extends Modal {
 	result: string;
 	onSubmit: (result: string) => void;
@@ -168,7 +168,7 @@ Obsidianの設定からSample pluginを有効化してみてください。
 
 これだけでは寂しいので、設定から挨拶を日本語にできるようにしましょう。
 プラグインを有効に戻し、`SuperSettingTab`クラスを次のように追加します。
-```TypeScript
+```typescript
 class SuperSettingTab extends PluginSettingTab {
 	plugin: MyFinestPlugin;
 
@@ -197,7 +197,7 @@ class SuperSettingTab extends PluginSettingTab {
 }
 ```
 これに合わせて、`MyFinestPlugin`クラスの挙動を次のように書き換えます。
-```TypeScript
+```typescript
 interface Settings {
 	language: "en" | "ja";
 }
@@ -246,7 +246,7 @@ export default class MyFinestPlugin extends Plugin {
 }
 ```
 と言うわけで、コードの全容は次のようになります。
-```TypeScript
+```typescript
 import {
 	App,
 	Modal,
