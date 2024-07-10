@@ -2,13 +2,13 @@
   import { Canvas, Layer } from "svelte-canvas";
 
   const col = 3;
-  const grids = [...Array(col)].map();
+  //  const grids = [...Array(col)].map();
 </script>
 
 <main>
   <div class="canvas">
     <Canvas>
-      <Layer {render} />
+      <Layer />
     </Canvas>
   </div>
   <p>
