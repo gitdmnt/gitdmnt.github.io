@@ -49,7 +49,7 @@ git clone https://github.com/obsidianmd/obsidian-sample-plugin
 
 ホットリロード用のプラグインもクローンしましょう。
 ```
-https://github.com/pjeby/hot-reload
+git clone https://github.com/pjeby/hot-reload
 ```
 サンプルのリポジトリにはnodeやeslintの設定も同梱されているため、
 ```
