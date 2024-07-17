@@ -74,17 +74,27 @@ if (image == "") {
     min-width: 320px;
     min-height: 100dvh;
   }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
+  pre.astro-code {
+    padding: 1rem;
+    border-radius: 0.4rem;
+
+    code {
+      font-family:
+        Menlo,
+        Monaco,
+        Lucida Console,
+        Liberation Mono,
+        DejaVu Sans Mono,
+        Bitstream Vera Sans Mono,
+        Courier New,
+        monospace;
+      font-size: small;
+
+      & > span {
+      }
+    }
   }
+
   p {
     margin-block: 1rem;
   }
@@ -94,6 +104,9 @@ if (image == "") {
   }
   ul {
     list-style: url("/triangle.svg");
+    li {
+      margin: 0.5rem;
+    }
   }
   ol {
     list-style: decimal;
