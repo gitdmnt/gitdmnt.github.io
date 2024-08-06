@@ -26,6 +26,9 @@
 li.water {
   display: grid;
   align-items: center;
+  margin: 0;
+  width: 20px;
+  height: 20px;
   justify-content: center;
 }
 
