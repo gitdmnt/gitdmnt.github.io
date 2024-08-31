@@ -12,7 +12,7 @@
   "dependencies": {
     "@astrojs/mdx": "^2.0.3",
     "@astrojs/react": "^3.0.7",
-    "@astrojs/svelte": "^5.4.0",
+    "@astrojs/svelte": "^5.7.0",
     "@astrojs/upgrade": "^0.3.1",
     "@types/react": "^18.0.21",
     "@types/react-bootstrap": "^0.32.35",
@@ -23,10 +23,11 @@
     "react-dom": "^18.0.0",
     "react-twitter-widgets": "^1.11.0",
     "sharp": "0.32",
-    "svelte": "^4.2.15",
+    "svelte": "^4.2.19",
     "svelte-canvas": "^1.2.0",
+    "svelte-file-dropzone": "^2.0.7",
     "temporal-polyfill": "^0.2.0",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.4"
   },
   "peerDependencies": {
     "react": "^17.0.0"

@@ -1,7 +1,7 @@
 ---
 import RevoClock from "../components/RevoClock/RevoClock";
 import Top from "../layouts/Top.astro";
-import Footer from "../components/Footer.astro";
+import Footer from "../components/SimpleFooter.astro";
 ---
 
 <Top
@@ -38,9 +38,7 @@ import Footer from "../components/Footer.astro";
       </p>
     </div>
   </div>
-  <footer>
-    <a href="/">や-さがされ</a>
-  </footer>
+  <Footer />
   <style>
     .container {
       background-color: #101010;
@@ -68,16 +66,6 @@ import Footer from "../components/Footer.astro";
       width: 50%;
       min-width: 320px;
       margin-inline: auto;
-    }
-
-    footer {
-      display: block;
-      width: 100%;
-      padding-block: 3rem;
-      text-align: center;
-      & a {
-        color: #1d1d1d;
-      }
     }
   </style>
 </Top>
