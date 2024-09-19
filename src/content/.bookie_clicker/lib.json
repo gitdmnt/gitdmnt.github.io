@@ -1,1 +1,54 @@
-{"version":1,"items":[{"attr":{"isbn":"9784074015108","title":"基本のきちんと和食","subtitle":"","authors":["市瀬 悦子"],"imageUrl":"http://books.google.com/books/content?id=FXspDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api","totalPageCount":163},"status":{"readStatus":"Read","combinedFlag":{"b64":"///////////////////////////g"},"progresses":[{"termStart":"2024-07-20","termEnd":"2024-07-20","flag":{"b64":"///////////////////////////g"},"memo":"「きちんと」と題されているだけあって電子レンジを使いたがらないなど、かなり伝統的調理への指向が強いけど、家庭科の教科書に書いてあるような基礎の基礎まで書いてあるから復習には便利。","star":5}],"lastRead":"2024-07-20","star":5}}]}
+{
+  "items": [
+    {
+      "attr": {
+        "isbn": "9784074015108",
+        "title": "基本のきちんと和食",
+        "subtitle": "",
+        "authors": ["市瀬 悦子"],
+        "imageUrl": "http://books.google.com/books/content?id=FXspDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "totalPageCount": 163
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": { "b64": "///////////////////////////g" },
+        "progresses": [
+          {
+            "termStart": "2024-07-20",
+            "termEnd": "2024-07-20",
+            "flag": { "b64": "///////////////////////////g" },
+            "memo": "「きちんと」と題されているだけあって電子レンジを使いたがらないなど、かなり伝統的調理への指向が強いけど、家庭科の教科書に書いてあるような基礎の基礎まで書いてあるから復習には便利。",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-07-20",
+        "star": 5
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784867320105",
+        "title": "水上バス浅草行き",
+        "subtitle": "",
+        "authors": ["岡本真帆"],
+        "imageUrl": "http://books.google.com/books/content?id=2yruzgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 1
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": { "b64": "gA==" },
+        "progresses": [
+          {
+            "termStart": "2024-09-19",
+            "termEnd": "2024-09-19",
+            "flag": { "b64": "gA==" },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-09-19",
+        "star": 5
+      }
+    }
+  ]
+}
