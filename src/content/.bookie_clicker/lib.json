@@ -2,6 +2,127 @@
   "items": [
     {
       "attr": {
+        "isbn": "9784062197120",
+        "title": "掟上今日子の挑戦状",
+        "subtitle": "",
+        "authors": ["西尾維新"],
+        "imageUrl": "http://books.google.com/books/content?id=2zIKswEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 281
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "//////////////////////////////////////////////+A"
+        },
+        "progresses": [
+          {
+            "termStart": "2024-10-01",
+            "termEnd": "2024-10-01",
+            "flag": {
+              "b64": "//////////////////////////////////////////////+A"
+            },
+            "memo": "",
+            "star": 5
+          },
+          {
+            "termStart": "2024-10-01",
+            "termEnd": "2024-10-01",
+            "flag": {
+              "b64": "//////////////////////////////////////////////+A"
+            },
+            "memo": "",
+            "star": 3
+          }
+        ],
+        "lastRead": "2024-10-01",
+        "star": 3
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784062574440",
+        "title": "超ひも理論とはなにか",
+        "subtitle": "究極の理論が描く物質・重力・宇宙",
+        "authors": ["竹内薫"],
+        "imageUrl": "http://books.google.com/books/content?id=_UCKAAAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 266
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "////////////////////////////////////////////wA=="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-09-27",
+            "termEnd": "2024-09-27",
+            "flag": {
+              "b64": "////////////////////////////////////////////wA=="
+            },
+            "memo": "不確定性原理のところでいきなり嘘書いてあってびっくりした",
+            "star": 1
+          }
+        ],
+        "lastRead": "2024-09-27",
+        "star": 1
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784065267288",
+        "title": "神社とは何か",
+        "subtitle": "",
+        "authors": ["新谷尚紀"],
+        "imageUrl": "http://books.google.com/books/content?id=asS6zgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 255
+      },
+      "status": {
+        "readStatus": "Reading",
+        "combinedFlag": {
+          "b64": "/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-10-01",
+            "termEnd": "2024-10-01",
+            "flag": { "b64": "/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" },
+            "memo": "事例研究だから前提知識が足りな過ぎて読めない",
+            "star": 4
+          }
+        ],
+        "lastRead": "2024-10-01",
+        "star": 4
+      }
+    },
+    {
+      "attr": {
+        "isbn": "9784065274859",
+        "title": "現代思想入門",
+        "subtitle": "",
+        "authors": ["千葉雅也"],
+        "imageUrl": "http://books.google.com/books/content?id=fB7uzgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 248
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": {
+          "b64": "/////////////////////////////////////////w=="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-09-27",
+            "termEnd": "2024-09-27",
+            "flag": { "b64": "/////////////////////////////////////////w==" },
+            "memo": "いいと思う",
+            "star": 4
+          }
+        ],
+        "lastRead": "2024-09-27",
+        "star": 4
+      }
+    },
+    {
+      "attr": {
         "isbn": "9784074015108",
         "title": "基本のきちんと和食",
         "subtitle": "",
@@ -22,31 +143,6 @@
           }
         ],
         "lastRead": "2024-07-20",
-        "star": 5
-      }
-    },
-    {
-      "attr": {
-        "isbn": "9784867320105",
-        "title": "水上バス浅草行き",
-        "subtitle": "",
-        "authors": ["岡本真帆"],
-        "imageUrl": "http://books.google.com/books/content?id=2yruzgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-        "totalPageCount": 1
-      },
-      "status": {
-        "readStatus": "Read",
-        "combinedFlag": { "b64": "gA==" },
-        "progresses": [
-          {
-            "termStart": "2024-09-19",
-            "termEnd": "2024-09-19",
-            "flag": { "b64": "gA==" },
-            "memo": "",
-            "star": 5
-          }
-        ],
-        "lastRead": "2024-09-19",
         "star": 5
       }
     },
@@ -231,6 +327,35 @@
     },
     {
       "attr": {
+        "isbn": "9784576170619",
+        "title": "可能世界の哲学",
+        "subtitle": "「存在」と「自己」を考える",
+        "authors": ["三浦俊彦"],
+        "imageUrl": "http://books.google.com/books/content?id=q6GNswEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 301
+      },
+      "status": {
+        "readStatus": "Reading",
+        "combinedFlag": {
+          "b64": "/////////////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+        },
+        "progresses": [
+          {
+            "termStart": "2024-09-27",
+            "termEnd": "2024-09-27",
+            "flag": {
+              "b64": "/////////////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+            },
+            "memo": "",
+            "star": 4
+          }
+        ],
+        "lastRead": "2024-09-27",
+        "star": 4
+      }
+    },
+    {
+      "attr": {
         "isbn": "9784627157620",
         "title": "宇宙論入門(原著第2版)",
         "subtitle": "",
@@ -298,7 +423,31 @@
         "lastRead": "2024-01-13",
         "star": 3
       }
+    },
+    {
+      "attr": {
+        "isbn": "9784867320105",
+        "title": "水上バス浅草行き",
+        "subtitle": "",
+        "authors": ["岡本真帆"],
+        "imageUrl": "http://books.google.com/books/content?id=2yruzgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "totalPageCount": 1
+      },
+      "status": {
+        "readStatus": "Read",
+        "combinedFlag": { "b64": "gA==" },
+        "progresses": [
+          {
+            "termStart": "2024-09-19",
+            "termEnd": "2024-09-19",
+            "flag": { "b64": "gA==" },
+            "memo": "",
+            "star": 5
+          }
+        ],
+        "lastRead": "2024-09-19",
+        "star": 5
+      }
     }
   ]
 }
-
