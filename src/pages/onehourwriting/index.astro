@@ -1,7 +1,13 @@
 ---
 import Top from "../../layouts/Top.astro";
-import { Content as About } from "/src/content/onehourwriting/about.md";
 import json from "../../data/onehourwriting/history.json";
+import { Temporal } from "temporal-polyfill";
+
+// const today = Temporal.Now.plainDateISO();
+const today = Temporal.PlainDate.from({ year: 2024, month: 10, day: 13 });
+const nextSaturday = today.add({ days: (13 - today.dayOfWeek) % 7 });
+const date = `${nextSaturday.year}年${nextSaturday.month}月${nextSaturday.day}日`;
+const theme = ["自由課題"].map((s) => "「" + s + "」").join("、");
 ---
 
 <Top
@@ -14,54 +20,174 @@ import json from "../../data/onehourwriting/history.json";
   <main>
     <h1>深夜の真剣レポート<br />60分一本勝負</h1>
     <div>
-      <About />
+      <h2>次回の開催情報</h2>
+      <p>
+        次回は {date} 土曜日の 22 時から開催します。 お題は{theme}です。
+      </p>
     </div>
-    <h2>開催履歴</h2>
-    {
-      json.map((item, index) => {
-        return (
-          <li>
-            <h3>
-              第{index + 1}回({item.date})
-            </h3>
-            <p>お題: {item.theme.map((s) => "「" + s + "」").join("、")}</p>
-            <ul>
-              {item.articles.map((article) => {
-                return (
-                  <li>
-                    <a href={article.url}>
-                      {article.title !== "" ? article.title : "無題"}
-                    </a>
-                    <span>by {article.author}</span>
-                    <span>-</span>
-                    <span>
-                      {article.theme !== "" ? article.theme : "自由課題"}
-                    </span>
-                  </li>
-                );
-              })}
-            </ul>
-          </li>
-        );
-      })
-    }
+    <div>
+      <h2>概要</h2>
+      <p>
+        「深夜の真剣レポート 60 分一本勝負」とは、スケジュールに指定された 1
+        時間でお題に沿ったレポートを書き上げる形式のライティングコンテスト、いわゆる「ワンライ」です。
+      </p>
+    </div>
+    <div>
+      <h2>目的</h2>
+      <p>
+        この企画は、ライティングの練習を通じて、文章を書くことの楽しさを再認識し、
+        また、自分の表現力を高めることを目的としています。
+        それだけでなく、同じ条件で書かれた他者の文章を読むことで、
+        自分の文章に対する視点を広げることもできます。
+      </p>
+    </div>
+    <div>
+      <h2>レギュレーション</h2>
+      <div>
+        <h3>形式自由！</h3>
+        <p>
+          文章の形式はなんでも構いません。
+          文字数や画像使用についての規定もありません。
+        </p>
+      </div>
+      <div>
+        <h3>公開必須！</h3>
+        <p>
+          ブログ、Twitter, あるいは note
+          などのサービスを活用して、あなたの書いた文章を発表してください。
+          成長のために、あるいは後世に向けた記録として、どこかの媒体に公開しましょう。
+        </p>
+      </div>
+      <div>
+        <h3>遅刻OK!</h3>
+        <p>
+          途中まででもよいので、ぜひ投稿してください。
+          なるべくならその日寝るまでが望ましいですが、次の開催日までならいつでも構いません。
+          ボツにするのが一番もったいないので、恥じらうことなく公開しましょう。
+        </p>
+      </div>
+    </div>
+    <div>
+      <h2>スケジュール</h2>
+      <p>
+        毎週土曜日の夜 22 時から開催しています。<a
+          href="https://discord.gg/2UAAFXxa3u">宇田の Discord サーバー</a
+        >で作業通話も行っています。
+        一人では集中できないという方はぜひご参加ください。
+      </p>
+    </div>
+    <div>
+      <h2>参加者へのお願い</h2>
+      <div>
+        <h3>自分の表現に誇りを持ってください</h3>
+        <p>
+          あなたが書いた文章は、その日その時のあなたにしか書けなかった文章です。
+          どうか卑下せず、胸を張って公開してください。
+          コミュニティの人々がきっとあたたかく認めてくれるでしょう。
+        </p>
+      </div>
+      <div>
+        <h3>他者のことを尊重してください</h3>
+        <p>
+          文章の持つ力は強大です。
+          それだけに、誰かを傷つけるような表現も用意にできてしまいます。
+          ですが、それは少なくともこの企画の趣旨には合致しません。
+          自他を問わず、人をいたずらに傷つけるような表現は控えてください。
+        </p>
+      </div>
+    </div>
+    <div>
+      <h2>開催履歴</h2>
+      <ul>
+        {
+          json.map((item, index) => {
+            return (
+              <li>
+                <h3>
+                  第{index + 1}回({item.date})
+                </h3>
+                <p>お題: {item.theme.map((s) => "「" + s + "」").join("、")}</p>
+                <ul>
+                  {item.articles.map((article) => {
+                    return (
+                      <li>
+                        <a href={article.url}>
+                          {article.title !== "" ? article.title : "無題"}
+                        </a>
+                        <span>by {article.author}</span>
+                        <span>-</span>
+                        <span>
+                          {article.theme !== "" ? article.theme : "自由課題"}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
   </main>
+
+  <style>
+    main {
+      --bg: #ffffff;
+      --hc: #505060;
+      --pc: #606073;
+      --ec: #00a0ff;
+
+      margin: 0;
+      padding: 2rem;
+      width: calc(100vw-2rem);
+      background-color: var(--bg);
+      color: var(--hc);
+    }
+    h1 {
+      margin: 0;
+      margin-block-start: calc(100dvh - 15rem);
+      font-size: 4rem;
+      @media (max-width: 600px) {
+        margin-block-start: 2rem;
+        font-size: 2rem;
+      }
+      max-width: 36rem;
+      color: var(--hc);
+    }
+    main > div {
+      margin-block-start: 3rem;
+      padding-inline: 2rem;
+      padding-block: 2rem 1rem;
+      background-color: #eeeeee;
+      border-radius: 1rem;
+
+      > h2 {
+        margin: 0;
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        margin: 0;
+        margin-block-start: 1rem;
+        font-size: 1.1rem;
+        border-block-end: 1px solid var(--hc);
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        > li {
+          margin-block: 0.8rem;
+          margin-inline: 0;
+          padding: 0;
+          list-style: none;
+        }
+      }
+
+      p {
+        color: var(--pc);
+      }
+    }
+  </style>
 </Top>
-
-<style>
-  main {
-    --bg: #ffffff;
-    --fc: #505060;
-
-    margin: 0;
-    padding: 2rem;
-    width: 100vw;
-    background-color: var(--bg);
-    color: var(--fc);
-  }
-  h1 {
-    font-size: 4rem;
-    max-width: 36rem;
-    margin: 0;
-  }
-</style>
