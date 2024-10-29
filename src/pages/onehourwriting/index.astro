@@ -1,0 +1,68 @@
+---
+import Top from "../../layouts/Top.astro";
+import { Content as About } from "/src/content/onehourwriting/about.md";
+import json from "../../data/onehourwriting/history.json";
+---
+
+<Top
+  url={Astro.url.href}
+  type="website"
+  title="深夜の真剣レポート60分一本勝負"
+  description="毎週土曜日22時より開催"
+  image=""
+>
+  <main>
+    <h1>深夜の真剣レポート<br />60分一本勝負</h1>
+    <div>
+      <About />
+    </div>
+    <h2>開催履歴</h2>
+    {
+      json.map((item, index) => {
+        return (
+          <li>
+            <h3>
+              第{index + 1}回({item.date})
+            </h3>
+            <p>お題: {item.theme.map((s) => "「" + s + "」").join("、")}</p>
+            <ul>
+              {item.articles.map((article) => {
+                return (
+                  <li>
+                    <a href={article.url}>
+                      {article.title !== "" ? article.title : "無題"}
+                    </a>
+                    <span>by {article.author}</span>
+                    <span>-</span>
+                    <span>
+                      {article.theme !== "" ? article.theme : "自由課題"}
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+          </li>
+        );
+      })
+    }
+  </main>
+</Top>
+
+<style>
+  main {
+    --bg: #d3cece;
+
+    margin: 0;
+    padding: 2rem;
+    width: 100%;
+    background-color: var(--bg);
+  }
+  h1 {
+    font-size: 4rem;
+    width: 36rem;
+    margin: 0;
+  }
+  a {
+    color: #a31044;
+  }
+</style>
