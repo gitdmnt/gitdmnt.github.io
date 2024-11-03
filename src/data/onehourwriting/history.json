@@ -117,6 +117,47 @@
         "theme": ""
       }
     ]
+  },
+  {
+    "date": "2024-11-02",
+    "theme": ["今週の学び", "あなたのプレイリスト", "嘘"],
+    "articles": [
+      {
+        "title": "エアプのグルメ",
+        "author": "宇田",
+        "url": "https://gitdmnt.github.io/blog/%E3%82%A8%E3%82%A2%E3%83%97%E3%81%AE%E3%82%B0%E3%83%AB%E3%83%A1/",
+        "theme": "嘘"
+      },
+      {
+        "title": "ハロウィン明けの渋谷",
+        "author": "Mycelithyl",
+        "url": "https://mycelithyl.hateblo.jp/entry/2024/11/02/232518",
+        "theme": "嘘"
+      },
+      {
+        "title": "古着を買うという案",
+        "author": "500mL",
+        "url": "https://500ml.hatenablog.com/entry/2024/11/03/000332",
+        "theme": "嘘"
+      },
+      {
+        "title": "11/03",
+        "author": "Sorabou",
+        "url": "https://note.com/sorabou/n/n80a6c2292891",
+        "theme": ""
+      },
+      {
+        "title": "プラヴダかイスチナか",
+        "author": "ふぁぼん",
+        "url": "https://yuyusuki.hatenablog.com/entry/2024/11/03/014519",
+        "theme": "嘘"
+      },
+      {
+        "title": "どうして私に嘘をついたんですか？",
+        "author": "古野ジョン",
+        "url": "https://kakuyomu.jp/works/16818093087861786670",
+        "theme": "嘘"
+      }
+    ]
   }
 ]
-
