@@ -36,7 +36,17 @@ if (image == "") {
     <meta name="twitter:card" content={card} />
     <meta name="twitter:creator" content="@41_36_22" />
     <meta name="twitter:image" content={img} />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQ5GRX7G1Q"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
+      gtag("config", "G-XQ5GRX7G1Q");
+    </script>
     <title>{title + " - 家"}</title>
   </head>
   <body>
