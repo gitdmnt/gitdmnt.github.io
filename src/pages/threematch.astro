@@ -1,17 +1,17 @@
 ---
 import Common from "../layouts/Common.astro";
-import Game from "../components/2048/game.svelte";
+import Game from "../components/threematch/game.svelte";
 ---
 
 <Common
   url={Astro.url.href}
   type="article"
-  title="すいどう"
+  title="かたづけ"
   description="ごちゃごちゃ"
   image=""
 >
   <main>
-    <h2>2048</h2>
+    <h2>スリーマッチパズル</h2>
     <Game client:load />
   </main>
 </Common>
