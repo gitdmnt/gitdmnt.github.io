@@ -1,4 +1,5 @@
 import { get } from "svelte/store";
+import { x } from "../../../dist/_astro/index.gpc4_8R2";
 
 const color = {
   blue: "#90ccf7",
@@ -79,6 +80,12 @@ export class Board {
     console.log("initial draw finished");
   }
 
+  //
+  //
+  // 描画関連
+  //
+  //
+
   // 全てを消して描画する
   async draw() {
     this._boardCtx.clearRect(
@@ -120,21 +127,47 @@ export class Board {
     );
   }
 
+  //
+  //
+  // 外部に公開する関数
+  //
+  //
+
   //1操作ごとに呼び出す
   async oneStep(x1: number, y1: number, x2: number, y2: number) {
-    // 入力されたキャンバス内の座標をセルの座標に変換
+    // 入力されたキャンバス内の座標から方向を判定
+    const dx = x2 - x1;
+    const dy = y2 - y1;
+    if (Math.abs(dx) < 10 && Math.abs(dy) < 10) {
+      return;
+    }
+
     x1 = Math.floor(
       (x1 - this._cellPadding) / (this._cellSize + 2 * this._cellPadding)
     );
     y1 = Math.floor(
       (y1 - this._cellPadding) / (this._cellSize + 2 * this._cellPadding)
     );
-    x2 = Math.floor(
-      (x2 - this._cellPadding) / (this._cellSize + 2 * this._cellPadding)
-    );
-    y2 = Math.floor(
-      (y2 - this._cellPadding) / (this._cellSize + 2 * this._cellPadding)
-    );
+
+    const theta = Math.atan2(dy, dx);
+    const pi = Math.PI;
+    if ((3 / 4) * pi >= theta && theta > pi / 4) {
+      // 下
+      x2 = x1;
+      y2 = y1 + 1;
+    } else if (pi / 4 >= theta && theta > -pi / 4) {
+      // 右
+      x2 = x1 + 1;
+      y2 = y1;
+    } else if (-pi / 4 >= theta && theta > (-3 / 4) * pi) {
+      // 上
+      x2 = x1;
+      y2 = y1 - 1;
+    } else {
+      // 左
+      x2 = x1 - 1;
+      y2 = y1;
+    }
 
     // プレイヤーの操作を解決
     await this.swap(x1, y1, x2, y2);
@@ -150,6 +183,28 @@ export class Board {
     // 描画
     await this.draw();
   }
+
+  // 選択したセルをハイライトする
+  highlightCell(x: number, y: number) {}
+
+  // デバッグ用
+  getBoard() {
+    // 転置する
+    let str = "";
+    for (let y = 0; y < this._height; y++) {
+      for (let x = 0; x < this._width; x++) {
+        str += (this._board[x][y] ?? "n") + " ";
+      }
+      str += "\n";
+    }
+    console.log(str);
+  }
+
+  //
+  //
+  // あとなんかいろいろ
+  //
+  //
 
   // 2つのセルを入れ替える
   async swap(x1: number, y1: number, x2: number, y2: number) {
@@ -249,16 +304,30 @@ export class Board {
     return false;
   }
 
+  //
+  //
+  // マッチング関連
+  //
+  //
+
   checkMatch(): [number, number][] | null {
     console.log("checking match");
-    let match = this.checkLineMatch();
+    let match = this.checkFourLineMatch();
     if (match) {
       console.log(`match found at ${match}`);
       return match;
-    } else null;
+    }
+
+    match = this.checkThreeLineMatch();
+    if (match) {
+      console.log(`match found at ${match}`);
+      return match;
+    }
+
+    return null;
   }
 
-  checkLineMatch(): [number, number][] | null {
+  checkThreeLineMatch(): [number, number][] | null {
     // 横方向のマッチをチェック
     for (let y = 0; y < this._height; y++) {
       for (let x = 0; x < this._width - 2; x++) {
@@ -292,6 +361,51 @@ export class Board {
             [x, y],
             [x, y + 1],
             [x, y + 2],
+          ];
+        }
+      }
+    }
+    return null;
+  }
+
+  checkFourLineMatch(): [number, number][] | null {
+    // 横方向のマッチをチェック
+    for (let y = 0; y < this._height; y++) {
+      for (let x = 0; x < this._width - 3; x++) {
+        if (this._board[x][y] === null) {
+          continue;
+        }
+        if (
+          this._board[x][y] === this._board[x + 1][y] &&
+          this._board[x][y] === this._board[x + 2][y] &&
+          this._board[x][y] === this._board[x + 3][y]
+        ) {
+          return [
+            [x, y],
+            [x + 1, y],
+            [x + 2, y],
+            [x + 3, y],
+          ];
+        }
+      }
+    }
+
+    // 縦方向のマッチをチェック
+    for (let x = 0; x < this._width; x++) {
+      for (let y = 0; y < this._height - 3; y++) {
+        if (this._board[x][y] === null) {
+          continue;
+        }
+        if (
+          this._board[x][y] === this._board[x][y + 1] &&
+          this._board[x][y] === this._board[x][y + 2] &&
+          this._board[x][y] === this._board[x][y + 3]
+        ) {
+          return [
+            [x, y],
+            [x, y + 1],
+            [x, y + 2],
+            [x, y + 3],
           ];
         }
       }
@@ -407,18 +521,6 @@ export class Board {
       this._board[x][y] = fallBoard2[y][0];
       this.drawCell(this._boardCtx, x, y);
     }
-  }
-
-  getBoard() {
-    // 転置する
-    let str = "";
-    for (let y = 0; y < this._height; y++) {
-      for (let x = 0; x < this._width; x++) {
-        str += (this._board[x][y] ?? "n") + " ";
-      }
-      str += "\n";
-    }
-    console.log(str);
   }
 }
 
