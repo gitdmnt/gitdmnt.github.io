@@ -1,5 +1,4 @@
 import { get } from "svelte/store";
-import { x } from "../../../dist/_astro/index.DKfXzplx";
 
 const color = {
   blue: "#90ccf7",
