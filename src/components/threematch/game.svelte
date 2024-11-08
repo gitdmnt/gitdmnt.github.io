@@ -4,13 +4,35 @@
 
   let canvas_base: HTMLCanvasElement;
   let canvas_animation: HTMLCanvasElement;
-  const width = 400;
-  const height = 400;
+  let xNum = 10;
+  let yNum = 10;
+  let blockSize = 20;
   let board;
+  let width = xNum * 20;
+  let height = yNum * 20;
+  let dropColorCount = 4;
+  let isLocking = false;
 
   let startX: number | null = null;
   let startY: number | null = null;
   let isDragging = false;
+
+  const handleValueChange = async () => {
+    console.log("Value changed to ", xNum, yNum);
+
+    width = xNum * 20;
+    height = yNum * 20;
+
+    board = new Board(
+      dropColorCount,
+      width,
+      height,
+      blockSize,
+      3,
+      canvas_base,
+      canvas_animation
+    );
+  };
 
   function handleMouseDown(event: MouseEvent) {
     const rect = canvas_base.getBoundingClientRect();
@@ -35,7 +57,20 @@
   }
 
   onMount(async () => {
-    board = new Board(width, height, 20, 3, canvas_base, canvas_animation);
+    isLocking = true;
+    new Promise(() => {
+      board = new Board(
+        dropColorCount,
+        width,
+        height,
+        blockSize,
+        3,
+        canvas_base,
+        canvas_animation
+      );
+    }).then(() => {
+      isLocking = false;
+    });
   });
 </script>
 
@@ -51,9 +86,36 @@
       on:mouseup={handleMouseUp}
     ></canvas>
   </div>
-  <button on:click={() => board.checkMatch()}>check match</button>
+  <button on:click={() => board.draw()}>draw</button>
   <button on:click={() => board.update()}>update</button>
   <button on:click={() => board.getBoard()}>get</button>
+  <input
+    type="range"
+    id="width"
+    min="1"
+    max="40"
+    step="1"
+    bind:value={xNum}
+    on:change={handleValueChange}
+  />
+  <input
+    type="range"
+    id="height"
+    min="1"
+    max="40"
+    step="1"
+    bind:value={yNum}
+    on:change={handleValueChange}
+  />
+  <input
+    type="range"
+    id="height"
+    min="1"
+    max="4"
+    step="1"
+    bind:value={dropColorCount}
+    on:change={handleValueChange}
+  />
 </main>
 
 <style>
