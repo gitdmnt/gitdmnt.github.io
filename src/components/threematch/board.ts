@@ -1,5 +1,4 @@
-import { get } from "svelte/store";
-import { l, m, n, x } from "../../../dist/_astro/index.gpc4_8R2";
+
 
 // 0-3 が色、10-14がそれぞれrow, coliumn, propeller, tnt, light
 type Cell = number | null;
