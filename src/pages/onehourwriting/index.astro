@@ -1,13 +1,7 @@
 ---
 import Top from "../../layouts/Top.astro";
 import json from "../../data/onehourwriting/history.json";
-import { Temporal } from "temporal-polyfill";
-
-// const today = Temporal.Now.plainDateISO();
-const today = Temporal.PlainDate.from({ year: 2024, month: 10, day: 13 });
-const nextSaturday = today.add({ days: (13 - today.dayOfWeek) % 7 });
-const date = `${nextSaturday.year}年${nextSaturday.month}月${nextSaturday.day}日`;
-const theme = ["自由課題"].map((s) => "「" + s + "」").join("、");
+import { NextDay } from "./nextday";
 ---
 
 <Top
@@ -19,12 +13,7 @@ const theme = ["自由課題"].map((s) => "「" + s + "」").join("、");
 >
   <main>
     <h1>深夜の真剣レポート<br />60分一本勝負</h1>
-    <div>
-      <h2>次回の開催情報</h2>
-      <p>
-        次回は {date} 土曜日の 22 時から開催します。 お題は{theme}です。
-      </p>
-    </div>
+    <NextDay client:load />
     <div>
       <h2>概要</h2>
       <p>
