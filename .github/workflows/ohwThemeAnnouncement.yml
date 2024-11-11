@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "src/data/onehourwriting/themes.json"
+  workflow_dispatch:
 
 jobs:
   discord-announcement:
@@ -18,10 +19,13 @@ jobs:
           WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL_FOR_THEME_UPDATE }}
         run: |
           # JSONファイルを読み取って内容を変数に格納
-          json_data=$(jq '.' ./src/data/onehourwriting/themes.json)
+          json_data=$(jq '.themes' src/data/onehourwriting/themes.json)
+          t1=$(echo $json_data | jq -r '.[0]')
+          t2=$(echo $json_data | jq -r '.[1]')
+          t3=$(echo $json_data | jq -r '.[2]')
 
           # メッセージを作成
-          message="テーマが更新されました。\n次回のテーマは「${json_data[0]}」「${json_data[1]}」${json_data[2]}です。"
+          message="テーマが更新されました。\n次回のテーマは「${t1}」、「${t2}」、「${t3}」です。"
 
           # Webhookに送信するペイロードを作成
           payload="{\"content\": \"$message\"}"
