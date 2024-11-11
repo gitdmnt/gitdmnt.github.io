@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "src/data/history.json"
+      - "src/data/onehourwriting/history.json"
 
 jobs:
   discord-announcement:
