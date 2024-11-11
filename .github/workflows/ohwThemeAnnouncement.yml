@@ -18,7 +18,7 @@ jobs:
           WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL_FOR_THEME_UPDATE }}
         run: |
           # JSONファイルを読み取って内容を変数に格納
-          json_data=$(jq '.' src/data/themes.json)
+          json_data=$(jq '.' src/data/onehourwriting/themes.json)
 
           # メッセージを作成
           message="テーマが更新されました。\n次回のテーマは「${json_data[0]}」「${json_data[1]}」${json_data[2]}です。"
