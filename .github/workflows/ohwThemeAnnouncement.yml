@@ -16,7 +16,7 @@ jobs:
       - name: Read JSON file and Call Webhook
         id: get-themes
         env:
-          WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL_FOR_THEME_UPDATE }}
+          WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL_FOR_DEBUG }}
         run: |
           # JSONファイルを読み取って内容を変数に格納
           json_data=$(cat ./src/data/onehourwriting/themes.json | jq '.themes')
