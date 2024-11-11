@@ -1,4 +1,4 @@
-name: Theme update announcement
+name: History update announcement
 
 on:
   push:
