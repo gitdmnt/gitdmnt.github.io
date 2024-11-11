@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "src/data/themes.json"
+      - "src/data/onehourwriting/themes.json"
 
 jobs:
   discord-announcement:
