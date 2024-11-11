@@ -13,6 +13,8 @@ jobs:
     name: Discord Announcement
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
       - name: Read JSON file and Call Webhook
         id: get-themes
         env:
