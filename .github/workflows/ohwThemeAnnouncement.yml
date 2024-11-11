@@ -1,0 +1,33 @@
+name: Theme update announcement
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/data/themes.json"
+
+jobs:
+  discord-announcement:
+    name: Discord Announcement
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read JSON file and Call Webhook
+        id: get-themes
+        env:
+          WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL_FOR_THEME_UPDATE }}
+        run: |
+          # JSONファイルを読み取って内容を変数に格納
+          json_data=$(jq '.' src/data/themes.json)
+
+          # メッセージを作成
+          message="テーマが更新されました。\n次回のテーマは「${json_data[0]}」「${json_data[1]}」${json_data[2]}です。"
+
+          # Webhookに送信するペイロードを作成
+          payload="{\"content\": \"$message\"}"
+
+          # WebhookにPOSTリクエストを送信
+          curl -X POST "$WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -d "$payload"
+

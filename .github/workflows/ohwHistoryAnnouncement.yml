@@ -1,0 +1,30 @@
+name: Theme update announcement
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/data/history.json"
+
+jobs:
+  discord-announcement:
+    name: Discord Announcement
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read JSON file and Call Webhook
+        id: get-themes
+        env:
+          WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL_FOR_HISTORY_UPDATE }}
+        run: |
+          # メッセージを作成
+          message="[開催履歴](https://gitdmnt.github.io/onehourwriting#history)が更新されました。"
+
+          # Webhookに送信するペイロードを作成
+          payload="{\"content\": \"$message\"}"
+
+          # WebhookにPOSTリクエストを送信
+          curl -X POST "$WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -d "$payload"
+
