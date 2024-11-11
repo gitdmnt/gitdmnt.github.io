@@ -5,9 +5,7 @@ export const NextDay = () => {
   const today = Temporal.Now.plainDateISO();
   const nextSaturday = today.add({ days: (13 - today.dayOfWeek) % 7 });
   const date = `${nextSaturday.year}年${nextSaturday.month}月${nextSaturday.day}日`;
-  const theme = ["今週学んだこと", "去年の今週", "呪い(のろい/まじない)"]
-    .map((s) => "「" + s + "」")
-    .join("、");
+  const theme = ["今週学んだこと"].map((s) => "「" + s + "」").join("、");
   return (
     <div>
       <div>
