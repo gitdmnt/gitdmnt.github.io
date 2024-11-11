@@ -19,7 +19,7 @@ jobs:
           WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL_FOR_THEME_UPDATE }}
         run: |
           # JSONファイルを読み取って内容を変数に格納
-          json_data=$(jq '.themes' src/data/onehourwriting/themes.json)
+          json_data=$(cat src/data/onehourwriting/themes.json | jq '.themes')
           t1=$(echo $json_data | jq -r '.[0]')
           t2=$(echo $json_data | jq -r '.[1]')
           t3=$(echo $json_data | jq -r '.[2]')
