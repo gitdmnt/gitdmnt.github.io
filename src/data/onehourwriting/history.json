@@ -177,6 +177,48 @@
         "theme": "嘘"
       }
     ]
+  },
+  {
+    "date": "2024-11-09",
+    "theme": ["今週の学び", "去年の今週", "呪い(のろい/まじない)"],
+    "articles": [
+      {
+        "title": "場所を賢くハッシュ化する",
+        "author": "メタぺん",
+        "url": "https://gist.github.com/boletales/877dd209f7a3101b2a0734a93777f766",
+        "theme": "今週学んだこと"
+      },
+      {
+        "title": "エモいって、留保だ……",
+        "author": "宇田",
+        "url": "https://gitdmnt.github.io/blog/エモいって、留保だ……/",
+        "theme": "呪い(のろい/まじない)"
+      },
+      {
+        "title": "週報20241109",
+        "author": "500mL",
+        "url": "https://500ml.hatenablog.com/entry/2024/11/09/230013",
+        "theme": "自由課題"
+      },
+      {
+        "title": "架空の呪い「夜陰の呪詛」",
+        "author": "みむらみむ",
+        "url": "https://mimuchang.hatenadiary.jp/entry/2024/11/09/232154",
+        "theme": "呪い(のろい/まじない)"
+      },
+      {
+        "title": "演出の手間、手間の演出",
+        "author": "えるごすむ",
+        "url": "https://note.com/5240119/n/na639666914d3",
+        "theme": "自由課題"
+      },
+      {
+        "title": "去年の今週 20241109",
+        "author": "Nickel 2+",
+        "url": "https://note.com/ferrum_3_plus/n/n524bb0f90515",
+        "theme": "去年の今週"
+      }
+    ]
   }
 ]
 
