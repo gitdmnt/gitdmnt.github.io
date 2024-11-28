@@ -128,6 +128,18 @@ class Board {
     }
   }
 
+  // マッチ処理
+
+  checkMatch(): boolean {
+    // TODO
+    return false;
+  }
+
+  removeOneMatch(): boolean {
+    // TODO
+    return false;
+  }
+
   // セル操作
 
   tapCell([col, row]: Position) {
@@ -142,14 +154,22 @@ class Board {
     this.setCell(b, temp);
 
     const isSwappable = (() => {
-      return this.checkMatches() || this.isBomb(a) || this.isBomb(b);
+      return this.checkMatch() || this.isBomb(a) || this.isBomb(b);
     })();
 
     if (isSwappable) {
       return true;
     } else {
+      const temp = this.getCell(a);
+      this.setCell(a, this.getCell(b));
+      this.setCell(b, temp);
       return false;
     }
+  }
+
+  fallDown(): boolean {
+    //TODO
+    return false;
   }
 
   // ステップ処理
