@@ -19,6 +19,7 @@ export const WaterSort = () => {
   const [num, setNum] = useState(10);
   const [visiblity, setVisiblity] = useState(false);
   const [isClear, setIsClear] = useState(false);
+  const [history, setHistory] = useState([]);
 
   const color = [
     "#00000000",
@@ -147,8 +148,8 @@ export const WaterSort = () => {
       result[i] = result_host;
       result[j] = result_client;
       setBottle(result);
+      setHistory([...history, result]);
     }
-
     // 1本目を適当に
     setSelected(-1);
   };
@@ -213,19 +214,30 @@ export const WaterSort = () => {
     bottle.push([0, 0, 0, 0]);
     setBottle(bottle);
     setDefaultBottle(bottle);
+    setHistory([bottle]);
 
     setIsClear(false);
   };
 
-  const initStable = (n) => {};
+  const initHardStable = (n) => {};
 
   const resetBottle = () => {
     setBottle(defaultBottle);
+    setHistory([defaultBottle]);
   };
 
   const seed = defaultBottle
     .map((e) => e.reduce((str, cur) => str + cur.toString(), ""))
     .reduce((str, cur) => str + cur.toString(), "");
+
+  const undo = () => {
+    const last = history[history.length - 2];
+    if (last) {
+      setBottle(last);
+      setHistory(history.slice(0, -1));
+      setSelected(-1);
+    }
+  };
 
   return (
     <div className={styles.watersort}>
@@ -326,6 +338,11 @@ export const WaterSort = () => {
         </li>
       </ul>
       <div className="ui">
+        <div className="undoredo">
+          <button type="button" className={styles.button} onClick={undo}>
+            1つもどる
+          </button>
+        </div>
         <input
           type="range"
           min={2}
