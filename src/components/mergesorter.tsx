@@ -2,7 +2,7 @@ import "@styles/global.css";
 import React from "react";
 import { useState } from "react";
 
-export const MergeSorter = () => {
+export const MergeSorterComponent = () => {
   const [list, setList] = useState<string[][]>([]);
   const [listIndex1, setListIndex1] = useState<number>(0);
   const [listIndex2, setListIndex2] = useState<number>(0);
