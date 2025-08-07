@@ -1,6 +1,6 @@
 import React from "react";
 
-const item = [
+const defaultItem = [
   [
     "バナッハ=タルスキーのパラドックス",
     "宇宙定数",
@@ -33,11 +33,13 @@ const item = [
 ];
 
 export const BingoComponent = () => {
+  const [item, setItem] = React.useState<string[][]>(defaultItem);
   const [bingoBools, setBingoBools] = React.useState<boolean[][]>(
     Array(5)
       .fill(null)
       .map(() => Array(5).fill(false))
   );
+  const [isEditable, setIsEditable] = React.useState<boolean>(false);
 
   const handleClick = (row: number, col: number) => {
     const newBingoBools = bingoBools.map((r, rIndex) =>
@@ -47,50 +49,82 @@ export const BingoComponent = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-8 text-xs">
-      {[0, 1, 2, 3, 4].map((row) => (
-        <div key={row} className="flex">
-          {[0, 1, 2, 3, 4].map((col) => (
-            <div
-              key={col}
-              className={
-                "w-20 h-20 flex items-center justify-center bg-white border border-amber-400 "
-              }
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr",
-                gridTemplateRows: "1fr",
-              }}
-              onClick={() => handleClick(row, col)}
-            >
+    <>
+      <div className="flex flex-col items-center justify-center p-8 text-xs">
+        {[0, 1, 2, 3, 4].map((row) => (
+          <div key={row} className="flex">
+            {[0, 1, 2, 3, 4].map((col) => (
               <div
-                style={{ gridColumn: "1", gridRow: "1" }}
-                className="w-20 h-20 opacity-75"
+                key={col}
+                className={
+                  "md:w-20 md:h-20 w-17 h-17 flex items-center justify-center bg-white border border-amber-400 "
+                }
               >
-                {bingoBools[row][col] && <MaruSVG />}
+                {!isEditable && (
+                  <button
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "1fr",
+                      gridTemplateRows: "1fr",
+                      placeItems: "normal",
+                    }}
+                    className="w-full h-full focus:outline-none"
+                    onClick={() => handleClick(row, col)}
+                  >
+                    <div
+                      style={{ gridColumn: "1", gridRow: "1", zIndex: 1 }}
+                      className="w-full h-full flex items-center justify-center text-center font-bold"
+                    >
+                      {item[row][col]}
+                    </div>
+                    <div
+                      style={{ gridColumn: "1", gridRow: "1" }}
+                      className="w-full h-full opacity-75"
+                    >
+                      {bingoBools[row][col] && <MaruSVG />}
+                    </div>
+                  </button>
+                )}
+                {isEditable && (
+                  <textarea
+                    className="resize-none w-full h-full focus:outline-none p-2"
+                    defaultValue={item[row][col]}
+                    onChange={(e) => {
+                      const newItem = [...item];
+                      newItem[row][col] = e.target.value;
+                      setItem(newItem);
+                    }}
+                  ></textarea>
+                )}
               </div>
-              <p style={{ gridColumn: "1", gridRow: "1" }}>{item[row][col]}</p>
-            </div>
-          ))}
-        </div>
-      ))}
-    </div>
+            ))}
+          </div>
+        ))}
+      </div>
+      <button onClick={() => setIsEditable(!isEditable)}>
+        {isEditable ? "保存" : "編集"}
+      </button>
+    </>
   );
 };
 
-const MaruSVG = () => {
+interface MaruSVGProps {
+  coeff?: number;
+}
+
+const MaruSVG = (props: MaruSVGProps) => {
   return (
     <svg
-      width="72"
-      height="72"
-      viewBox="0 0 378 425"
+      width="66"
+      height="66"
+      viewBox="0 0 450 450"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M290.455 331.091C270.955 337.091 251.455 343.091 223.034 346.557C194.614 350.023 157.864 350.773 135.557 350.409C106.444 349.935 83.0454 340.25 54.2954 326.648C32.6183 316.392 20.0682 293.341 9.4659 268.023C-0.188893 244.967 7.8409 213.091 18.7727 176.818C24.4381 158.02 36.4545 140.545 47.1136 124.898C57.7727 109.25 68.2727 96.5 82.3068 83.1818C112.196 54.8173 145.614 34.9545 176.58 20.9659C210.625 5.58614 244.114 3.81818 272.807 6.81818C308.454 10.5453 334.318 29.5 348.682 46.8636C364.851 66.4098 369.977 92.3409 372.261 118.011C375.075 149.634 363.977 180.955 347.42 219.409C336.328 245.172 312.864 280.364 289.659 311.659C266.455 342.955 242.455 368.455 225.591 384.966C199.727 408.227 185.205 417.432 174.625 418.966C169.295 418.25 164.045 414.5 158.636 410.636"
+        d="M288.172 385.778C286.724 387.269 281.633 388.784 256.583 389.914C235.896 390.847 198.947 390.298 174.49 389.552C139.12 388.473 111.324 379.065 81.7428 365.538C58.6265 354.968 43.9329 333.162 31.8746 309.114C20.691 286.811 24.8195 260.092 32.4561 231.931C36.7585 216.066 46.6101 198.549 57.9663 181.124C69.3224 163.698 83.0814 147.29 99.2214 131.379C115.361 115.467 133.465 100.551 150.395 89.1371C167.325 77.7235 182.533 70.2651 200.143 63.4396C236.815 49.2257 271.933 43.7539 303.654 45.2343C341.109 46.9823 370.002 64.0272 387.525 77.1698C404.421 89.843 413.935 112.936 421.977 135.865C428.918 155.652 422.8 180.717 414.779 207.409C410.957 220.13 405.31 230.372 393.647 248.803C381.984 267.234 363.88 293.339 345.139 316.109C326.399 338.88 307.571 357.526 293.164 370.488C257.703 402.394 243.581 404.604 238.106 404.989C235.51 405.171 233.355 403.135 231.874 400.875C230.393 398.615 229.669 395.632 229.658 392.976C229.647 390.32 230.371 388.083 231.117 385.778"
         stroke="#FF0000"
-        stroke-width="24"
+        stroke-width="16"
         stroke-linecap="round"
       />
     </svg>
