@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 
 const defaultItem = [
   [
@@ -33,13 +34,37 @@ const defaultItem = [
 ];
 
 export const BingoComponent = () => {
-  const [item, setItem] = React.useState<string[][]>(defaultItem);
-  const [bingoBools, setBingoBools] = React.useState<boolean[][]>(
+  const [item, setItem] = useState<string[][]>(defaultItem);
+  const [bingoBools, setBingoBools] = useState<boolean[][]>(
     Array(5)
       .fill(null)
       .map(() => Array(5).fill(false))
   );
-  const [isEditable, setIsEditable] = React.useState<boolean>(false);
+  const [isEditable, setIsEditable] = useState<boolean>(false);
+
+  // URLパラメータからアイテムを取得
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const itemParam = params.get("item");
+    if (itemParam) {
+      const parsedItem = decodeURIComponent(itemParam)
+        .split(";")
+        .map((row, i) =>
+          row.split(",").map((cell, j) => cell || defaultItem[i]?.[j] || "")
+        );
+      setItem(parsedItem.concat(defaultItem.slice(parsedItem.length)));
+    }
+  }, []);
+
+  // アイテムをURLパラメータにエンコードして更新
+  useEffect(() => {
+    const params = new URLSearchParams();
+    params.set(
+      "item",
+      encodeURIComponent(item.map((row) => row.join(",")).join(";"))
+    );
+    window.history.replaceState({}, "", `?${params.toString()}`);
+  }, [item]);
 
   const handleClick = (row: number, col: number) => {
     const newBingoBools = bingoBools.map((r, rIndex) =>
@@ -101,7 +126,10 @@ export const BingoComponent = () => {
           </div>
         ))}
       </div>
-      <button onClick={() => setIsEditable(!isEditable)}>
+      <button
+        className="mt-4 px-4 py-2 bg-white rounded-full hover:bg-amber-100 transition"
+        onClick={() => setIsEditable(!isEditable)}
+      >
         {isEditable ? "保存" : "編集"}
       </button>
     </>
@@ -124,8 +152,8 @@ const MaruSVG = (props: MaruSVGProps) => {
       <path
         d="M288.172 385.778C286.724 387.269 281.633 388.784 256.583 389.914C235.896 390.847 198.947 390.298 174.49 389.552C139.12 388.473 111.324 379.065 81.7428 365.538C58.6265 354.968 43.9329 333.162 31.8746 309.114C20.691 286.811 24.8195 260.092 32.4561 231.931C36.7585 216.066 46.6101 198.549 57.9663 181.124C69.3224 163.698 83.0814 147.29 99.2214 131.379C115.361 115.467 133.465 100.551 150.395 89.1371C167.325 77.7235 182.533 70.2651 200.143 63.4396C236.815 49.2257 271.933 43.7539 303.654 45.2343C341.109 46.9823 370.002 64.0272 387.525 77.1698C404.421 89.843 413.935 112.936 421.977 135.865C428.918 155.652 422.8 180.717 414.779 207.409C410.957 220.13 405.31 230.372 393.647 248.803C381.984 267.234 363.88 293.339 345.139 316.109C326.399 338.88 307.571 357.526 293.164 370.488C257.703 402.394 243.581 404.604 238.106 404.989C235.51 405.171 233.355 403.135 231.874 400.875C230.393 398.615 229.669 395.632 229.658 392.976C229.647 390.32 230.371 388.083 231.117 385.778"
         stroke="#FF0000"
-        stroke-width="16"
-        stroke-linecap="round"
+        strokeWidth="16"
+        strokeLinecap="round"
       />
     </svg>
   );
