@@ -42,7 +42,8 @@
     "react": "^17.0.0"
   },
   "trustedDependencies": [
-    "es5-ext"
+    "es5-ext",
+    "esbuild",
+    "sharp"
   ]
 }
-

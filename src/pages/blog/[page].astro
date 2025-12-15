@@ -4,13 +4,25 @@ import Card from "../../components/Card.astro";
 import { Temporal } from "temporal-polyfill";
 
 export async function getStaticPaths({ paginate }) {
-  const posts = (await Astro.glob("/src/content/article/*.{md,mdx}")).sort(
+  const posts: Record<string, any>[] = Object.values(
+    import.meta.glob("/src/content/article/*.{md,mdx}", { eager: true })
+  );
+  posts.sort(
     (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
   );
 
   return paginate(posts, { pageSize: 10 });
 }
-const { page } = Astro.props;
+const { page } = Astro.props as {
+  page: {
+    data: Array<{
+      frontmatter: { title: string; description?: string; date?: string };
+      file: string;
+    }>;
+    url: { prev?: string | null; next?: string | null };
+    currentPage: number;
+  };
+};
 ---
 
 <Common

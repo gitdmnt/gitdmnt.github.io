@@ -1,5 +1,4 @@
 ---
-layout: /src/layouts/Article.astro
 title: SSSS.DYNAZENON
 author: 宇田
 date: 2024-02-03

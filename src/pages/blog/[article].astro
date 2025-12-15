@@ -1,9 +1,9 @@
 ---
-import type { AstroInstance } from "astro";
-
+// dynamic routing
 export async function getStaticPaths() {
-  const posts: AstroInstance[] = await Astro.glob(
-    "../../content/article/*.{md,mdx}"
+  const posts: Record<string, any> = await import.meta.glob(
+    "/src/content/article/*.{md,mdx}",
+    { eager: true }
   );
   interface Obj {
     params: {
@@ -20,10 +20,84 @@ export async function getStaticPaths() {
 
   return articles;
 }
+
+import Common from "../../layouts/Common.astro";
+import Md from "../../layouts/Md.astro";
+import { Temporal } from "temporal-polyfill";
+
 const { article } = Astro.params;
-const content = (await Astro.glob("/src/content/article/*.{md,mdx}")).filter(
-  (p) => p.file.split("/").pop().split(".")[0] === article
-)[0];
+const content = Object.values(
+  import.meta.glob("/src/content/article/*.{md,mdx}", { eager: true })
+);
+const page: any = content.find((p: Record<string, any>) => {
+  return p.file.split("/").pop().split(".")[0] === article;
+});
+
+const { frontmatter } = page;
 ---
 
-{(<content.Content />)}
+<Common
+  url={Astro.url.href}
+  type="article"
+  title={frontmatter.title}
+  description={frontmatter.description}
+  image={frontmatter.thumbnail}
+>
+  <h1>{frontmatter.title}</h1>
+  <Md>
+    <page.Content />
+  </Md>
+  <p class="credit">
+    {Temporal.PlainDate.from(frontmatter.date.slice(0, 10)).toString()},
+    書いた人: {frontmatter.author}
+  </p>
+  <a
+    href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+    class="twitter-share-button"
+    data-text={frontmatter.title + "\n" + frontmatter.description}
+    data-url={Astro.url.href}
+    data-dnt="true"
+    data-show-count="false">Tweet</a
+  >
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"
+  ></script>
+
+  <!-- KaTeX -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+    integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn"
+    crossorigin="anonymous"
+  />
+
+  <!-- The loading of KaTeX is deferred to speed up page rendering -->
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"
+    integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx"
+    crossorigin="anonymous"></script>
+
+  <!-- To automatically render math in text elements, include the auto-render extension: -->
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+    crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ],
+      });"
+  ></script>
+</Common>
+
+<style>
+  .h1 {
+    white-space: wrap;
+  }
+  .credit {
+    color: rgb(189, 189, 189);
+    font-size: 10pt;
+  }
+</style>
