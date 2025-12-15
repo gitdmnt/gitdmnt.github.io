@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import TrajectoryChart from "./TrajectoryChart";
+import { TrajectoryChart } from "./TrajectoryChart";
 import type { Condition } from "./type";
 import { reynoldsNumber, dragCoefficient } from "./utils";
 import { calculate } from "./calculate";
@@ -223,7 +223,7 @@ const ResultCard = ({ condition }: { condition: Condition }) => {
   return (
     <div className="card flex flex-col gap-4">
       <h2 className="font-bold text-xl">計算結果</h2>
-      <div className="caption">
+      <div className="caption w-full min-h-60">
         <TrajectoryChart x={x_vals} y={y_vals} title="弾道軌跡" />
       </div>
     </div>

@@ -16,7 +16,7 @@ const margin = { top: 16, right: 16, bottom: 40, left: 48 };
 
 export const TrajectoryChart: React.FC<Props> = ({ x, y, title }) => {
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "100%", height: 360 }}>
       <ParentSize>
         {({ width, height }) => {
           const outerInnerWidth = Math.max(
@@ -143,6 +143,4 @@ export const TrajectoryChart: React.FC<Props> = ({ x, y, title }) => {
     </div>
   );
 };
-
-export default TrajectoryChart;
 
