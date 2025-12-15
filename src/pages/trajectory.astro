@@ -1,0 +1,25 @@
+---
+import { TrajectoryCalculator } from "@/components/Trajectory";
+import Top from "@/layouts/Top.astro";
+import Footer from "@/components/SimpleFooter.astro";
+import "../styles/global.css";
+---
+
+<Top
+  url={Astro.url.href}
+  type="article"
+  title="簡易弾道計算機"
+  description="空気抵抗はあるよ"
+  image=""
+>
+  <div class="min-h-screen w-dvw bg-neutral-100 text-neutral-800">
+    <div class="min-h-screen w-1/2 mx-auto py-16">
+      <div class="text-center p-8 mb-4 bg-white rounded-xl shadow-lg">
+        <h1 class="text-4xl font-bold">簡易弾道計算機</h1>
+        <p class="text-sm text-neutral-500">ティータイムのおともに。</p>
+      </div>
+      <TrajectoryCalculator client:load />
+    </div>
+  </div>
+  <Footer />
+</Top>
