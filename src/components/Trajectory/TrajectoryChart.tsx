@@ -15,6 +15,10 @@ type Props = {
 const margin = { top: 16, right: 16, bottom: 40, left: 48 };
 
 export const TrajectoryChart: React.FC<Props> = ({ x, y, title }) => {
+  const xLabel = "distance";
+  const xUnit = "m";
+  const yLabel = "height";
+  const yUnit = "m";
   return (
     <div style={{ width: "100%", height: 360 }}>
       <ParentSize>
@@ -124,6 +128,34 @@ export const TrajectoryChart: React.FC<Props> = ({ x, y, title }) => {
                   top={innerHeight}
                   tickLabelProps={() => ({ fill: "#666", fontSize: 10 })}
                 />
+
+                {/* X軸ラベル */}
+                <text
+                  x={innerWidth / 2}
+                  y={innerHeight + 28}
+                  textAnchor="middle"
+                  style={{ fontSize: 12, fill: "#333" }}
+                >
+                  {xLabel && xUnit
+                    ? `${xLabel} (${xUnit})`
+                    : xLabel
+                    ? xLabel
+                    : `(${xUnit})`}
+                </text>
+
+                {/* Y軸ラベル */}
+
+                <text
+                  transform={`translate(${-36},${innerHeight / 2}) rotate(-90)`}
+                  textAnchor="middle"
+                  style={{ fontSize: 12, fill: "#333" }}
+                >
+                  {yLabel && yUnit
+                    ? `${yLabel} (${yUnit})`
+                    : yLabel
+                    ? yLabel
+                    : `(${yUnit})`}
+                </text>
 
                 {title ? (
                   <text
