@@ -7,7 +7,7 @@ import { reynoldsNumber, dragCoefficient } from "./utils";
 // ただし A = πr^2
 export const calculate = (condition: Condition) => {
   let x = 0;
-  let y = 0;
+  let y = condition.yoffset ?? 0;
 
   const deltaT = condition.deltaT;
 
@@ -52,4 +52,3 @@ export const calculate = (condition: Condition) => {
 
   return { x_list, y_list };
 };
-

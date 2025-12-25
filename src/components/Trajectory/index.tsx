@@ -22,6 +22,7 @@ const InputCard = ({
   // 発射諸元
   const [initV, setInitV] = useState(1);
   const [angle, setAngle] = useState(45);
+  const [yoffset, setYoffset] = useState(0);
 
   // 球の諸元
   const [radius, setRadius] = useState(1);
@@ -43,6 +44,7 @@ const InputCard = ({
     setCondition({
       initV,
       angle,
+      yoffset,
       radius,
       bulletDensity,
       mass,
@@ -54,6 +56,7 @@ const InputCard = ({
   }, [
     initV,
     angle,
+    yoffset,
     radius,
     bulletDensity,
     mass,
@@ -85,6 +88,15 @@ const InputCard = ({
                 type="number"
                 value={angle}
                 onChange={(e) => setAngle(parseFloat(e.target.value))}
+                className="border p-1 rounded w-full"
+              />
+            </div>
+            <div>
+              <label className="caption">発射高さ (m): </label>
+              <input
+                type="number"
+                value={yoffset}
+                onChange={(e) => setYoffset(parseFloat(e.target.value))}
                 className="border p-1 rounded w-full"
               />
             </div>
@@ -217,18 +229,17 @@ const ResultCard = ({ condition }: { condition: Condition }) => {
 
   const x_vals = result.x_list;
   const y_vals = result.y_list;
-  const x_max = x_vals.length > 0 ? Math.max(...x_vals) : 1;
-  const y_max = y_vals.length > 0 ? Math.max(...y_vals) : 1;
 
   return (
     <div className="card flex flex-col gap-4">
       <h2 className="font-bold text-xl">計算結果</h2>
       <div className="caption w-full min-h-60">
-        <TrajectoryChart x={x_vals} y={y_vals} title="弾道軌跡" />
+        <TrajectoryChart
+          results={[{ x_list: x_vals, y_list: y_vals, condition }]}
+        />
       </div>
     </div>
   );
 };
 
 export default TrajectoryCalculator;
-

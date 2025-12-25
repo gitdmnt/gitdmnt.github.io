@@ -5,16 +5,19 @@ import { AxisLeft, AxisBottom } from "@visx/axis";
 import { LinePath } from "@visx/shape";
 import { GridRows, GridColumns } from "@visx/grid";
 import { curveMonotoneX } from "d3-shape";
+import type { Condition } from "./type";
 
 type Props = {
-  x: number[];
-  y: number[];
-  title?: string;
+  results: { x_list: number[]; y_list: number[]; condition: Condition }[];
 };
 
 const margin = { top: 16, right: 16, bottom: 40, left: 48 };
 
-export const TrajectoryChart: React.FC<Props> = ({ x, y, title }) => {
+export const TrajectoryChart: React.FC<Props> = ({ results }) => {
+  const title = "弾道軌跡";
+
+  const x = results[0]?.x_list || [];
+  const y = results[0]?.y_list || [];
   const xLabel = "distance";
   const xUnit = "m";
   const yLabel = "height";
@@ -175,4 +178,3 @@ export const TrajectoryChart: React.FC<Props> = ({ x, y, title }) => {
     </div>
   );
 };
-

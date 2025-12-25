@@ -1,6 +1,7 @@
 export interface Condition {
   initV: number;
   angle: number;
+  yoffset: number;
   radius: number;
   bulletDensity: number;
   mass: number;
@@ -9,4 +10,3 @@ export interface Condition {
   viscosity: number;
   deltaT: number;
 }
-
