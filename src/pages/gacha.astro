@@ -1,20 +1,22 @@
 ---
 import Common from "../layouts/Common.astro";
 import GachaComponent from "../components/Gacha";
-const md = await Astro.glob("/src/content/resources/5w1h/*.md");
+const md = Object.values(
+  import.meta.glob("/src/content/resources/5w1h/*.md", { eager: true })
+) as Array<any>;
 const gachaItemLists = md.map((p) =>
-    p.rawContent().split("\n").filter(Boolean),
+  p.rawContent().split("\n").filter(Boolean)
 );
 ---
 
 <Common
-    url={Astro.url.href}
-    type="article"
-    title="冷蔵庫"
-    description="からっぽ"
-    image=""
+  url={Astro.url.href}
+  type="article"
+  title="冷蔵庫"
+  description="からっぽ"
+  image=""
 >
-    <main>
-        <GachaComponent gachaItemLists={gachaItemLists} client:load />
-    </main>
+  <main>
+    <GachaComponent gachaItemLists={gachaItemLists} client:load />
+  </main>
 </Common>

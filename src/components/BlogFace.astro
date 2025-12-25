@@ -11,7 +11,11 @@ if (file === "") {
   file = name;
 }
 const img = (
-  await Astro.glob("/src/content/resources/blogicon/*.{png,jpg,webp}")
+  Object.values(
+    import.meta.glob("/src/content/resources/blogicon/*.{png,jpg,webp}", {
+      eager: true,
+    })
+  ) as Array<any>
 ).filter((p) => p.default.src.split("/").pop().split(".")[0] === file)[0]
   .default;
 

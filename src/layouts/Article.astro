@@ -17,7 +17,7 @@ const { frontmatter } = Astro.props;
     <slot />
   </Md>
   <p class="credit">
-    {Temporal.PlainDate.from(frontmatter.date.slice(0, 10)).toString()},
+    {Temporal.PlainDate.from(frontmatter.pubDate.slice(0, 10)).toString()},
     書いた人: {frontmatter.author}
   </p>
   <a

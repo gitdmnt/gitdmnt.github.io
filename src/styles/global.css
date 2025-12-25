@@ -4,8 +4,8 @@
   .caption {
     @apply text-xs text-neutral-500;
   }
+
   .card {
-    @apply bg-white dark:bg-neutral-800 shadow-md rounded-lg p-4;
+    @apply bg-white shadow-md rounded-lg p-4;
   }
 }
-

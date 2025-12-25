@@ -3,70 +3,68 @@ import Common from "../../layouts/Common.astro";
 import { Image } from "astro:assets";
 
 export async function getStaticPaths({ paginate }) {
-    const cap = await Astro.glob("/src/content/illust/*.md");
-    const img = await Astro.glob("/src/content/illust/*.png");
-    const posts = cap
-        .map((p) => {
-            const i = cap.indexOf(p);
-            return [cap[i], img[i]];
-        })
-        .sort(
-            (a, b) =>
-                Date.parse(b[0].frontmatter.date) -
-                Date.parse(a[0].frontmatter.date),
-        );
+  const cap = Object.values(
+    import.meta.glob("/src/content/illust/*.md", { eager: true })
+  ) as Array<any>;
+  const img = Object.values(
+    import.meta.glob("/src/content/illust/*.png", { eager: true })
+  ) as Array<any>;
+  const posts = cap
+    .map((p) => {
+      const i = cap.indexOf(p);
+      return [cap[i], img[i]];
+    })
+    .sort(
+      (a, b) =>
+        Date.parse(b[0].frontmatter.date) - Date.parse(a[0].frontmatter.date)
+    );
 
-    return paginate(posts, { pageSize: 20 });
+  return paginate(posts, { pageSize: 20 });
 }
-const { page } = Astro.props;
+const { page } = Astro.props as any;
 ---
 
 <Common
-    url={Astro.url.href}
-    type="blog"
-    title="倉庫"
-    description="絵が並んでいる。"
-    image=""
+  url={Astro.url.href}
+  type="blog"
+  title="倉庫"
+  description="絵が並んでいる。"
+  image=""
 >
-    <main>
-        <div class="container">
-            {
-                page.data.map((p) => {
-                    const name = p[0].file.split("/").pop().split(".")[0];
-                    return (
-                        <a href={"/gallery/" + name}>
-                            <Image
-                                class="illust"
-                                src={p[1].default}
-                                alt=""
-                                quality={1}
-                            />
-                        </a>
-                    );
-                })
-            }
-        </div>
-    </main>
+  <main>
+    <div class="container">
+      {
+        page.data.map((p) => {
+          const name = p[0].file.split("/").pop().split(".")[0];
+          return (
+            <a href={"/gallery/" + name}>
+              <Image class="illust" src={p[1].default} alt="" quality={1} />
+            </a>
+          );
+        })
+      }
+    </div>
+  </main>
 </Common>
 <style>
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .illust {
+    width: 80%;
+    height: auto;
+  }
+  .illust:hover {
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
+  }
+  @media (max-width: 600px) {
     .container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
     .illust {
-        width: 80%;
-        height: auto;
+      width: 100%;
     }
-    .illust:hover {
-        box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
-    }
-    @media (max-width: 600px) {
-        .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-        .illust {
-            width: 100%;
-        }
-    }
+  }
 </style>

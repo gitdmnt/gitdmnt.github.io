@@ -5,7 +5,9 @@ import { Image } from "astro:assets";
 import { Temporal } from "temporal-polyfill";
 
 export async function getStaticPaths() {
-  const posts = await Astro.glob("/src/content/illust/*.png");
+  const posts = Object.values(
+    import.meta.glob("/src/content/illust/*.png", { eager: true })
+  ) as Array<any>;
   interface Obj {
     params: {
       picture: string;
@@ -22,12 +24,16 @@ export async function getStaticPaths() {
   return pictures;
 }
 const { picture } = Astro.params;
-const caption = (await Astro.glob("/src/content/illust/*.md")).filter(
-  (p) => p.file.split("/").pop().split(".")[0] === picture,
-)[0];
-const img = (await Astro.glob("/src/content/illust/*.png")).filter(
-  (p) => p.default.src.split("/").pop().split(".")[0] === picture,
-)[0].default;
+const caption: any = Object.values(
+  import.meta.glob("/src/content/illust/*.md", { eager: true })
+).filter((p: any) => p.file.split("/").pop().split(".")[0] === picture)[0];
+const img = (
+  Object.values(
+    import.meta.glob("/src/content/illust/*.png", { eager: true })
+  ) as Array<any>
+).filter(
+  (p: any) => p.default.src.split("/").pop().split(".")[0] === picture
+)[0]?.default;
 ---
 
 <Common
@@ -53,7 +59,7 @@ const img = (await Astro.glob("/src/content/illust/*.png")).filter(
     <p class="date">
       {
         Temporal.PlainDate.from(
-          caption.frontmatter.date.slice(0, 10),
+          caption.frontmatter.date.slice(0, 10)
         ).toString()
       }
     </p>
