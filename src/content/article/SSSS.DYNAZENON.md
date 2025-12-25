@@ -1,7 +1,7 @@
 ---
 title: SSSS.DYNAZENON
 author: 宇田
-date: 2024-02-03
+pubDate: 2024-02-03
 description: SSSS.DYNAZENONを見た。1話を見始めたのがおそらく半年前になるだろうか。
 thumbnail:
 ---

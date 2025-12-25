@@ -13,7 +13,7 @@ const articleSchema = z.object({
   description: z.string().optional(),
   pubDate: z.coerce.date(),
   updatedDate: z.coerce.date().optional(),
-  thumbnail: z.string().optional(),
+  thumbnail: z.string().nullable().optional(),
 });
 
 // 4. Define your collection(s)
@@ -40,8 +40,8 @@ const illust = defineCollection({
     date: z.coerce.date(),
     tags: z.array(z.string()).optional(),
     description: z.string().optional(),
-    series: z.string().optional(),
-    link: z.string().optional(),
+    series: z.string().nullable().optional(),
+    link: z.string().nullable().optional(),
   }),
 });
 

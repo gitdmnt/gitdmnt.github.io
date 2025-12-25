@@ -1,7 +1,7 @@
 ---
 title: Obisidianのプラグインを作る
 author: 宇田
-date: 2024-07-10
+pubDate: 2024-07-10
 description: 作ります
 thumbnail:
 ---
