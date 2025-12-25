@@ -10,157 +10,60 @@ import Top from "../layouts/Top.astro";
   image=""
 >
   <main>
-    <div class="container">
-      <div class="madori">
-        <h2 class="genkan">や‐さがされ</h2>
-        <div class="kabe"></div>
-        <ul class="rouka">
-          <li class="heya">
-            <a href="/about">げたばこ</a>
-          </li>
-          <li class="heya">
-            <a href="/blog/1">つくえ</a>
-          </li>
-          <li class="heya">
-            <a href="/gallery/1">やねうら</a>
-          </li>
-          <li class="heya">
-            <a href="/bookshelf">ほんだな</a>
-          </li>
-          <li class="heya">
-            <a href="/clock">とけい</a>
-          </li>
-          <li class="heya">
-            <a href="/watersort">ながし</a>
-          </li>
-          <li class="heya">
-            <a href="/onehourwriting">はりがみ</a>
-          </li>
-        </ul>
-      </div><div class="ie">
-        <div class="yubin-uke">
-          <h2 class="bira">動かしています</h2>
-          <ul class="bira">
-            <li class="bira">文字</li>
-            <li class="bira">ピクセル</li>
-            <li class="bira">バイナリ・ディジット</li>
-          </ul>
-          <h2 class="bira">動かされています</h2>
-          <ul class="bira">
-            <li class="bira">意味</li>
-            <li class="bira">実存</li>
-            <li class="bira">愛</li>
-            <li class="bira">恐怖</li>
-          </ul>
+    <div
+      class="flex flex-row flex-wrap gap-16 justify-between min-h-screen w-dvw text-neutral-950"
+    >
+      <div class="self-start flex flex-row gap-4">
+        <h2
+          class="font-extrabold text-9xl [writing-mode:vertical-rl] border-r-16 border-neutral-950 pr-4 whitespace-nowrap"
+        >
+          や‐さがされ
+        </h2>
+        <div
+          class="flex flex-col list-none gap-2 text-2xl font-bold whitespace-nowrap *:first-letter:text-4xl"
+        >
+          <a href="/about">げたばこ</a>
+          <a href="/blog/1">つくえ</a>
+          <a href="/gallery/1">やねうら</a>
+          <a href="/bookshelf">ほんだな</a>
+          <a href="/clock">とけい</a>
+          <a href="/watersort">ながし</a>
+          <a href="/onehourwriting">はりがみ</a>
+          <a href="/mergesorter">ひとりあそび</a>
+          <a href="/trajectory">だんどうけいさん</a>
         </div>
-        <div class="kabe2"></div>
-        <div class="hyosatsu">
-          <div class="shitsuryo">住んで<br />います</div>
-          <div class="kabe3"></div>
-          <h2 class="keiso">
+      </div>
+      <div class="self-end flex flex-row gap-4 ml-auto">
+        <div class="flex flex-col gap-2 justify-end text-xl">
+          <div class="flex flex-col items-end">
+            <h2 class="font-bold">動かしています</h2>
+            <div>文字</div>
+            <div>ピクセル</div>
+            <div>バイナリ・ディジット</div>
+          </div>
+          <div>
+            <div class="flex flex-col items-end">
+              <h2 class="font-bold">動かされています</h2>
+              <div>意味</div>
+              <div>実存</div>
+              <div>愛</div>
+              <div>恐怖</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col border-l-16 border-neutral-950 pl-4">
+          <div
+            class="flex flex-col text-[2rem] font-bold border-b-8 border-neutral-950 pb-2 mb-2"
+          >
+            <div>住んで</div>
+            <div>います</div>
+          </div>
+          <div class="flex flex-col font-extrabold text-8xl">
             <a href="https://github.com/gitdmnt/">宇</a>
             <a href="https://twitter.com/41_36_22">田</a>
-          </h2>
+          </div>
         </div>
       </div>
     </div>
   </main>
-
-  <style>
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      place-items: space-between space-between;
-      min-height: 100dvh;
-      color: #1d1d1d;
-      font-family: "Kosugi";
-    }
-    .madori {
-      display: grid;
-      grid-template-columns: 100pt 16pt 1fr;
-      margin: 0;
-    }
-    .genkan {
-      writing-mode: vertical-lr;
-      margin-block: 0;
-      font-size: 100pt;
-      line-height: 1;
-      font-weight: bolder;
-    }
-    .kabe {
-      height: 100%;
-      width: 16pt;
-      background: #1d1d1d;
-    }
-    .rouka {
-      font-size: 16pt;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      font-weight: normal;
-      font-family: "Noto Sans JP", "Yu Gothic", "Meiryo", "Arial", sans-serif;
-    }
-    .heya:first-letter {
-      font-size: 24pt;
-    }
-    .heya {
-      white-space: nowrap;
-    }
-    .ie {
-      display: grid;
-      grid-template-columns: 1fr 10pt 105pt;
-      place-items: end end;
-      align-self: end;
-    }
-    .hyosatsu {
-      display: grid;
-      grid-template-rows: auto 10px 200pt;
-      justify-items: center;
-      margin: 0;
-    }
-    .shitsuryo {
-      font-size: 32pt;
-      margin: 0;
-      padding: 0;
-    }
-    .kabe3 {
-      height: 10px;
-      justify-self: end;
-      width: 100pt;
-      background: #1d1d1d;
-    }
-    .keiso {
-      writing-mode: horizontal-tb;
-      font-size: 100pt;
-      margin: 0;
-      padding: 0;
-    }
-    .yubin-uke {
-      font-family: "Noto Sans JP", "Yu Gothic", "Meiryo", "Arial", sans-serif;
-      text-align: right;
-      margin-block-end: 4pt;
-    }
-    .kabe2 {
-      height: 100%;
-      width: 10pt;
-      background: #1d1d1d;
-    }
-    .bira {
-      margin: 0;
-      padding: 0;
-      font-size: 15pt;
-      white-space: nowrap;
-    }
-    h2.bira {
-      line-height: 1.6;
-    }
-    ul.bira {
-      line-height: 1.2;
-      list-style: none;
-    }
-    a {
-      color: #1d1d1d;
-      text-decoration: none;
-    }
-  </style>
 </Top>
