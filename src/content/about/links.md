@@ -1,8 +1,7 @@
 ---
-layout: "/src/layouts/Md.astro"
 title: "記事2"
 author: "uda2"
-date: "2000-01-01"
+pubDate: "2000-01-01"
 description: "記事っす！ 2"
 ---
 
