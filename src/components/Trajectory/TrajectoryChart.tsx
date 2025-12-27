@@ -85,15 +85,27 @@ export const TrajectoryChart: React.FC<Props> = ({ results }) => {
                   stroke="#e6e6e6"
                 />
 
-                <LinePath
-                  curve={curveNatural}
-                  data={points}
-                  x={(d) => xScale(d.x) ?? 0}
-                  y={(d) => yScale(d.y) ?? 0}
-                  stroke="#2563eb"
-                  strokeWidth={2}
-                  fill="none"
-                />
+                {results.map((result, idx) => {
+                  const pts = result.x_list.map((vx, i) => ({
+                    x: vx,
+                    y: result.y_list[i] ?? 0,
+                  }));
+                  const color = `hsl(${(idx * 251) % 360}, 80%, ${
+                    ((Math.floor(idx / 5) * 5 * 23 + 40) % 60) + 30
+                  }%)`;
+                  return (
+                    <LinePath
+                      key={idx}
+                      curve={curveNatural}
+                      data={pts}
+                      x={(d) => xScale(d.x) ?? 0}
+                      y={(d) => yScale(d.y) ?? 0}
+                      stroke={color}
+                      strokeWidth={2}
+                      fill="none"
+                    />
+                  );
+                })}
 
                 <AxisLeft
                   scale={yScale}
