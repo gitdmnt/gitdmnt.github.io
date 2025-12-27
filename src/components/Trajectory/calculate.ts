@@ -17,7 +17,7 @@ export const calculate = (condition: Condition) => {
   const x_list = [x];
   const y_list = [y];
 
-  while (y >= 0) {
+  while (y >= 0 && x_list.length < 100000) {
     // 空気抵抗の計算
     const v = Math.sqrt(vx * vx + vy * vy);
 
@@ -27,11 +27,17 @@ export const calculate = (condition: Condition) => {
       condition.radius * 2,
       condition.viscosity
     );
-    const cd = dragCoefficient(re);
-    const area = Math.PI * condition.radius * condition.radius;
 
-    const dragForceX = 0.5 * condition.fluidDensity * v * vx * cd * area;
-    const dragForceY = 0.5 * condition.fluidDensity * v * vy * cd * area;
+    let dragForceX = 0;
+    let dragForceY = 0;
+
+    if (re > 0) {
+      const cd = dragCoefficient(re);
+      const area = Math.PI * condition.radius * condition.radius;
+
+      dragForceX = 0.5 * condition.fluidDensity * v * vx * cd * area;
+      dragForceY = 0.5 * condition.fluidDensity * v * vy * cd * area;
+    }
 
     // 加速度の計算
     const ax = -dragForceX / condition.mass;
@@ -50,5 +56,10 @@ export const calculate = (condition: Condition) => {
     y_list.push(y);
   }
 
-  return { x_list, y_list };
+  return {
+    x_list,
+    y_list,
+    finalVelocity: Math.sqrt(vx * vx + vy * vy),
+    flightTime: (x_list.length - 1) * deltaT,
+  };
 };
