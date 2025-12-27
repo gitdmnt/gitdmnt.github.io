@@ -15,6 +15,7 @@ export const ResultCard = ({ condition }: { condition: Condition }) => {
   >([]);
   useEffect(() => {
     if (!condition) return;
+    if (!isValidCondition(condition)) return;
     setResults((prev) => {
       const exists = prev.some((r) => isSameCondition(r.condition, condition));
       if (exists) return prev;
@@ -89,3 +90,13 @@ const isSameCondition = (a: Condition, b: Condition) =>
   a.fluidDensity === b.fluidDensity &&
   a.viscosity === b.viscosity &&
   a.deltaT === b.deltaT;
+
+const isValidCondition = (c: Condition) =>
+  c.initV > 0 &&
+  c.mass > 0 &&
+  c.bulletDensity > 0 &&
+  c.radius > 0 &&
+  c.g > 0 &&
+  c.fluidDensity >= 0 &&
+  c.viscosity > 0 &&
+  c.deltaT > 0;
