@@ -16,6 +16,11 @@ const margin = { top: 16, right: 16, bottom: 40, left: 48 };
 export const TrajectoryChart: React.FC<Props> = ({ results }) => {
   const title = "弾道軌跡";
 
+  const xMin = Math.min(...results.map((r) => Math.min(...(r.x_list || [0]))));
+  const xMax = Math.max(...results.map((r) => Math.max(...(r.x_list || [0]))));
+  const yMin = Math.min(...results.map((r) => Math.min(...(r.y_list || [0]))));
+  const yMax = Math.max(...results.map((r) => Math.max(...(r.y_list || [0]))));
+
   const x = results[0]?.x_list || [];
   const y = results[0]?.y_list || [];
   const xLabel = "distance";
@@ -178,3 +183,4 @@ export const TrajectoryChart: React.FC<Props> = ({ results }) => {
     </div>
   );
 };
+
