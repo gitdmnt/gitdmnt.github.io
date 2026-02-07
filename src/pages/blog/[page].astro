@@ -8,7 +8,8 @@ export async function getStaticPaths({ paginate }) {
     import.meta.glob("/src/content/article/*.{md,mdx}", { eager: true })
   );
   posts.sort(
-    (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
+    (a, b) =>
+      Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate)
   );
 
   return paginate(posts, { pageSize: 10 });
@@ -16,7 +17,7 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props as {
   page: {
     data: Array<{
-      frontmatter: { title: string; description?: string; date?: string };
+      frontmatter: { title: string; description?: string; pubDate?: string };
       file: string;
     }>;
     url: { prev?: string | null; next?: string | null };
@@ -41,7 +42,7 @@ const { page } = Astro.props as {
             href={"/blog/" + p.file.split("/").pop().split(".")[0]}
             body={p.frontmatter.description}
             date={Temporal.PlainDate.from(
-              (p.frontmatter.date ?? "1970-01-01").slice(0, 10)
+              (p.frontmatter.pubDate ?? "1970-01-01").slice(0, 10)
             ).toString()}
           />
         ))
@@ -52,23 +53,23 @@ const { page } = Astro.props as {
         () => {
           if (page.url.prev != null) {
             return (
-              <a class="page prev" href={page.url.prev}>
-                <li>{page.currentPage - 1}</li>
-              </a>
+              <li class="page prev">
+                <a href={page.url.prev}>{page.currentPage - 1}</a>
+              </li>
             );
           } else {
             return;
           }
         }
       }
-      <li class="page pres">{page.currentPage}</li>
+      <li class="page curr">{page.currentPage}</li>
       {
         () => {
           if (page.url.next != null) {
             return (
-              <a class="page next" href={page.url.next}>
-                <li>{page.currentPage + 1}</li>
-              </a>
+              <li class="page next">
+                <a href={page.url.next}>{page.currentPage + 1}</a>
+              </li>
             );
           } else {
             return;
@@ -93,33 +94,34 @@ const { page } = Astro.props as {
   .page-list {
     margin-inline: auto;
     margin-block: 2rem;
-    display: grid;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
     justify-content: center;
-    grid-template-rows: 2.5rem;
-    grid-template-columns: 2rem 2rem 2rem;
   }
   .page {
-    box-sizing: border-box;
+    margin: 0;
+    box-sizing: content-box;
     padding: 0.5rem;
     border: 1px solid #1d1d1d;
     color: #1d1d1d;
   }
   .prev {
-    grid-column: 1/2;
     text-align: center;
   }
-  .pres {
-    grid-column: 2/3;
+  .curr {
     background: #1d1d1d;
     text-align: center;
     color: #fffefd;
   }
   .next {
-    grid-column: 3/4;
     text-align: center;
   }
   a {
     color: #1d1d1d;
     text-decoration: none;
+    width: 100%;
+    display: block;
+    height: 100%;
   }
 </style>
