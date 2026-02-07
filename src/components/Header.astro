@@ -2,24 +2,49 @@
 
 ---
 
-<header>
-  <div class="title">
-    <a class="title" href="/"> や<span class="title">-</span>さがされ</a>
+<header
+  class="md:fixed md:h-dvh w-full md:w-28 md:self-start md:flex md:items-center md:justify-center
+  px-12 py-8 md:p-0 md:border-r md:border-black md:border-dashed"
+>
+  <div
+    class="w-full h-full flex flex-row items-center justify-between text-nowrap"
+  >
+    <a class="text-2xl md:text-xl black md:-rotate-90" href="/"
+      >や<span>-</span>さがされ</a
+    >
+    <ul class="listnone flex flex-row gap-2 md:hidden">
+      <li class="border-b border-black border-dashed">
+        <a class="black" href="/about">げたばこ</a>
+      </li>
+      <li class="border-b border-black border-dashed">
+        <a class="black" href="/blog/1">やねうら</a>
+      </li>
+    </ul>
   </div>
-  <ul class="link-container">
-    <li class="page-link">
-      <div class="page-link-component">
-        <a href="/about">げたばこ</a>
-      </div>
-    </li>
-    <li class="page-link">
-      <div class="page-link-component">
-        <a href="/blog/1">やねうら</a>
-      </div>
-    </li>
-  </ul>
 </header>
-
+<style>
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    margin: 0;
+    padding: 0;
+  }
+  .black {
+    color: #1d1d1d;
+  }
+  .border-black {
+    border-color: #1d1d1d;
+  }
+  .listnone {
+    list-style: none;
+  }
+  .writing-vertical {
+    transform: rotate(-90deg);
+  }
+</style>
+<!-- 
 <style>
   header {
     display: grid;
@@ -47,7 +72,7 @@
     color: #1d1d1d;
     text-decoration: none;
   }
-  @container (max-width: 600px) {
+  @container (max-width: 768px) {
     header {
       grid-template-columns: auto 1fr;
       justify-items: stretch;
@@ -90,3 +115,4 @@
     }
   }
 </style>
+-->

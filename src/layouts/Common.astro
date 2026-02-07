@@ -21,27 +21,29 @@ interface Props {
   description={description}
   image={image}
 >
-  <div class="container">
-    <div class="sizer">
-      <div class="start">
-        <Header />
-      </div>
-      <div class="centerpart">
+  <div
+    class="w-full bg-[#f2f2ed] md:bg-white flex flex-col md:flex-row items-center min-h-dvh"
+  >
+    <Header />
+    <div class="flex w-full h-full justify-center">
+      <div
+        class="mx-12 md:min-w-120 md:w-1/2 md:border md:border-[#d56a8a] md:rounded-4xl md:my-12 md:p-10 md:mx-40"
+      >
         <slot />
       </div>
-      <div class="rightside">
-        <Footer />
-      </div>
     </div>
+    <Footer />
   </div>
 </Top>
+
+<style></style>
+
+<!--
 <style>
   .container {
     container-type: inline-size;
   }
   .sizer {
-    display: grid;
-    grid-template-columns: 80px 1fr 80px;
   }
   .centerpart {
     margin-inline: auto;
@@ -50,15 +52,12 @@ interface Props {
     padding-block: 2rem;
     min-width: 320px;
     width: 60%;
-    max-width: 800px;
+    max-width: 840px;
     border: 1px solid #d56a8a;
     border-radius: 20pt;
   }
-  @container (max-width: 600px) {
+  @container (max-width: 768px) {
     .sizer {
-      grid-template-rows: repeat(3, auto);
-      grid-template-columns: 1fr;
-
       background-color: #f2f2ed;
     }
     .centerpart {
@@ -69,3 +68,5 @@ interface Props {
     }
   }
 </style>
+
+-->

@@ -10,18 +10,28 @@ interface Props {
 const { mode = "light" } = Astro.props;
 ---
 
-<footer>
-  <div class="twitter link">
+<footer
+  class="md:fixed md:h-dvh w-full md:w-28 md:self-start md:flex md:items-center md:justify-end
+   py-8 md:p-0 md:border-r md:border-black md:border-dashed md:right-0"
+>
+  <div class="pt-8 md:p-0 h-20 md:h-screen w-full md:w-20 flex flex-col">
     <a href="https://twitter.com/41_36_22/">
-      <div class="spacer"></div>
+      <div class="h-10 md:h-20 w-full twitter"></div>
     </a>
-  </div>
-  <div class="github link">
     <a href="https://github.com/gitdmnt/">
-      <div class="spacer"></div>
+      <div class="h-10 md:h-20 w-full github"></div>
     </a>
   </div>
 </footer>
+<style>
+  .twitter {
+    background-color: #d56a8a;
+  }
+  .github {
+    background-color: #1d1d1d;
+  }
+</style>
+<!--
 <style>
   footer {
     height: 100dvh;
@@ -46,7 +56,7 @@ const { mode = "light" } = Astro.props;
     width: 100%;
   }
 
-  @container (max-width: 600px) {
+  @container (max-width: 768px) {
     footer {
       margin-block-start: 4rem;
       height: 50px;
@@ -58,3 +68,4 @@ const { mode = "light" } = Astro.props;
     }
   }
 </style>
+ -->
