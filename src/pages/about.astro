@@ -3,29 +3,32 @@ import Common from "../layouts/Common.astro";
 import { Content as Profile } from "/src/content/about/profile.md";
 import * as ProfilePic from "/src/content/illust/icon.png";
 import { Content as Links } from "/src/content/about/links.md";
+import Md from "@/layouts/Md.astro";
 ---
 
 <Common
-    url={Astro.url.href}
-    type="profile"
-    title="姿見"
-    description="誰！？"
-    image={ProfilePic.default.src}
+  url={Astro.url.href}
+  type="profile"
+  title="姿見"
+  description="誰！？"
+  image={ProfilePic.default.src}
 >
-    <main>
-        <div class="intro">著者近影(気が向いたら撮るぜ！)</div>
-        <div class="profile">
-            <Profile />
-        </div>
-        <div class="links">
-            <Links />
-        </div>
-    </main>
+  <main>
+    <div class="intro">著者近影(気が向いたら撮るぜ！)</div>
+    <div class="profile">
+      <Md>
+        <Profile />
+      </Md>
+    </div>
+    <div class="links">
+      <Links />
+    </div>
+  </main>
 </Common>
 <style>
-    main {
-        width: 50%;
-        min-width: 320px;
-        margin: auto;
-    }
+  main {
+    width: 50%;
+    min-width: 320px;
+    margin: auto;
+  }
 </style>
