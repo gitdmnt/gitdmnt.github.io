@@ -5,7 +5,7 @@ pubDate: "2002-09-22"
 description: ""
 ---
 
-## こう名乗っています。
+## 名
 
 1. 宇田まなと
 2. でぃめ
@@ -13,19 +13,16 @@ description: ""
 4. 春瀬
 5. その他 400 以上の名前
 
-## ここに所属しています。
+## 在
 
 - [こっちに来てはいけない](https://discord.gg/2UAAFXxa3u "My Discord Server")
 - 天然ウナギ専門店
-
-## ここに連絡してください。
-
 - [宇田 / Twitter](https://twitter.com/41_36_22 "Twitter Account (Uda)")
 - [春瀬 / Twitter](https://twitter.com/tosdmnt "Twitter Account (Haruse)")
 - udamana / Discord
 - attamattamat / Gmail
 
-## これをしています。
+## do
 
 - ひとりごとを言う
 - 萌えイラストを描く
@@ -34,7 +31,7 @@ description: ""
 - ラブコメを求める
 - [パソコンを叩く](https://github.com/gitdmnt GitHub Account)
 
-## これが好きです。
+## 好
 
 - 自由と尊厳
 - 愛情と象徴
