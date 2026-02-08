@@ -1,15 +1,25 @@
 ---
-title: "記事2"
-author: "uda2"
-pubDate: "2000-01-01"
-description: "記事っす！ 2"
+title: "リンク集"
+author: "宇田"
+pubDate: "2002-09-22"
+description: ""
 ---
 
-## 相互リンク
+## 繋
 
-- [シャーロットエースの部屋](https://charlotteace.github.io/ "国際単位系！")
+<iframe src="https://charlotteace.github.io/parts/banner" scrolling="no" frameborder="0" width="200" height="40"></iframe>
+
 - [ふぁぼんのホームページ](https://www.fabon.info/ "ふぁぼん先生！")
 
-## バナー
+### 旗
 
- <iframe src="https://charlotteace.github.io/parts/banner" scrolling="no" frameborder="0" width="200" height="40"></iframe>
+```javascript
+<iframe
+  src="https://https://gitdmnt.github.io/banner.png"
+  scrolling="no"
+  frameborder="0"
+  width="200"
+  height="40"
+></iframe>
+```
+
