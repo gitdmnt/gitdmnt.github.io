@@ -13,7 +13,7 @@ description: ""
 
 ### 旗
 
-```javascript
+```html
 <a
   href="https://https://gitdmnt.github.io/"
   target="_blank"
