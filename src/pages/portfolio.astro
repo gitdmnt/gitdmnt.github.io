@@ -1,0 +1,14 @@
+---
+import Top from "../layouts/Top.astro";
+import { PortfolioRoot } from "../components/Portfolio";
+---
+
+<Top
+  url={Astro.url.href}
+  type="profile"
+  title="姿見"
+  description="誰！？"
+  image=""
+>
+  <PortfolioRoot client:load />
+</Top>

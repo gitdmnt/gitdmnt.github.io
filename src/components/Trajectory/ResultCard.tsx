@@ -3,7 +3,11 @@ import { TrajectoryChart } from "./TrajectoryChart";
 import type { Condition } from "./type";
 import { calculate } from "./calculate";
 
-export const ResultCard = ({ condition }: { condition: Condition }) => {
+export const ResultCard = ({
+  condition,
+}: {
+  condition: Condition | undefined;
+}) => {
   const [results, setResults] = useState<
     {
       x_list: number[];
@@ -100,3 +104,4 @@ const isValidCondition = (c: Condition) =>
   c.fluidDensity >= 0 &&
   c.viscosity > 0 &&
   c.deltaT > 0;
+
