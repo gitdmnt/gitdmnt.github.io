@@ -14,8 +14,8 @@
 
 .bottle {
   list-style: none;
-  width: 20px;
-  height: 80px;
+  width: 22px;
+  height: 82px;
   border-radius: 0 0 12px 12px;
   border: 1px solid #333;
   margin-block: 1rem;
@@ -126,7 +126,6 @@ label.toggle {
   margin-block: 1rem;
   margin-inline-start: 1rem;
   margin-inline-end: auto;
-
 }
 
 input.toggle {
@@ -135,9 +134,9 @@ input.toggle {
 
 div.toggle {
   margin: auto;
-  width: 36px;
+  width: 48px;
   border-radius: 20px;
-  height: 20px;
+  height: 28px;
   padding: 2px;
   background-color: #eee;
   border: 1px solid #ddd;
@@ -160,12 +159,13 @@ p.toggle {
   font-size: 10pt;
 }
 
-input.toggle:checked~div.toggle {
+input.toggle:checked ~ div.toggle {
   background-color: #f7dae3;
   border: 1px solid #f6c3d3;
 }
 
-input:checked~div.toggle>div.slider {
+input:checked ~ div.toggle > div.slider {
   background-color: #e58da9;
   grid-column: 2/3;
 }
+

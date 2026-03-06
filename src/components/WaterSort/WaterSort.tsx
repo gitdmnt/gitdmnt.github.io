@@ -14,12 +14,12 @@ export const WaterSort = () => {
     [0, 0, 0, 0],
     [0, 0, 0, 0],
   ]);
-  const [selected, setSelected] = useState(-1);
+  const [selected, setSelected] = useState<number | undefined>(-1);
   const [isHard, setIsHard] = useState(false);
   const [num, setNum] = useState(10);
   const [visiblity, setVisiblity] = useState(false);
   const [isClear, setIsClear] = useState(false);
-  const [history, setHistory] = useState([]);
+  const [history, setHistory] = useState<number[][][]>([]);
 
   const color = [
     "#00000000",
@@ -69,13 +69,13 @@ export const WaterSort = () => {
     "#1d1d1d",
   ];
 
-  const bottleClick = (i) => {
-    if (selected === -1) {
+  const bottleClick = (i: number) => {
+    if (selected === undefined || selected === -1) {
       // 1度目の選択
       setSelected(i);
     } else if (selected === i) {
       // 同じものを選択したとき
-      setSelected(-1);
+      setSelected(undefined);
     } else {
       // 正常
       pour(selected, i);
@@ -87,76 +87,67 @@ export const WaterSort = () => {
     }
   };
 
-  const pour = (i, j) => {
-    const first_element_index_start = (() => {
+  const pour = (i: number, j: number) => {
+    // 1本目に選択されたボトルの空でない一番上の要素の一番上のインデックスを取得
+    const first_element_start = (() => {
       const a = bottle[i].findIndex((v) => v !== 0);
-      if (a === -1) {
-        return 3;
-      } else {
-        return a;
-      }
+      return a === -1 ? 3 : a;
     })();
-    const first_element_index_end =
+
+    // 1本目に選択されたボトルの空でない一番上の要素の一番下のインデックスを取得
+    const first_element_end =
       (() => {
         const a = bottle[i]
-          .slice(first_element_index_start, 4)
-          .findIndex((v) => v !== bottle[i][first_element_index_start]);
-        if (a === -1) {
-          return bottle[i].slice(first_element_index_start, 4).length;
-        } else {
-          return a;
-        }
-      })() + first_element_index_start;
-    const first_element_length =
-      first_element_index_end - first_element_index_start;
+          .slice(first_element_start, 4)
+          .findIndex((v) => v !== bottle[i][first_element_start]);
+        return a === -1 ? bottle[i].slice(first_element_start, 4).length : a;
+      })() + first_element_start;
+
+    // 1本目に選択されたボトルの空でない一番上の要素の長さを取得
+    const first_element_length = first_element_end - first_element_start;
+
+    // 1本目に選択されたボトルの空でない一番上の要素の色を取得
+    const first_element_color = bottle[i][first_element_start];
+
+    // 2本目に選択されたボトルの空領域の長さを取得
     const space_length = (() => {
       const a = bottle[j].findIndex((v) => v !== 0);
-      if (a === -1) {
-        return 4;
-      } else {
-        return a;
-      }
+      return a === -1 ? 4 : a;
     })();
-    // 違う色だったら弾く
-    // console.log("host:  ", first_element_index_start, bottle[i][first_element_index_start])
-    // console.log("client:", space_length, bottle[j][space_length === 4 ? 3 : space_length])
-    if (
-      space_length !== 4 &&
-      bottle[i][first_element_index_start] !==
-        bottle[j][space_length === 4 ? 3 : space_length]
-    ) {
-    } else {
-      const amount = Math.min(first_element_length, space_length);
+
+    // 2本目に選択されたボトルの空でない一番上の要素の色を取得
+    const second_element_color =
+      space_length === 4 ? undefined : bottle[j][space_length];
+
+    // 完全に空か、1本目の色と2本目の色が同じなら注ぐ
+    if (space_length === 4 || first_element_color === second_element_color) {
+      const pour_amount = Math.min(first_element_length, space_length);
       let result_host = bottle[i].concat();
       let result_client = bottle[j].concat();
-      let count = 0;
-      let point_host = first_element_index_start;
-      let point_client = 3;
-      // console.log("amount:", amount, first_element_index_start, first_element_index_end, space_length)
-      // 無理やり入れ替えててキモいと思う
-      while (count < amount) {
-        if (result_client[point_client] === 0) {
-          result_host[point_host] = 0;
-          result_client[point_client] = bottle[i][point_host];
-          // console.log("replace", point_client, "with", point_host);
-          count++;
-          point_host++;
-        }
-        point_client--;
-      }
+      result_host.fill(
+        0,
+        first_element_start,
+        first_element_start + pour_amount,
+      );
+      result_client.fill(
+        first_element_color,
+        space_length - pour_amount,
+        space_length,
+      );
       let result = bottle.concat();
       result[i] = result_host;
       result[j] = result_client;
       setBottle(result);
       setHistory([...history, result]);
     }
-    // 1本目を適当に
-    setSelected(-1);
+
+    // 選択を解除
+    setSelected(undefined);
   };
 
   const check = () => {
     const length = bottle.filter(
-      (b) => b[0] === b[1] && b[0] === b[2] && b[0] === b[3]
+      (b) => b[0] === b[1] && b[0] === b[2] && b[0] === b[3],
     ).length;
     if (length === num) {
       return true;
@@ -165,7 +156,7 @@ export const WaterSort = () => {
     }
   };
 
-  const init = (n, isHardTemp) => {
+  const init = (n: number, isHardTemp: boolean) => {
     // 難易度設定
     if (isHardTemp) {
       setIsHard(true);
@@ -219,7 +210,7 @@ export const WaterSort = () => {
     setIsClear(false);
   };
 
-  const initHardStable = (n) => {};
+  const initHardStable = (n: number) => {};
 
   const resetBottle = () => {
     setBottle(defaultBottle);
