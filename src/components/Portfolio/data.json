@@ -1,0 +1,23 @@
+[
+  {
+    "tags": ["Web App"],
+    "title": "bookie clicker",
+    "description": "読書記録を取り、統計情報を閲覧するために設計された仮想書架のWebアプリ。",
+    "additionalDescription": "ユーザーは自分の読書履歴をISBNに紐付けて記録することができます。履歴は読書開始時と終了時にアプリ上のストップウォッチを操作することで記録されます。読書中にはページに紐付けてメモや感想も保存でき、振り返りや分析の補助に使えます。さらに、自分の読書傾向を把握するため、蓄積した読書履歴にもとづく統計データが閲覧できます。",
+    "motivation": "読書メーターなどの既存のサービスを使っていましたが、統計情報を閲覧する機能が乏しかったりと、UI/UXに不満があったため、自分で作ることにしました。タイトルの \"bookie clicker\" は、開発を始めた当時、個人的に熱中していた名作クリッカーゲーム「cookie clicker」のように、読書ページ量や累計読書時間をどんどん積み重ねて増大させていくことに喜びを見出す補助ツールにしたいという思いから名付けました。",
+    "stack": [
+      "React",
+      "TypeScript",
+      "Cloudflare Pages",
+      "Cloudflare Workers",
+      "Cloudflare R2"
+    ],
+    "period": "2026-03-10",
+    "image": "",
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/gitdmnt/bookie_clicker" },
+      { "label": "Demo", "url": "https://bookie-clicker.pages.dev/" }
+    ]
+  }
+]
+
