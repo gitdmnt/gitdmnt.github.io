@@ -32,7 +32,7 @@ const products: PortfolioCardProps[] = data
     image: item.image ?? "",
     links: (item.links ?? []) as PortfolioLink[],
   }))
-  .sort((a, b) => b.period.localeCompare(a.period));
+  .sort((a, b) => a.period.localeCompare(b.period));
 
 const TAG_COLORS: Record<PortfolioTags, string> = {
   CD: "bg-purple-400/30 text-purple-100 border-purple-300/40",
@@ -390,9 +390,9 @@ const AddEntryForm = ({ allTags }: { allTags: PortfolioTags[] }) => {
         <div className="flex items-center gap-3">
           <span
             className="flex items-center justify-center w-7 h-7 rounded-full border border-white/20 bg-white/5 text-white/50 group-hover:text-white/80 transition-colors"
-            style={{ fontSize: "1.1rem", lineHeight: 1 }}
+            style={{ fontSize: "0.8rem", lineHeight: 1 }}
           >
-            +
+            ＋
           </span>
           <div className="text-left">
             <p className="text-white/80 font-medium text-sm group-hover:text-white transition-colors">
@@ -536,19 +536,23 @@ const AddEntryForm = ({ allTags }: { allTags: PortfolioTags[] }) => {
             <label className={labelCls}>Links</label>
             <div className="flex flex-col gap-2">
               {links.map((link, i) => (
-                <div key={i} className="flex gap-2 items-center">
-                  <input
-                    className={inputCls + " w-28 shrink-0"}
-                    placeholder="GitHub"
-                    value={link.label}
-                    onChange={(e) => updateLink(i, "label", e.target.value)}
-                  />
-                  <input
-                    className={inputCls + " flex-1"}
-                    placeholder="https://..."
-                    value={link.url}
-                    onChange={(e) => updateLink(i, "url", e.target.value)}
-                  />
+                <div key={i} className="flex items-center gap-2">
+                  <div className="w-28 shrink-0">
+                    <input
+                      className={inputCls}
+                      placeholder="GitHub"
+                      value={link.label}
+                      onChange={(e) => updateLink(i, "label", e.target.value)}
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <input
+                      className={inputCls}
+                      placeholder="https://..."
+                      value={link.url}
+                      onChange={(e) => updateLink(i, "url", e.target.value)}
+                    />
+                  </div>
                   <button
                     type="button"
                     className="shrink-0 text-white/30 hover:text-white/70 transition-colors text-lg leading-none cursor-pointer"

@@ -18,6 +18,22 @@
       { "label": "GitHub", "url": "https://github.com/gitdmnt/bookie_clicker" },
       { "label": "Demo", "url": "https://bookie-clicker.pages.dev/" }
     ]
+  },
+  {
+    "tags": ["Web App"],
+    "title": "広告のゲーム",
+    "period": "2024-01-17",
+    "description": "Watersortの移植。",
+    "additionalDescription": "Watersortは、複数のスタックに入った色水を並び換え、最終的に同じ色ごとに一つのスタックにまとめることを目的としたパズルゲームです。\nただし、ある色の水は同じ色の水の上か空のスタックにしか積めない、スタックの大きさには上限がある、空のスタックの数には限りがある、といったいくつかの制約があります。\nユニバーサルデザインを意識し、色覚補助機能を実装しています。",
+    "motivation": "このページを作り始める1週間前からAndroidアプリのWatersortに生活そっちのけで熱中してしまっていたのですが、広告が多すぎたり難易度が低すぎたりと不満に感じる点がいくつかあったので、自分で実装することを思い立ちました。\nWeb技術に不慣れだった頃に製作したのでCanvasさえ使っておらず、HTMLのul/li要素と最低限のCSS, JavaScriptだけで実装されています。\nちょうどWatersortが流行っていた時期だったので、Twitterでちょっとバズりました。",
+    "image": "",
+    "stack": ["React", "TypeScript", "CSS"],
+    "links": [
+      {
+        "label": "Twitter",
+        "url": "https://twitter.com/41_36_22/status/1747290294163534257"
+      }
+    ]
   }
 ]
 
