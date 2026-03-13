@@ -153,8 +153,8 @@
     "title": "altpaint (仮称)",
     "period": "2026-03-11",
     "description": "コミック制作用のネイティブアプリ。",
-    "additionalDescription": "",
-    "motivation": "",
+    "additionalDescription": "Rust で実装したコミック制作用ペイントアプリです。性能が要求されるキャンバス描画やレイヤー合成処理のみを中核とし、それ以外の非性能要件はプラグインパネルによって柔軟に機能を拡張できる設計です。性能と拡張性を共存させるため、描画フレームワークはwgpuを用いてフルスクラッチで実装しています。現在はイラスト制作に必要な最低限の基本的な描画、レイヤー処理、入出力などのプラグインが提供されており、多少不便ながらもイラストの制作は可能な状態となっています。今後はコミック制作に特化した機能の実装と既存のペンの追加を行い、コミック制作に必要な機能を(可能であればC108の締切までに)実装することを目標としています。",
+    "motivation": "既存のコミック制作ツールを使っていたところ、非同期処理性能や拡張性の不足に不便を感じたため、自分で作ることにしました。",
     "image": "",
     "status": "開発中",
     "stack": ["Rust", "wgpu"],
@@ -170,8 +170,8 @@
     "title": "うだまなみ",
     "period": "2025-01-01",
     "description": "メッセージ転送、インタプリタ、LLM Chat botなどの機能を持つDiscord bot.",
-    "additionalDescription": "",
-    "motivation": "Discordのようなハンドルネームが必要なコミュニティでも匿名でチャットできるようにすべきだと考え、開発しました。",
+    "additionalDescription": "Rust で実装した Discord bot で、Google Gemini API を統合したチャット機能、数式評価、ゲーム機能などが実装されています。プライベートコミュニティ向けに会話ログ管理や権限制御を実装し、実運用で検証しています。",
+    "motivation": "Discordのようなハンドルネームが必要なコミュニティでも匿名でチャットできるようにすべきだと考え、開発しました。現在も実際のコミュニティサーバーで運用されています。",
     "image": "",
     "status": "運用中",
     "stack": ["Rust"],
@@ -179,6 +179,133 @@
       {
         "label": "GitHub",
         "url": "https://github.com/gitdmnt/udamanami"
+      }
+    ]
+  },
+  {
+    "tags": ["Web App"],
+    "title": "pixiv34dle",
+    "period": "2026-03-13",
+    "description": "rule34dleのpixiv向け移植。",
+    "additionalDescription": "Bun + React + Cloudflare Workers で実装した変なゲームです。提示された2つのキャラクターのどちらがpixivで人気かを当てるゲームです。現在はキャラクターライブラリを充実させるところで止まっています。",
+    "motivation": "Bun や Cloudflare Workers など、これまで経験の浅かった Web スタックを試したかったため開発しました。既存の npm エコシステムとの相互運用性を実装して確認しています。",
+    "image": "",
+    "status": "beta",
+    "stack": ["TypeScript", "Bun", "Cloudflare Workers", "React"],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/gitdmnt/pixiv34dle"
+      }
+    ]
+  },
+  {
+    "tags": ["Web App"],
+    "title": "差分ブロック崩し",
+    "period": "2026-03-13",
+    "description": "Before/After 画像の差分からブロック崩しを生成する Web アプリ。",
+    "additionalDescription": "React + Canvas でゲーム画面を構築されたブロック崩しゲームです。間違い探しなどの画像を入力するとおもしろいと思います。ゲームをより楽しくするボール分裂などのアイテムもそのうち実装したいです。",
+    "motivation": "画像差分をブロック崩しにするというアイディア自体は昔からたくさんありましたが、どれも画像とゲームが密結合していました。そのため、せっかく実装したゲーム基盤なのに、開発側が用意したいくつかのステージをクリアしたらそこで終了、という状態になっており、それではあまりにも悲しいと思いました。そこで、画像を入力すると自動でステージを生成できるようにすることで、いくらでもこのタイプのゲームを新鮮な気持ちで遊べるようにしました。",
+    "image": "",
+    "status": "beta",
+    "stack": ["TypeScript", "React", "Cloudflare Pages Functions"],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/gitdmnt/heisei_breakout"
+      },
+      {
+        "label": "demo",
+        "url": "https://heisei-breakout.pages.dev/"
+      }
+    ]
+  },
+  {
+    "tags": ["Native App"],
+    "title": "pixraper",
+    "period": "2026-01-10",
+    "description": "Pixiv の投稿データを収集し、タグ単位で分析するためのツール。",
+    "additionalDescription": "Pixivのタグごとの投稿件数やブックマーク数の分析を目的としたツールです。バックエンドをRust+Tauri v2, フロントエンドをSvelteで構成したネイティブアプリです。作っている途中で規約違反であることに気が付きましたが、とりあえず完成だけさせました。",
+    "motivation": "Pixiv データを自分の用途に合わせて可視化・分析するため。人気キャラクターを探したりするのに使いたかったです。",
+    "image": "",
+    "status": "運用中",
+    "stack": ["Rust", "Tauri", "Svelte", "TypeScript"],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/gitdmnt/pixraper"
+      }
+    ]
+  },
+  {
+    "tags": ["Electron plugin"],
+    "title": "obsidian-stats-viewer",
+    "period": "2025-04-09",
+    "description": "Obsidian の vault-stats を可視化するプラグイン。",
+    "additionalDescription": "`.obsidian/vault-stats.json` を入力として統計情報を表示することを目的とした実装で、Svelte/TypeScript ベースで構成されています。",
+    "motivation": "Obsidian に蓄積したノート統計を見やすく把握するため。",
+    "image": "",
+    "status": "運用中",
+    "stack": ["Svelte", "TypeScript"],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/gitdmnt/obsidian-stats-viewer"
+      }
+    ]
+  },
+  {
+    "tags": ["Web App"],
+    "title": "copy_link_for_md",
+    "period": "2025-07-15",
+    "description": "Markdown 形式のリンクをクリップボードへコピーする拡張機能。",
+    "additionalDescription": "ブラウザ拡張として動作し、現在ページの情報から Markdown 向けリンク文字列を素早く生成します。",
+    "motivation": "メモ作成時のリンク貼り付け作業を簡略化するため。",
+    "image": "",
+    "status": "運用中",
+    "stack": ["JavaScript"],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/gitdmnt/copy_link_for_md"
+      }
+    ]
+  },
+  {
+    "tags": ["Backend App"],
+    "title": "dezero_rust",
+    "period": "2025-07-09",
+    "description": "『ゼロから作る Deep Learning 3』の DeZero を Rust で移植する学習実装。",
+    "additionalDescription": "`Variable` や `Function`、数値微分などの要素を段階的に実装して、計算グラフと自動微分の理解を深める構成です。",
+    "motivation": "Rust で自動微分フレームワークの設計を追体験し、理解を深めるため。",
+    "image": "",
+    "status": "運用中",
+    "stack": ["Rust"],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/gitdmnt/dezero_rust"
+      }
+    ]
+  },
+  {
+    "tags": ["Web App"],
+    "title": "Naively-Indexed",
+    "period": "2025-04-22",
+    "description": "学習済み知識をチェックボックスで記録・共有するための Web アプリ。",
+    "additionalDescription": "分野ごとの達成項目データをインポート/エクスポートし、教える側と学ぶ側のギャップを可視化する用途で設計されています。",
+    "motivation": "学習進捗を構造化して共有し、教える内容の選定を効率化するため。",
+    "image": "",
+    "status": "運用中",
+    "stack": ["TypeScript", "Astro"],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/gitdmnt/Naively-Indexed"
+      },
+      {
+        "label": "Demo",
+        "url": "https://naively-indexed.netlify.app/"
       }
     ]
   }
