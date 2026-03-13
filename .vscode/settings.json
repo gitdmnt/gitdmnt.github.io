@@ -1,3 +1,6 @@
 {
-  "markdown.validate.enabled": true
+  "markdown.validate.enabled": true,
+  "chat.tools.terminal.autoApprove": {
+    "bun": true
+  }
 }
