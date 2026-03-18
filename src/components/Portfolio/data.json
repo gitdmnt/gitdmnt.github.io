@@ -308,5 +308,32 @@
         "url": "https://naively-indexed.netlify.app/"
       }
     ]
+  },
+  {
+    "tags": ["Web App"],
+    "title": "CoCキャラメーカー",
+    "period": "2026-03-18",
+    "description": "LLMを使ってクトゥルフ神話TRPGのキャラクターを作成するWebアプリ。",
+    "additionalDescription": "Gemini APIを使い、ランダムな職業やバックストーリーを持つTRPGのプレイヤーキャラクターを作成できます。",
+    "motivation": "必要であり、またGeminiの新しいSDKを使ってみたかったから。",
+    "image": "",
+    "status": "運用中",
+    "stack": [
+      "React",
+      "Next.js",
+      "Cloudflare Pages",
+      "Cloudflare Workers",
+      "@google/genai"
+    ],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/gitdmnt/coccharamaker"
+      },
+      {
+        "label": "Demo",
+        "url": "https://coccharamaker.udama.net"
+      }
+    ]
   }
 ]
