@@ -260,7 +260,7 @@
     "period": "2025-07-15",
     "description": "Markdown 形式のリンクをクリップボードへコピーする拡張機能。",
     "additionalDescription": "ブラウザ拡張として動作し、現在ページの情報から Markdown 向けリンク文字列を素早く生成します。",
-    "motivation": "メモ作成時のリンク貼り付け作業を簡略化するため。",
+    "motivation": "メモ作成時のリンク貼り付け作業を簡略化するため。また、ブラウザ拡張の開発を経験するため。",
     "image": "",
     "status": "運用中",
     "stack": ["JavaScript"],
@@ -279,7 +279,7 @@
     "additionalDescription": "`Variable` や `Function`、数値微分などの要素を段階的に実装して、計算グラフと自動微分の理解を深める構成です。",
     "motivation": "Rust で自動微分フレームワークの設計を追体験し、理解を深めるため。",
     "image": "",
-    "status": "運用中",
+    "status": "開発中",
     "stack": ["Rust"],
     "links": [
       {
